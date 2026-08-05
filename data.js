@@ -492,151 +492,1181 @@ window.SURVEY = {
     "rentN": 126
   },
   "comments": {
-    "summary": [
-      {
+    "perQuestion": {
+      "396284": {
         "id": 396284,
         "label": "3b. Improvements to the fare system",
-        "total": 363,
-        "public": 305,
+        "nAll": 359,
+        "nPublic": 305,
+        "nPrivate": 58,
         "upvotes": 515,
-        "pctUpvoted": 50.8
+        "pctUpvoted": 50.8,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Fare & payment",
+            "count": 137,
+            "pct": 38.2
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 79,
+            "pct": 22.0
+          },
+          {
+            "name": "Frequency & reliability",
+            "count": 53,
+            "pct": 14.8
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 46,
+            "pct": 12.8
+          },
+          {
+            "name": "Cost & affordability",
+            "count": 32,
+            "pct": 8.9
+          },
+          {
+            "name": "Cars & driving",
+            "count": 27,
+            "pct": 7.5
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 63,
+            "text": "Tap phone to pay"
+          },
+          {
+            "upvotes": 38,
+            "text": "Higher frequency to reduce the need to plan my trip before every ride, routes that don't always have to go through Downtown, but pick up in neighborhoods, cleanliness on the bus and at the bus stop, more pedestrian safety elements at the bus stop and corresponding road and intersection, improved public safety."
+          },
+          {
+            "upvotes": 36,
+            "text": "Tap to Pay/Open Payment"
+          }
+        ],
+        "examples": [
+          {
+            "text": "Quit letting on people who do not pay, adds additional homeless to every trip"
+          },
+          {
+            "text": "One fare system across that integrates with other bus systems as well as train/rail."
+          },
+          {
+            "text": "Tap to pay and a modern ticket system would be amazing on top of increasing express routes."
+          }
+        ]
       },
-      {
+      "396287": {
         "id": 396287,
         "label": "6. Circumstances more likely to ride",
-        "total": 426,
-        "public": 388,
+        "nAll": 422,
+        "nPublic": 388,
+        "nPrivate": 38,
         "upvotes": 494,
-        "pctUpvoted": 42.8
+        "pctUpvoted": 42.8,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 169,
+            "pct": 40.0
+          },
+          {
+            "name": "Frequency & reliability",
+            "count": 126,
+            "pct": 29.9
+          },
+          {
+            "name": "Cars & driving",
+            "count": 84,
+            "pct": 19.9
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 63,
+            "pct": 14.9
+          },
+          {
+            "name": "Travel time & directness",
+            "count": 46,
+            "pct": 10.9
+          },
+          {
+            "name": "Cleanliness & conditions",
+            "count": 40,
+            "pct": 9.5
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 99,
+            "text": "If it didn't literally take 4 times longer to get anywhere than by car."
+          },
+          {
+            "upvotes": 56,
+            "text": "Airport service that doesn't require changing at the stupid transit center out there. Is the airport not a transit center? why not send all the busses there and let us change to a durham bus or head into the airport for work"
+          },
+          {
+            "upvotes": 42,
+            "text": "The main bus station needs to be cleaned up.  I was there two weeks ago when there was a drug bust with 6 police vehicles that came in from both directions and arrested someone 4 seats away from me.  I am now avoiding it like the plague."
+          }
+        ],
+        "examples": [
+          {
+            "text": "Circular routes around the city instead of having to go downtown and then back out"
+          },
+          {
+            "text": "If there were sidewalks to walk to the bus stop. People drive like maniacs through my neighborhood."
+          },
+          {
+            "text": "Higher frequency for my route (GoRlaeigh 17) so that I can make better connections with other transit agency services i.e., going to Cary/Durham/etc."
+          }
+        ]
       },
-      {
+      "396289": {
         "id": 396289,
         "label": "7. Change to ride one more day/week",
-        "total": 291,
-        "public": 260,
+        "nAll": 289,
+        "nPublic": 260,
+        "nPrivate": 31,
         "upvotes": 165,
-        "pctUpvoted": 10.4
+        "pctUpvoted": 10.4,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Frequency & reliability",
+            "count": 90,
+            "pct": 31.1
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 88,
+            "pct": 30.4
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 49,
+            "pct": 17.0
+          },
+          {
+            "name": "Cars & driving",
+            "count": 39,
+            "pct": 13.5
+          },
+          {
+            "name": "Travel time & directness",
+            "count": 34,
+            "pct": 11.8
+          },
+          {
+            "name": "Distance to stop",
+            "count": 16,
+            "pct": 5.5
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 56,
+            "text": "Higher frequency, more safety, and more dedicated bus lanes"
+          },
+          {
+            "upvotes": 28,
+            "text": "Speed and reliability"
+          },
+          {
+            "upvotes": 22,
+            "text": "Direct routes to where I want to go. I do not want to go through the downtown bust station."
+          }
+        ],
+        "examples": [
+          {
+            "text": "Better safety, as a single parent taking the bus is not an option unless every bus has bus security cameras or something. I see homeless people taking the bus."
+          },
+          {
+            "text": "Higher frequency, more safety, and more dedicated bus lanes"
+          },
+          {
+            "text": "I only take the bus when I really need it, I like to walk."
+          }
+        ]
       },
-      {
+      "396290": {
         "id": 396290,
         "label": "8. First word or phrase about the bus",
-        "total": 333,
-        "public": 313,
+        "nAll": 333,
+        "nPublic": 313,
+        "nPrivate": 20,
         "upvotes": 129,
-        "pctUpvoted": 12.8
+        "pctUpvoted": 12.8,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Personal safety & security",
+            "count": 51,
+            "pct": 15.3
+          },
+          {
+            "name": "Cars & driving",
+            "count": 48,
+            "pct": 14.4
+          },
+          {
+            "name": "Frequency & reliability",
+            "count": 22,
+            "pct": 6.6
+          },
+          {
+            "name": "Travel time & directness",
+            "count": 21,
+            "pct": 6.3
+          },
+          {
+            "name": "Cleanliness & conditions",
+            "count": 16,
+            "pct": 4.8
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 10,
+            "pct": 3.0
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 47,
+            "text": "time-consuming"
+          },
+          {
+            "upvotes": 20,
+            "text": "Complicated schedules and safety"
+          },
+          {
+            "upvotes": 10,
+            "text": "The behavior and cleanliness of the buses has significantly decayed the last 3 years. Moore Square all is dirty, people are drinking, smoking marijuana and I have seen security walk right by these people. I have even seen several women walking in just underwear. The needs to be enforcement of basic behavior rules  there and on the bus. This is not done. Supervisors are not doing their job when ask"
+          }
+        ],
+        "examples": [
+          {
+            "text": "so sad, and it could be so much better if bad behavior was enforced instead of excused."
+          },
+          {
+            "text": "How all public transit is underfunded and subordinated to car-dominance."
+          },
+          {
+            "text": "Under-investment. Last resort. Doing the best that we can with the lack of funding provided."
+          }
+        ]
       },
-      {
+      "396291": {
         "id": 396291,
         "label": "9. Versus bus systems elsewhere",
-        "total": 284,
-        "public": 253,
+        "nAll": 281,
+        "nPublic": 253,
+        "nPrivate": 31,
         "upvotes": 152,
-        "pctUpvoted": 20.2
+        "pctUpvoted": 20.2,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Frequency & reliability",
+            "count": 103,
+            "pct": 36.7
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 89,
+            "pct": 31.7
+          },
+          {
+            "name": "Fare & payment",
+            "count": 74,
+            "pct": 26.3
+          },
+          {
+            "name": "Cars & driving",
+            "count": 33,
+            "pct": 11.7
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 30,
+            "pct": 10.7
+          },
+          {
+            "name": "Cleanliness & conditions",
+            "count": 28,
+            "pct": 10.0
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 36,
+            "text": "\"Tap to Pay\" system that I have used in other major city transit services"
+          },
+          {
+            "upvotes": 26,
+            "text": "Tap to pay, easy to navigate, live/accurate schedule in Google maps, frequently available (no big deal about missing a bus), many routes. Lots of people taking the bus so it feels safe."
+          },
+          {
+            "upvotes": 11,
+            "text": "Tap to pay meant no barriers to just spontaneously deciding to use it. Electric buses were modern and clean."
+          }
+        ],
+        "examples": [
+          {
+            "text": "In London there is great bus service -- frequent service that gets you anywhere you want to go"
+          },
+          {
+            "text": "Other systems are clean and more behavior expectations are done and implemented. They are cleaner and more dependable."
+          },
+          {
+            "text": "The buses are infrequent and the routes are limited."
+          }
+        ]
       },
-      {
-        "id": 396292,
-        "label": "Walk/bike 1. Crossing-street experience",
-        "total": 414,
-        "public": 387,
-        "upvotes": 469,
-        "pctUpvoted": 25.6
-      },
-      {
-        "id": 396293,
-        "label": "Walk/bike 2. Easier/harder crossing spots",
-        "total": 307,
-        "public": 289,
-        "upvotes": 212,
-        "pctUpvoted": 17.3
-      },
-      {
-        "id": 396294,
-        "label": "Walk/bike 3. Confusing intersections",
-        "total": 180,
-        "public": 168,
-        "upvotes": 114,
-        "pctUpvoted": 18.5
-      },
-      {
-        "id": 396306,
-        "label": "Walk/bike 5. What feels comfortable",
-        "total": 331,
-        "public": 311,
-        "upvotes": 183,
-        "pctUpvoted": 10.0
-      },
-      {
-        "id": 396506,
-        "label": "Walk/bike 6. What feels stressful",
-        "total": 304,
-        "public": 282,
-        "upvotes": 174,
-        "pctUpvoted": 11.7
-      },
-      {
-        "id": 396507,
-        "label": "Walk/bike 9. Why not walk or bike",
-        "total": 285,
-        "public": 265,
-        "upvotes": 188,
-        "pctUpvoted": 7.9
-      },
-      {
-        "id": 396511,
-        "label": "11. Improve walk/bike to transit stops",
-        "total": 160,
-        "public": 149,
-        "upvotes": 128,
-        "pctUpvoted": 8.1
-      },
-      {
-        "id": 396516,
-        "label": "12a. Disability / mobility / sensory needs",
-        "total": 56,
-        "public": 51,
-        "upvotes": 43,
-        "pctUpvoted": 15.7
-      },
-      {
+      "396191": {
         "id": 396191,
         "label": "1a. Reasons for stopping riding",
-        "total": 46,
-        "public": 0,
+        "nAll": 46,
+        "nPublic": 0,
+        "nPrivate": 46,
         "upvotes": 0,
-        "pctUpvoted": null
+        "pctUpvoted": null,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 9,
+            "pct": 19.6
+          },
+          {
+            "name": "Frequency & reliability",
+            "count": 7,
+            "pct": 15.2
+          },
+          {
+            "name": "Cleanliness & conditions",
+            "count": 4,
+            "pct": 8.7
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 3,
+            "pct": 6.5
+          },
+          {
+            "name": "Cars & driving",
+            "count": 3,
+            "pct": 6.5
+          },
+          {
+            "name": "Lighting",
+            "count": 2,
+            "pct": 4.3
+          }
+        ],
+        "topQuotes": [],
+        "examples": [
+          {
+            "text": "Office location moved away from transit access"
+          },
+          {
+            "text": "In good weather times I'll take my bicycle"
+          },
+          {
+            "text": "travel time is much longer than it takes with a car (bc Raleigh is so car-centric!)"
+          }
+        ]
       },
-      {
+      "396292": {
+        "id": 396292,
+        "label": "Walk/bike 1. Crossing-street experience",
+        "nAll": 412,
+        "nPublic": 387,
+        "nPrivate": 27,
+        "upvotes": 469,
+        "pctUpvoted": 25.6,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Cars & driving",
+            "count": 207,
+            "pct": 50.2
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 164,
+            "pct": 39.8
+          },
+          {
+            "name": "Crossings & intersections",
+            "count": 144,
+            "pct": 35.0
+          },
+          {
+            "name": "Sidewalks & gaps",
+            "count": 88,
+            "pct": 21.4
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 83,
+            "pct": 20.1
+          },
+          {
+            "name": "Lighting",
+            "count": 67,
+            "pct": 16.3
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 81,
+            "text": "Drivers do not respect pedestrians."
+          },
+          {
+            "upvotes": 61,
+            "text": "lack of sidewalks"
+          },
+          {
+            "upvotes": 56,
+            "text": "Most drivers in Raleigh do not respect the \"no turn on red\" signs, which makes crossing the street extremely dangerous, especially with little kids."
+          }
+        ],
+        "examples": [
+          {
+            "text": "having to be observant of cars and bikes"
+          },
+          {
+            "text": "not enough cross walks or sidewalks on many streets, including New Bern Ave"
+          },
+          {
+            "text": "Lack of sidewalks especially in residential areas."
+          }
+        ]
+      },
+      "396293": {
+        "id": 396293,
+        "label": "Walk/bike 2. Easier/harder crossing spots",
+        "nAll": 306,
+        "nPublic": 289,
+        "nPrivate": 18,
+        "upvotes": 212,
+        "pctUpvoted": 17.3,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Crossings & intersections",
+            "count": 92,
+            "pct": 30.1
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 58,
+            "pct": 19.0
+          },
+          {
+            "name": "Cars & driving",
+            "count": 53,
+            "pct": 17.3
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 49,
+            "pct": 16.0
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 40,
+            "pct": 13.1
+          },
+          {
+            "name": "Lighting",
+            "count": 28,
+            "pct": 9.2
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 50,
+            "text": "IRONWORKS. Dear god. Atlantic Avenue / Whittaker Mill"
+          },
+          {
+            "upvotes": 39,
+            "text": "Glenwood.  Any part of this road except for downtown is a pedestrian nightmare."
+          },
+          {
+            "upvotes": 25,
+            "text": "Peace at Person St is very dangerous. Crossing Wake Forest Rd north of Franklin is very dangerous (cars go SO fast). Above all else Atlantic Avenue at Whitaker Mill is an accident waiting to happen. I cannot believe the City allowed developers to build Iron Works and did not force them to build a safe pedestrian crossing across Atlantic to connect to the stuff on Whitaker Mill. People are often ru"
+          }
+        ],
+        "examples": [
+          {
+            "text": "blind curves are harder and places without traffic signals are harder"
+          },
+          {
+            "text": "Glenwood. Any part of this road except for downtown is a pedestrian nightmare."
+          },
+          {
+            "text": "It's more comfortable to cross the street even in painted crosswalk, if there's \"No Turn on Red\" side. That needs to be expanded beyond downtown corridors."
+          }
+        ]
+      },
+      "396294": {
+        "id": 396294,
+        "label": "Walk/bike 3. Confusing intersections",
+        "nAll": 179,
+        "nPublic": 168,
+        "nPrivate": 12,
+        "upvotes": 114,
+        "pctUpvoted": 18.5,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Crossings & intersections",
+            "count": 55,
+            "pct": 30.7
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 34,
+            "pct": 19.0
+          },
+          {
+            "name": "Cars & driving",
+            "count": 30,
+            "pct": 16.8
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 23,
+            "pct": 12.8
+          },
+          {
+            "name": "Sidewalks & gaps",
+            "count": 13,
+            "pct": 7.3
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 12,
+            "pct": 6.7
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 25,
+            "text": "The part along Glenwood where the sidewalk disappears because of the train tracks"
+          },
+          {
+            "upvotes": 22,
+            "text": "need crosswalks and sidewalks on New Bern Ave"
+          },
+          {
+            "upvotes": 19,
+            "text": "Atlantic Ave at Whitaker Mill, New Bern at King Charles (lights are timed so you have to run across 1/2 the street, wait in the median, and run across the other half)."
+          }
+        ],
+        "examples": [
+          {
+            "text": "need crosswalks and sidewalks on New Bern Ave"
+          },
+          {
+            "text": "The most recent I've noticed is where Hillsborough and Jones Franklin meet. One crosswalk is almost completely gone and the curb ramp doesn't connect/meet ADA"
+          },
+          {
+            "text": "Noo sidewalk crossing for bikers or walkers hardly in my neighborhood"
+          }
+        ]
+      },
+      "396306": {
+        "id": 396306,
+        "label": "Walk/bike 5. What feels comfortable",
+        "nAll": 331,
+        "nPublic": 311,
+        "nPrivate": 20,
+        "upvotes": 183,
+        "pctUpvoted": 10.0,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 128,
+            "pct": 38.7
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 115,
+            "pct": 34.7
+          },
+          {
+            "name": "Cars & driving",
+            "count": 109,
+            "pct": 32.9
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 55,
+            "pct": 16.6
+          },
+          {
+            "name": "Connectivity & infrastructure",
+            "count": 54,
+            "pct": 16.3
+          },
+          {
+            "name": "Stop amenities (shelter/bench/shade)",
+            "count": 44,
+            "pct": 13.3
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 80,
+            "text": "Having separation from cars.  We need sidewalks and protected bike lanes."
+          },
+          {
+            "upvotes": 24,
+            "text": "dedicated bike lanes...ideally protected from traffic\nSidewalks that are clean and consistent, not littered with scooters,"
+          },
+          {
+            "upvotes": 16,
+            "text": "For Biking I love the greenway because it is completely separate from cars. I also appreciate the separated bike lanes that have a grassy median between bikes and cars."
+          }
+        ],
+        "examples": [
+          {
+            "text": "Having separation from cars. We need sidewalks and protected bike lanes."
+          },
+          {
+            "text": "Wide sidewalks for walking, real separated bike lanes (with a barrier, not just a painted line) for biking"
+          },
+          {
+            "text": "I love just clearing head NOT looking at my phone."
+          }
+        ]
+      },
+      "396506": {
+        "id": 396506,
+        "label": "Walk/bike 6. What feels stressful",
+        "nAll": 304,
+        "nPublic": 282,
+        "nPrivate": 22,
+        "upvotes": 174,
+        "pctUpvoted": 11.7,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Cars & driving",
+            "count": 135,
+            "pct": 44.4
+          },
+          {
+            "name": "Sidewalks & gaps",
+            "count": 107,
+            "pct": 35.2
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 81,
+            "pct": 26.6
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 63,
+            "pct": 20.7
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 36,
+            "pct": 11.8
+          },
+          {
+            "name": "Crossings & intersections",
+            "count": 34,
+            "pct": 11.2
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 57,
+            "text": "lack of sidewalks or having to share the road with cars as biker (no separate bike lane)"
+          },
+          {
+            "upvotes": 39,
+            "text": "Conflicts at intersections with cars, distracted drivers"
+          },
+          {
+            "upvotes": 25,
+            "text": "no sidewalks, poor lighting"
+          }
+        ],
+        "examples": [
+          {
+            "text": "switching between different types of bike infrastructure and the heat"
+          },
+          {
+            "text": "Security and narrow lanes or no crossing areas"
+          },
+          {
+            "text": "Poor lighting, lack of shade, narrow sidewalks, and cars not obeying signals"
+          }
+        ]
+      },
+      "396307": {
         "id": 396307,
         "label": "Walk/bike 7. Safety concerns changing routes",
-        "total": 252,
-        "public": 0,
+        "nAll": 251,
+        "nPublic": 0,
+        "nPrivate": 252,
         "upvotes": 0,
-        "pctUpvoted": null
+        "pctUpvoted": null,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 79,
+            "pct": 31.5
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 62,
+            "pct": 24.7
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 59,
+            "pct": 23.5
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 49,
+            "pct": 19.5
+          },
+          {
+            "name": "Cars & driving",
+            "count": 49,
+            "pct": 19.5
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 34,
+            "pct": 13.5
+          }
+        ],
+        "topQuotes": [],
+        "examples": [
+          {
+            "text": "There are parts of my neighborhood that feel unsafe to walk to because we do not have sidewalks."
+          },
+          {
+            "text": "a lack of connectivity between ped/bike infrastructure and lots of poorly designed ped/bike infrastructure"
+          },
+          {
+            "text": "Lack of cycling infrastructure and having to wait at too many intersections for the pedestrian signal to come on."
+          }
+        ]
       },
-      {
+      "396310": {
         "id": 396310,
-        "label": "Walk/bike 8. Easier to figure out",
-        "total": 68,
-        "public": 0,
+        "label": "Walk/bike 8. What would make navigating easier",
+        "nAll": 67,
+        "nPublic": 0,
+        "nPrivate": 68,
         "upvotes": 0,
-        "pctUpvoted": null
+        "pctUpvoted": null,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 16,
+            "pct": 23.9
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 16,
+            "pct": 23.9
+          },
+          {
+            "name": "Connectivity & infrastructure",
+            "count": 15,
+            "pct": 22.4
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 13,
+            "pct": 19.4
+          },
+          {
+            "name": "Cars & driving",
+            "count": 13,
+            "pct": 19.4
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 11,
+            "pct": 16.4
+          }
+        ],
+        "topQuotes": [],
+        "examples": [
+          {
+            "text": "actually prioritizing pedestrian safety and not just car throughput"
+          },
+          {
+            "text": "Connectivity of protected bikeways and sidewalks"
+          },
+          {
+            "text": "actual connected and protected infrastructure"
+          }
+        ]
       },
-      {
+      "396507": {
+        "id": 396507,
+        "label": "Walk/bike 9. Why not walk or bike",
+        "nAll": 285,
+        "nPublic": 265,
+        "nPrivate": 20,
+        "upvotes": 188,
+        "pctUpvoted": 7.9,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 69,
+            "pct": 24.2
+          },
+          {
+            "name": "Distance to stop",
+            "count": 68,
+            "pct": 23.9
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 67,
+            "pct": 23.5
+          },
+          {
+            "name": "Weather",
+            "count": 65,
+            "pct": 22.8
+          },
+          {
+            "name": "Cars & driving",
+            "count": 54,
+            "pct": 18.9
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 46,
+            "pct": 16.1
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 63,
+            "text": "no sidewalks"
+          },
+          {
+            "upvotes": 39,
+            "text": "distance and/or weather"
+          },
+          {
+            "upvotes": 37,
+            "text": "Many roads are required to be on to get to certain destinations, especially in the Midtown or North Raleigh area. Those roads act like impassable rivers for a pedestrian or bicyclist, so the only option is to drive, or take a bus that requires an exchange which can extend travel time by 4 times the amount of time it would take to drive, if you are able to drive."
+          }
+        ],
+        "examples": [
+          {
+            "text": "Too many intersections with long pedestrian waiting times, having to walk in darker areas of downtown, and lack of bike lanes"
+          },
+          {
+            "text": "Huge streets like Atlantic, capital, New Bern, not having time to cross or good stoplight timing and we need PEDESTRIAN / BIKE bridges"
+          },
+          {
+            "text": "weather, distance, lack of shade, number of vehicular conflicts like intersections"
+          }
+        ]
+      },
+      "396511": {
+        "id": 396511,
+        "label": "11. Improve walk/bike to transit stops",
+        "nAll": 157,
+        "nPublic": 149,
+        "nPrivate": 11,
+        "upvotes": 128,
+        "pctUpvoted": 8.1,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 77,
+            "pct": 49.0
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 25,
+            "pct": 15.9
+          },
+          {
+            "name": "Stop amenities (shelter/bench/shade)",
+            "count": 23,
+            "pct": 14.6
+          },
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 18,
+            "pct": 11.5
+          },
+          {
+            "name": "Crossings & intersections",
+            "count": 17,
+            "pct": 10.8
+          },
+          {
+            "name": "Cars & driving",
+            "count": 15,
+            "pct": 9.6
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 48,
+            "text": "Sidewalks"
+          },
+          {
+            "upvotes": 31,
+            "text": "Greenway connections, lighting and mid block crossings. It's impossible to take the Route 3 anymore because you can't get across Raleigh Blvd because people drive 100 mph on that street."
+          },
+          {
+            "upvotes": 24,
+            "text": "street trees! lighting! sidewalks"
+          }
+        ],
+        "examples": [
+          {
+            "text": "ADA-compliant sidewalk and/or separated bike lane leading up to the transit stops"
+          },
+          {
+            "text": "Greenway connections, lighting and mid block crossings. It's impossible to take the Route 3 anymore because you can't get across Raleigh Blvd because people drive 100 mph on that street."
+          },
+          {
+            "text": "a Bench would be nice. A canopy even better."
+          }
+        ]
+      },
+      "396516": {
+        "id": 396516,
+        "label": "12a. Disability / mobility / sensory needs",
+        "nAll": 48,
+        "nPublic": 51,
+        "nPrivate": 5,
+        "upvotes": 43,
+        "pctUpvoted": 15.7,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Sidewalks & gaps",
+            "count": 20,
+            "pct": 41.7
+          },
+          {
+            "name": "Accessibility & mobility",
+            "count": 14,
+            "pct": 29.2
+          },
+          {
+            "name": "Cars & driving",
+            "count": 11,
+            "pct": 22.9
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 5,
+            "pct": 10.4
+          },
+          {
+            "name": "Bike lanes & greenways",
+            "count": 4,
+            "pct": 8.3
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 4,
+            "pct": 8.3
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 14,
+            "text": "Cars are so loud, so big, so fast, so dangerous."
+          },
+          {
+            "upvotes": 13,
+            "text": "need sidewalks and ramps"
+          },
+          {
+            "upvotes": 8,
+            "text": "Deaf and hard of hearing need to be able to see the area around them as well as signs, lights, and have a clear view of cars approaching. Sidewalks are often overgrown , which hides signs and lights and parts of the walkway."
+          }
+        ],
+        "examples": [
+          {
+            "text": "I do see handicap (wheelchair) in the roads since there are no bus ramps to ride the bus and little crosswalks for easy access to wheelchair or any other handicap"
+          },
+          {
+            "text": "Lack of pedestrian bridges and bike lanes that are protected from traffic"
+          },
+          {
+            "text": "yes, I don't want to get run over by people not following the law and since RPD refuses to enforce any traffic laws including speeding I feel like we need to be able to anticipate the wreckless drivers"
+          }
+        ]
+      },
+      "396518": {
         "id": 396518,
-        "label": "13. Make walking/biking more appealing",
-        "total": 47,
-        "public": 0,
+        "label": "Walk/bike 13. Make walking/biking more appealing",
+        "nAll": 47,
+        "nPublic": 0,
+        "nPrivate": 47,
         "upvotes": 0,
-        "pctUpvoted": null
+        "pctUpvoted": null,
+        "spatial": false,
+        "themes": [
+          {
+            "name": "Bike lanes & greenways",
+            "count": 16,
+            "pct": 34.0
+          },
+          {
+            "name": "Connectivity & infrastructure",
+            "count": 13,
+            "pct": 27.7
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 10,
+            "pct": 21.3
+          },
+          {
+            "name": "Sidewalks & gaps",
+            "count": 9,
+            "pct": 19.1
+          },
+          {
+            "name": "Cars & driving",
+            "count": 9,
+            "pct": 19.1
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 7,
+            "pct": 14.9
+          }
+        ],
+        "topQuotes": [],
+        "examples": [
+          {
+            "text": "this last checkbox is hilariously bad. \"all road users?\" no just car drivers, raleigh is car brained and will never change. you have this survey nearly annually and nothing changes"
+          },
+          {
+            "text": "actual connected and protected infrastructure"
+          },
+          {
+            "text": "De-centering cars and building for humans."
+          }
+        ]
       },
-      {
+      "396333": {
         "id": 396333,
         "label": "5. Map pins of weekly trips",
-        "total": 617,
-        "public": 608,
+        "nAll": 103,
+        "nPublic": 608,
+        "nPrivate": 9,
         "upvotes": 16,
-        "pctUpvoted": 2.5
+        "pctUpvoted": 2.5,
+        "spatial": true,
+        "themes": [
+          {
+            "name": "Routes, coverage & transfers",
+            "count": 6,
+            "pct": 5.8
+          },
+          {
+            "name": "Distance to stop",
+            "count": 4,
+            "pct": 3.9
+          },
+          {
+            "name": "Cars & driving",
+            "count": 2,
+            "pct": 1.9
+          },
+          {
+            "name": "Driver behavior & enforcement",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "name": "Personal safety & security",
+            "count": 1,
+            "pct": 1.0
+          },
+          {
+            "name": "Travel time & directness",
+            "count": 1,
+            "pct": 1.0
+          }
+        ],
+        "topQuotes": [
+          {
+            "upvotes": 2,
+            "text": "I usually travel from SE Raleigh off S. New Hope Rd to the downtown Raleigh area or Wake Forest Rd (Costco, Wegmans area)"
+          },
+          {
+            "upvotes": 1,
+            "text": "library"
+          },
+          {
+            "upvotes": 1,
+            "text": "Transfer Food Hall"
+          }
+        ],
+        "examples": [
+          {
+            "text": "My usual end point because it save me a few minutes than riding all the way into the bus station."
+          },
+          {
+            "text": "I usually travel from SE Raleigh off S. New Hope Rd to the downtown Raleigh area or Wake Forest Rd (Costco, Wegmans area)"
+          },
+          {
+            "text": "My destination, which is not far from my starting point but the bus route that gets me closest would take up to an hour which is impractical"
+          }
+        ]
       }
+    },
+    "order": [
+      "396284",
+      "396287",
+      "396289",
+      "396290",
+      "396291",
+      "396191",
+      "396292",
+      "396293",
+      "396294",
+      "396306",
+      "396506",
+      "396307",
+      "396310",
+      "396507",
+      "396511",
+      "396516",
+      "396518",
+      "396333"
     ],
     "topQuotes": {
       "396284": [
@@ -651,10 +1681,6 @@ window.SURVEY = {
         {
           "upvotes": 36,
           "text": "Tap to Pay/Open Payment"
-        },
-        {
-          "upvotes": 20,
-          "text": "Tap to pay and a modern ticket system would be amazing on top of increasing express routes."
         }
       ],
       "396287": [
@@ -669,10 +1695,6 @@ window.SURVEY = {
         {
           "upvotes": 42,
           "text": "The main bus station needs to be cleaned up.  I was there two weeks ago when there was a drug bust with 6 police vehicles that came in from both directions and arrested someone 4 seats away from me.  I am now avoiding it like the plague."
-        },
-        {
-          "upvotes": 24,
-          "text": "More Frequent Buses, Better Behavior on the buses, people are eating, drinking including alcohol, yelling, loud music, blocking aisle with big suitcases and carts, the buses are dirty, their is not behavior enforcement on the buses, making it hard for those trying to go to work."
         }
       ],
       "396289": [
@@ -687,10 +1709,6 @@ window.SURVEY = {
         {
           "upvotes": 22,
           "text": "Direct routes to where I want to go. I do not want to go through the downtown bust station."
-        },
-        {
-          "upvotes": 11,
-          "text": "Continue the 30-minute departure interval of the DRX from Raleigh to Durham until 10am."
         }
       ],
       "396290": [
@@ -705,10 +1723,6 @@ window.SURVEY = {
         {
           "upvotes": 10,
           "text": "The behavior and cleanliness of the buses has significantly decayed the last 3 years. Moore Square all is dirty, people are drinking, smoking marijuana and I have seen security walk right by these people. I have even seen several women walking in just underwear. The needs to be enforcement of basic behavior rules  there and on the bus. This is not done. Supervisors are not doing their job when ask"
-        },
-        {
-          "upvotes": 4,
-          "text": "Dirty"
         }
       ],
       "396291": [
@@ -723,12 +1737,9 @@ window.SURVEY = {
         {
           "upvotes": 11,
           "text": "Tap to pay meant no barriers to just spontaneously deciding to use it. Electric buses were modern and clean."
-        },
-        {
-          "upvotes": 8,
-          "text": "Umo App is hard to understand. Most cities have tap to ride systems."
         }
       ],
+      "396191": [],
       "396292": [
         {
           "upvotes": 81,
@@ -741,10 +1752,6 @@ window.SURVEY = {
         {
           "upvotes": 56,
           "text": "Most drivers in Raleigh do not respect the \"no turn on red\" signs, which makes crossing the street extremely dangerous, especially with little kids."
-        },
-        {
-          "upvotes": 41,
-          "text": "not enough cross walks or sidewalks on many streets, including New Bern Ave"
         }
       ],
       "396293": [
@@ -759,10 +1766,6 @@ window.SURVEY = {
         {
           "upvotes": 25,
           "text": "Peace at Person St is very dangerous. Crossing Wake Forest Rd north of Franklin is very dangerous (cars go SO fast). Above all else Atlantic Avenue at Whitaker Mill is an accident waiting to happen. I cannot believe the City allowed developers to build Iron Works and did not force them to build a safe pedestrian crossing across Atlantic to connect to the stuff on Whitaker Mill. People are often ru"
-        },
-        {
-          "upvotes": 12,
-          "text": "easier if there is a cross walk."
         }
       ],
       "396294": [
@@ -777,10 +1780,6 @@ window.SURVEY = {
         {
           "upvotes": 19,
           "text": "Atlantic Ave at Whitaker Mill, New Bern at King Charles (lights are timed so you have to run across 1/2 the street, wait in the median, and run across the other half)."
-        },
-        {
-          "upvotes": 8,
-          "text": "Whittaker Mill / Atlantic Avenue."
         }
       ],
       "396306": [
@@ -795,10 +1794,6 @@ window.SURVEY = {
         {
           "upvotes": 16,
           "text": "For Biking I love the greenway because it is completely separate from cars. I also appreciate the separated bike lanes that have a grassy median between bikes and cars."
-        },
-        {
-          "upvotes": 12,
-          "text": "For biking, having separation from vehicle lanes or being in a low-traffic area.  For walking, having a complete sidewalk that means I don't have to walk through someone's yard or along a ditch."
         }
       ],
       "396506": [
@@ -813,12 +1808,10 @@ window.SURVEY = {
         {
           "upvotes": 25,
           "text": "no sidewalks, poor lighting"
-        },
-        {
-          "upvotes": 6,
-          "text": "It is uncomfortable to walk or bike on streets with high speed limits (over 35 mph) or where right turns on red is allowed."
         }
       ],
+      "396307": [],
+      "396310": [],
       "396507": [
         {
           "upvotes": 63,
@@ -831,10 +1824,6 @@ window.SURVEY = {
         {
           "upvotes": 37,
           "text": "Many roads are required to be on to get to certain destinations, especially in the Midtown or North Raleigh area. Those roads act like impassable rivers for a pedestrian or bicyclist, so the only option is to drive, or take a bus that requires an exchange which can extend travel time by 4 times the amount of time it would take to drive, if you are able to drive."
-        },
-        {
-          "upvotes": 9,
-          "text": "Fear of having to cross any road. Drivers cannot be trusted to yield when supposed to"
         }
       ],
       "396511": [
@@ -849,10 +1838,6 @@ window.SURVEY = {
         {
           "upvotes": 24,
           "text": "street trees! lighting! sidewalks"
-        },
-        {
-          "upvotes": 15,
-          "text": "ADA-compliant sidewalk and/or separated bike lane leading up to the transit stops"
         }
       ],
       "396516": [
@@ -867,15 +1852,8 @@ window.SURVEY = {
         {
           "upvotes": 8,
           "text": "Deaf and hard of hearing need to be able to see the area around them as well as signs, lights, and have a clear view of cars approaching. Sidewalks are often overgrown , which hides signs and lights and parts of the walkway."
-        },
-        {
-          "upvotes": 4,
-          "text": "Uterine cancer survivor, so I need reasonable access to restrooms."
         }
       ],
-      "396191": [],
-      "396307": [],
-      "396310": [],
       "396518": [],
       "396333": [
         {
@@ -889,10 +1867,6 @@ window.SURVEY = {
         {
           "upvotes": 1,
           "text": "Transfer Food Hall"
-        },
-        {
-          "upvotes": 1,
-          "text": "beer!"
         }
       ]
     },

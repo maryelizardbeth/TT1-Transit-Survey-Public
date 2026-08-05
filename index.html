@@ -69,8 +69,15 @@
         </div>
       </details>
 
-      <h2 style="color:var(--raleigh-green);font-size:1.05rem;margin:4px 0 12px;">Takeaway for each question</h2>
-      <div class="q-list" id="question-list"><!-- injected by app.js --></div>
+      <h2 style="color:var(--raleigh-green);font-size:1.05rem;margin:4px 0 6px;">Survey responses</h2>
+      <p class="card-sub" style="margin:0 0 12px;">Takeaways from the structured, individual-response questions.</p>
+      <div class="q-list" id="survey-question-list"><!-- injected by app.js --></div>
+
+      <h2 style="color:var(--raleigh-green);font-size:1.05rem;margin:22px 0 6px;">Open comments — themes across every comment</h2>
+      <p class="card-sub" style="margin:0 0 12px;max-width:90ch;">Each question below summarizes the common themes across <strong>all</strong> of its
+        comments first, then adds the upvote layer. Some questions were collected privately and could not be upvoted; their themes are
+        summarized the same way, with a representative example in place of an endorsed comment.</p>
+      <div class="q-list" id="comment-question-list"><!-- injected by app.js --></div>
     </div>
   </section>
 
@@ -267,8 +274,9 @@
       </div>
 
       <div class="card wide">
-        <h2>The evidence residents upvoted most</h2>
-        <p class="card-sub">Highest-upvoted public comments tied to the two named barriers</p>
+        <h2>What residents said — and most endorsed</h2>
+        <p class="card-sub">Recurring themes for every question are summarized on the Overview &amp; Questions tab; these are the
+          most-endorsed individual comments tied to the two named barriers.</p>
         <div class="quote-list" id="quotes-evidence"></div>
       </div>
 

@@ -139,20 +139,9 @@
       }
     });
   }
-  // Horizontal bar of a question's top upvoted comments (label = truncated text).
-  function quoteBars(canvas, qid, color) {
-    var qs = (S.comments.topQuotes[qid] || []).slice(0, 4);
-    var full = qs.map(function (q) { return q.text; });
-    var trunc = qs.map(function (q) { var t = q.text.replace(/\s+/g, " "); return t.length > 30 ? t.slice(0, 30) + "…" : t; });
-    return smallHBar(canvas, trunc, qs.map(function (q) { return q.upvotes; }), color,
-      { titles: full, tipLabel: function (c) { return c.parsed.x + " upvotes"; } });
-  }
-
   // =========================================================================
   // Per-question takeaways (Section 1)
   // =========================================================================
-  var themeNames = ["Payment / app", "Safety / crime", "Frequency / reliability", "Car dependence", "Routes / coverage"];
-
   var QUESTIONS = [
     { num: "Q1", tag: "survey", title: "How often do you ride the bus?",
       body: "About three in four respondents are non-riders: " + m.pctNever + "% never use the bus and another " +
@@ -189,10 +178,6 @@
         smallDoughnut(cv, Object.keys(k), Object.values(k), [C.green, C.teal, C.amber, C.rust],
           { tipLabel: function (c) { return c.label + ": " + fmt(c.parsed); } });
       } },
-    { num: "Q3b", tag: "comments", title: "Improvements to the fare system",
-      body: "This question drew the highest comment engagement of any question — about half of public comments earned an upvote. The repeated, specific ask is <strong>tap-to-pay</strong> (contactless card or phone) instead of the Umo app.",
-      take: "Payment isn't a top reason people avoid the bus, but among those who comment it is the most concrete, high-agreement fix.",
-      viz: function (cv) { quoteBars(cv, "396284", C.teal); } },
     { num: "Q4", tag: "survey", title: "Is there a stop within a 10-minute walk?",
       body: "Roughly " + pctNoStop + "% of non-riders who answered don't have a stop within a ten-minute walk (versus far fewer current riders).",
       take: "For a meaningful share of non-riders, the nearest stop is simply <strong>too far to reach on foot</strong>.",
@@ -201,29 +186,6 @@
         smallDoughnut(cv, ["Yes", "No", "Not sure"], [s.Yes, s.No, s["Not sure"]], [C.green, C.rust, C.amber],
           { tipLabel: function (c) { return c.label + ": " + fmt(c.parsed) + " (" + pct(c.parsed, tot) + "%)"; } });
       } },
-    { num: "Q6–Q9", tag: "survey", title: "Open-ended: what would change your mind?",
-      body: "In their own words, non-riders most raise car dependence, frequency/reliability, safety, and route coverage. Payment stays minor — until people compare GoRaleigh to another city's system, where tap-to-pay spikes to the second-most-mentioned theme.",
-      take: "Unprompted priorities match the ratings: <strong>time, reliability, safety, and coverage</strong> lead.",
-      viz: function (cv) {
-        var avg = themeNames.map(function (t) {
-          var vals = S.openThemes.map(function (r) { return r[t]; });
-          return Math.round(vals.reduce(function (a, b) { return a + b; }, 0) / vals.length * 10) / 10;
-        });
-        smallHBar(cv, themeNames, avg, [C.amber, C.rust, C.teal, C.navy, C.mid],
-          { xfmt: function (v) { return v + "%"; }, tipLabel: function (c) { return c.parsed.x + "% of comments (avg across Q6–Q9)"; } });
-      } },
-    { num: "WB1", tag: "comments", title: "Crossing streets while walking or biking",
-      body: "The top-upvoted answers are &ldquo;drivers do not respect pedestrians&rdquo; (81 upvotes) and &ldquo;lack of sidewalks&rdquo; (61).",
-      take: "Driver behavior and missing sidewalks are the dominant pedestrian-safety complaints citywide.",
-      viz: function (cv) { quoteBars(cv, "396292", C.leaf); } },
-    { num: "WB2", tag: "comments", title: "Where crossing feels hardest",
-      body: "Residents named specific danger spots repeatedly: Atlantic Avenue at Whitaker Mill (Ironworks), Glenwood Avenue outside downtown, and New Bern Avenue.",
-      take: "This is concrete, <strong>location-specific</strong> intelligence that can be routed straight to traffic engineering.",
-      viz: function (cv) { quoteBars(cv, "396293", C.leaf); } },
-    { num: "WB11", tag: "comments", title: "Improving the walk or bike to transit stops",
-      body: "The single top answer is simply &ldquo;Sidewalks&rdquo; (48 upvotes), followed by greenway connections, lighting, and mid-block crossings.",
-      take: "The question most directly tied to TT1's charter <strong>validates the sidewalk-and-lighting focus</strong> unprompted.",
-      viz: function (cv) { quoteBars(cv, "396511", C.green); } },
     { num: "Demo", tag: "survey", title: "Who answered the demographic questions?",
       body: "Only about a quarter to a third of respondents answered the optional demographic items, and those who did skew white, higher-income, and highly educated.",
       take: "Read demographic breakdowns as <strong>directional</strong>. Gender has the largest usable samples and is explored on its own tab.",
@@ -234,28 +196,108 @@
   ];
 
   function renderQuestions() {
-    var host = document.getElementById("question-list");
+    var host = document.getElementById("survey-question-list");
     if (!host) return;
     host.innerHTML = QUESTIONS.map(function (q) {
       return '<details class="q-item"><summary>' +
         '<span class="q-num">' + q.num + '</span>' +
         '<span class="q-title">' + q.title + '</span>' +
-        '<span class="q-tag ' + q.tag + '">' + (q.tag === "survey" ? "Responses" : "Comments") + '</span>' +
+        '<span class="q-tag ' + q.tag + '">Responses</span>' +
         '<span class="q-chevron">&#9656;</span>' +
         '</summary><div class="q-body"><p>' + q.body + '</p>' +
         '<div class="q-chart"><canvas></canvas></div>' +
         '<div class="takeaway">' + q.take + '</div></div></details>';
     }).join("");
-    // Lazy-render each question's chart the first time its section is opened
-    // (a canvas has no size while the <details> is collapsed).
     var items = host.querySelectorAll(".q-item");
     items.forEach(function (el, i) {
       el.addEventListener("toggle", function () {
         var q = QUESTIONS[i];
-        if (el.open && !q._rendered && q.viz) {
-          q._rendered = true;
-          q.viz(el.querySelector("canvas"));
-        }
+        if (el.open && !q._rendered && q.viz) { q._rendered = true; q.viz(el.querySelector("canvas")); }
+      });
+    });
+  }
+
+  // =========================================================================
+  // Open comments (Section 1, part 2): themes across ALL comments, then upvotes
+  // =========================================================================
+  var THEME_COLORS = [C.green, C.leaf, C.teal, C.navy, C.amber, C.mid, C.chartreuse, C.rust];
+
+  // Short, hand-written conclusions layered on top of the auto theme summary.
+  var COMMENT_TAKEAWAYS = {
+    "396284": "Fare and payment dominate, with <strong>tap-to-pay instead of the Umo app</strong> the recurring ask; routes and reliability also surface.",
+    "396287": "Routes/coverage and frequency lead, and travel-time competitiveness with driving is the emotional peak — the most-endorsed comment says the bus takes <strong>four times longer than a car</strong>.",
+    "396289": "Frequency and route directness (avoiding the downtown transfer) are what would add a trip.",
+    "396290": "First impressions skew negative — safety, cars, and time — with <strong>&ldquo;time-consuming&rdquo;</strong> the most-endorsed.",
+    "396291": "Compared with other cities, GoRaleigh feels less frequent and less connected, and lacks <strong>tap-to-pay</strong>.",
+    "396191": "Routes/transfers and frequency lead the reasons people drifted away. All responses here were private.",
+    "396292": "Driver behavior, car traffic, and crossings dominate, with sidewalks and lighting close behind.",
+    "396293": "Named danger spots recur — <strong>Atlantic Ave/Whitaker Mill, Glenwood, New Bern</strong> — clustered on crossings and intersections.",
+    "396294": "Confusing crossings and unclear bike lanes, plus specific signal-timing complaints.",
+    "396306": "<strong>Separation from cars</strong> — sidewalks and protected bike lanes or greenways — defines a comfortable trip.",
+    "396506": "Missing sidewalks and hostile driver behavior are what make trips feel stressful.",
+    "396307": "Sidewalk gaps, missing bike lanes, and personal-safety fears push people to reroute. All responses here were private.",
+    "396310": "People ask for <strong>connected, protected infrastructure and enforcement</strong>, not more signage. All responses here were private.",
+    "396507": "Sidewalk gaps, distance, personal safety, and weather are the main reasons people don't walk or bike.",
+    "396511": "<strong>Sidewalks</strong> are the overwhelming ask for reaching stops, then lighting and safe crossings — directly on TT1's charter.",
+    "396516": "Sidewalks plus specific accessibility needs (ramps, clear sightlines, restrooms) for mobility and sensory needs.",
+    "396518": "Protected bike lanes, connected infrastructure, and safety from cars. All responses here were private.",
+    "396333": "These are map-pin location labels rather than discussion, and are best read spatially (see the separate map export)."
+  };
+
+  function themeSummary(a) {
+    if (a.spatial) {
+      return "This question captured <strong>" + fmt(a.nPublic + a.nPrivate) + " map pins</strong> marking weekly origins and " +
+        "destinations; about " + fmt(a.nAll) + " carried a text label. It is best read as a spatial layer rather than discussion.";
+    }
+    var t = a.themes.slice(0, 3).map(function (x) { return x.name + " (" + x.pct + "%)"; });
+    var joined = t.length >= 3 ? t[0] + ", " + t[1] + ", and " + t[2] : t.join(" and ");
+    return "Across <strong>" + fmt(a.nAll) + " comments</strong> (" + fmt(a.nPublic) + " public, " +
+      fmt(a.nPrivate) + " private), the leading themes are " + joined + ".";
+  }
+  function upvoteLine(a) {
+    if (a.spatial) return "";
+    if (a.upvotes > 0 && a.topQuotes.length) {
+      var q = a.topQuotes[0];
+      return '<p class="q-endorse"><span class="up">&#9650; ' + q.upvotes + '</span> Most-endorsed: <span class="txt">&ldquo;' + q.text + '&rdquo;</span></p>';
+    }
+    if (a.examples.length) {
+      return '<p class="q-endorse muted">Collected privately (no upvotes). Representative comment: <span class="txt">&ldquo;' + a.examples[0].text + '&rdquo;</span></p>';
+    }
+    return "";
+  }
+
+  function renderCommentQuestions() {
+    var host = document.getElementById("comment-question-list");
+    if (!host || !S.comments.perQuestion) return;
+    var order = S.comments.order;
+    host.innerHTML = order.map(function (qid) {
+      var a = S.comments.perQuestion[qid];
+      var parts = a.label.split(". ");
+      var num = parts.shift().replace("Walk/bike ", "WB");
+      var title = parts.join(". ");
+      var take = COMMENT_TAKEAWAYS[qid] || "";
+      var chart = a.spatial ? "" : '<div class="q-chart"><canvas></canvas></div>';
+      return '<details class="q-item" data-qid="' + qid + '"><summary>' +
+        '<span class="q-num">' + num + '</span>' +
+        '<span class="q-title">' + title + '</span>' +
+        '<span class="q-tag comments">' + fmt(a.nAll) + ' comments</span>' +
+        '<span class="q-chevron">&#9656;</span>' +
+        '</summary><div class="q-body"><p>' + themeSummary(a) + '</p>' +
+        chart + upvoteLine(a) +
+        (take ? '<div class="takeaway">' + take + '</div>' : '') +
+        '</div></details>';
+    }).join("");
+    host.querySelectorAll(".q-item").forEach(function (el) {
+      var a = S.comments.perQuestion[el.dataset.qid];
+      el.addEventListener("toggle", function () {
+        if (!el.open || el._rendered || a.spatial) return;
+        el._rendered = true;
+        var cv = el.querySelector("canvas");
+        if (!cv) return;
+        smallHBar(cv, a.themes.map(function (t) { return t.name; }), a.themes.map(function (t) { return t.pct; }),
+          a.themes.map(function (t, i) { return THEME_COLORS[i % THEME_COLORS.length]; }),
+          { xfmt: function (v) { return v + "%"; },
+            tipLabel: function (c) { return c.parsed.x + "% of comments (" + fmt(a.themes[c.dataIndex].count) + ")"; } });
       });
     });
   }
@@ -400,6 +442,7 @@
 
   // ---- Initial render -----------------------------------------------------
   renderQuestions();
+  renderCommentQuestions();
   renderView("whynot");
   rendered.whynot = true;
 })();

@@ -255,6 +255,20 @@ a { color: var(--raleigh-green); }
   height: 230px;
   margin: 14px 0;
 }
+.q-item .q-body .q-endorse {
+  font-size: 0.86rem;
+  margin: 4px 0 2px;
+  line-height: 1.5;
+}
+.q-item .q-body .q-endorse .up {
+  display: inline-block;
+  font-size: 0.7rem; font-weight: 700;
+  color: var(--raleigh-green); background: var(--green-tint);
+  border-radius: 10px; padding: 1px 8px; margin-right: 6px;
+  white-space: nowrap; font-variant-numeric: tabular-nums;
+}
+.q-item .q-body .q-endorse .txt { font-style: italic; color: #333; }
+.q-item .q-body .q-endorse.muted { color: #6b6b6b; }
 .q-item .q-body .takeaway {
   background: var(--green-tint-alt);
   border-left: 3px solid var(--leaf-green);

@@ -295,46 +295,17 @@ own_pct, own_n = ever_ridden_pct('Own')
 rent_pct, rent_n = ever_ridden_pct('Rent')
 
 # ---------------------------------------------------------------------------
-# COMMENTS file
+# COMMENTS file -- themes first (over ALL comments), then the upvote layer.
 # ---------------------------------------------------------------------------
-question_labels = {
-    396191: "1a. Reasons for stopping riding",
-    396284: "3b. Improvements to the fare system",
-    396287: "6. Circumstances more likely to ride",
-    396289: "7. Change to ride one more day/week",
-    396290: "8. First word or phrase about the bus",
-    396291: "9. Versus bus systems elsewhere",
-    396292: "Walk/bike 1. Crossing-street experience",
-    396293: "Walk/bike 2. Easier/harder crossing spots",
-    396294: "Walk/bike 3. Confusing intersections",
-    396306: "Walk/bike 5. What feels comfortable",
-    396506: "Walk/bike 6. What feels stressful",
-    396307: "Walk/bike 7. Safety concerns changing routes",
-    396310: "Walk/bike 8. Easier to figure out",
-    396507: "Walk/bike 9. Why not walk or bike",
-    396511: "11. Improve walk/bike to transit stops",
-    396516: "12a. Disability / mobility / sensory needs",
-    396518: "13. Make walking/biking more appealing",
-    396333: "5. Map pins of weekly trips",
-}
-order = [396284, 396287, 396289, 396290, 396291, 396292, 396293, 396294, 396306,
-         396506, 396507, 396511, 396516, 396191, 396307, 396310, 396518, 396333]
+import comment_themes
 
-comment_summary = []
-top_quotes = {}
-for qid in order:
-    sub = cdf[cdf['QuestionId'] == qid]
-    pub = sub[sub['Private'] == False]
-    n_public = int(len(pub))
-    total_up = int(sub['Upvotes'].sum())
-    pct_up = round(float((pub['Upvotes'] > 0).mean() * 100), 1) if n_public else None
-    comment_summary.append({"id": qid, "label": question_labels[qid], "total": int(len(sub)),
-                            "public": n_public, "upvotes": total_up, "pctUpvoted": pct_up})
-    quotes = []
-    for _, r in pub.sort_values('Upvotes', ascending=False).head(4).iterrows():
-        if pd.notna(r['Comment']):
-            quotes.append({"upvotes": int(r['Upvotes']), "text": str(r['Comment']).strip()[:400]})
-    top_quotes[str(qid)] = quotes
+per_question_raw = comment_themes.analyze(cdf, top_themes=6, top_quotes=3, examples=3)
+# Keyed by string qid for easy JS lookup; ordered list preserved separately.
+comment_perq = {str(qid): per_question_raw[qid] for qid in comment_themes.ORDER}
+comment_order = [str(qid) for qid in comment_themes.ORDER]
+
+# Convenience map still used by the focused quote blocks (why-not / evidence).
+top_quotes = {str(qid): per_question_raw[qid]["topQuotes"] for qid in comment_themes.ORDER}
 
 comments_agg = {
     "totalComments": int(len(cdf)),
@@ -379,7 +350,8 @@ SURVEY = {
     },
     "income": {"fareSwitch": fare_switch_income},
     "tenure": {"ownPct": own_pct, "ownN": own_n, "rentPct": rent_pct, "rentN": rent_n},
-    "comments": {"summary": comment_summary, "topQuotes": top_quotes, "aggregate": comments_agg},
+    "comments": {"perQuestion": comment_perq, "order": comment_order,
+                 "topQuotes": top_quotes, "aggregate": comments_agg},
 }
 
 with open(OUT_PATH, "w", encoding="utf-8") as f:
