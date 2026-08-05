@@ -111,46 +111,126 @@
     });
   }
 
+  // Compact chart builders used inside the per-question accordion.
+  function smallHBar(canvas, labels, data, colors, o) {
+    o = o || {};
+    return new Chart(canvas, {
+      type: "bar",
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderRadius: 3, maxBarThickness: 26 }] },
+      options: {
+        indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: false,
+        plugins: { legend: { display: false }, tooltip: { callbacks: {
+          title: o.titles ? function (items) { return o.titles[items[0].dataIndex]; } : undefined,
+          label: o.tipLabel || function (c) { return c.parsed.x; } } } },
+        scales: { x: { beginAtZero: true, grid: { color: "#eee" }, ticks: { callback: o.xfmt } },
+          y: { grid: { display: false }, ticks: { font: { size: 11 } } } }
+      }
+    });
+  }
+  function smallDoughnut(canvas, labels, data, colors, o) {
+    o = o || {};
+    return new Chart(canvas, {
+      type: "doughnut",
+      data: { labels: labels, datasets: [{ data: data, backgroundColor: colors, borderWidth: 2, borderColor: "#fff" }] },
+      options: {
+        responsive: true, maintainAspectRatio: false, cutout: "55%", animation: false,
+        plugins: { legend: { position: "right", labels: { boxWidth: 12, padding: 6, font: { size: 11 } } },
+          tooltip: { callbacks: { label: o.tipLabel || function (c) { return c.label + ": " + fmt(c.parsed); } } } }
+      }
+    });
+  }
+  // Horizontal bar of a question's top upvoted comments (label = truncated text).
+  function quoteBars(canvas, qid, color) {
+    var qs = (S.comments.topQuotes[qid] || []).slice(0, 4);
+    var full = qs.map(function (q) { return q.text; });
+    var trunc = qs.map(function (q) { var t = q.text.replace(/\s+/g, " "); return t.length > 30 ? t.slice(0, 30) + "…" : t; });
+    return smallHBar(canvas, trunc, qs.map(function (q) { return q.upvotes; }), color,
+      { titles: full, tipLabel: function (c) { return c.parsed.x + " upvotes"; } });
+  }
+
   // =========================================================================
   // Per-question takeaways (Section 1)
   // =========================================================================
+  var themeNames = ["Payment / app", "Safety / crime", "Frequency / reliability", "Car dependence", "Routes / coverage"];
+
   var QUESTIONS = [
     { num: "Q1", tag: "survey", title: "How often do you ride the bus?",
       body: "About three in four respondents are non-riders: " + m.pctNever + "% never use the bus and another " +
         pct(m.nLapsed, m.q1Answered) + "% stopped within the last six months. Only " + m.pctRider +
         "% currently ride daily, weekly, or occasionally.",
-      take: "The sample is overwhelmingly people the system is <strong>not</strong> currently reaching — exactly the audience for a &ldquo;why not&rdquo; study." },
+      take: "The sample is overwhelmingly people the system is <strong>not</strong> currently reaching — exactly the audience for a &ldquo;why not&rdquo; study.",
+      viz: function (cv) {
+        smallHBar(cv, S.q1.labels, S.q1.counts, [C.rust, C.amber, C.chartreuse, C.leaf, C.green],
+          { tipLabel: function (c) { return fmt(c.parsed.x) + " (" + pct(c.parsed.x, m.q1Answered) + "% of answered)"; } });
+      } },
     { num: "Q1a", tag: "survey", title: "What made you stop or never start riding?",
       body: "Among non-riders, schedule/frequency and safety lead, followed closely by changed travel needs, gaining access to a car, and the return of fares. No single reason dominates.",
-      take: "Non-ridership is <strong>multi-causal</strong>. Among people who stopped in just the last six months, the switch from free to paid fares jumps to the second-most-cited reason." },
+      take: "Non-ridership is <strong>multi-causal</strong>. Among people who stopped in just the last six months, the switch from free to paid fares jumps to the second-most-cited reason.",
+      viz: function (cv) {
+        smallHBar(cv, S.reasons.nonriders.labels, S.reasons.nonriders.counts, C.green,
+          { tipLabel: function (c) { return fmt(c.parsed.x) + " selections"; } });
+      } },
     { num: "Q2", tag: "survey", title: "Which improvements would make you more likely to ride?",
       body: "Ranked by importance, non-riders put <strong>sidewalks and safe crossings to reach the stop</strong> first (" +
         (sidewalkRow ? sidewalkRow.pctImportant : "—") + "% important), then lighting, reliability, shelters, and routes. Fare payment options rank 10th of 11.",
-      take: "Getting to the stop safely and having reliable service beat every on-board or payment feature." },
+      take: "Getting to the stop safely and having reliable service beat every on-board or payment feature.",
+      viz: function (cv) {
+        var imp = S.importance.nonriders.slice(0, 6);
+        smallHBar(cv, imp.map(function (x) { return x.name.replace("Better bus stop amenities - ", "").replace("Better ", ""); }),
+          imp.map(function (x) { return x.pctImportant; }),
+          imp.map(function (x) { return /sidewalk/i.test(x.name) ? C.green : C.leaf; }),
+          { xfmt: function (v) { return v + "%"; }, tipLabel: function (c) { return c.parsed.x + "% important / very important"; } });
+      } },
     { num: "Q3", tag: "survey", title: "Do you know how to pay the fare?",
       body: "Only " + pctKnow + "% of non-riders know how to pay, versus the large majority of current riders. A third simply assume it works like other cities' systems.",
-      take: "A real <strong>knowledge and outreach gap</strong> — most non-riders have never learned how payment works." },
+      take: "A real <strong>knowledge and outreach gap</strong> — most non-riders have never learned how payment works.",
+      viz: function (cv) {
+        var k = S.fareKnowledge.nonriders;
+        smallDoughnut(cv, Object.keys(k), Object.values(k), [C.green, C.teal, C.amber, C.rust],
+          { tipLabel: function (c) { return c.label + ": " + fmt(c.parsed); } });
+      } },
     { num: "Q3b", tag: "comments", title: "Improvements to the fare system",
       body: "This question drew the highest comment engagement of any question — about half of public comments earned an upvote. The repeated, specific ask is <strong>tap-to-pay</strong> (contactless card or phone) instead of the Umo app.",
-      take: "Payment isn't a top reason people avoid the bus, but among those who comment it is the most concrete, high-agreement fix." },
+      take: "Payment isn't a top reason people avoid the bus, but among those who comment it is the most concrete, high-agreement fix.",
+      viz: function (cv) { quoteBars(cv, "396284", C.teal); } },
     { num: "Q4", tag: "survey", title: "Is there a stop within a 10-minute walk?",
       body: "Roughly " + pctNoStop + "% of non-riders who answered don't have a stop within a ten-minute walk (versus far fewer current riders).",
-      take: "For a meaningful share of non-riders, the nearest stop is simply <strong>too far to reach on foot</strong>." },
+      take: "For a meaningful share of non-riders, the nearest stop is simply <strong>too far to reach on foot</strong>.",
+      viz: function (cv) {
+        var s = S.stopProximity.nonriders, tot = s.Yes + s.No + s["Not sure"];
+        smallDoughnut(cv, ["Yes", "No", "Not sure"], [s.Yes, s.No, s["Not sure"]], [C.green, C.rust, C.amber],
+          { tipLabel: function (c) { return c.label + ": " + fmt(c.parsed) + " (" + pct(c.parsed, tot) + "%)"; } });
+      } },
     { num: "Q6–Q9", tag: "survey", title: "Open-ended: what would change your mind?",
       body: "In their own words, non-riders most raise car dependence, frequency/reliability, safety, and route coverage. Payment stays minor — until people compare GoRaleigh to another city's system, where tap-to-pay spikes to the second-most-mentioned theme.",
-      take: "Unprompted priorities match the ratings: <strong>time, reliability, safety, and coverage</strong> lead." },
+      take: "Unprompted priorities match the ratings: <strong>time, reliability, safety, and coverage</strong> lead.",
+      viz: function (cv) {
+        var avg = themeNames.map(function (t) {
+          var vals = S.openThemes.map(function (r) { return r[t]; });
+          return Math.round(vals.reduce(function (a, b) { return a + b; }, 0) / vals.length * 10) / 10;
+        });
+        smallHBar(cv, themeNames, avg, [C.amber, C.rust, C.teal, C.navy, C.mid],
+          { xfmt: function (v) { return v + "%"; }, tipLabel: function (c) { return c.parsed.x + "% of comments (avg across Q6–Q9)"; } });
+      } },
     { num: "WB1", tag: "comments", title: "Crossing streets while walking or biking",
       body: "The top-upvoted answers are &ldquo;drivers do not respect pedestrians&rdquo; (81 upvotes) and &ldquo;lack of sidewalks&rdquo; (61).",
-      take: "Driver behavior and missing sidewalks are the dominant pedestrian-safety complaints citywide." },
+      take: "Driver behavior and missing sidewalks are the dominant pedestrian-safety complaints citywide.",
+      viz: function (cv) { quoteBars(cv, "396292", C.leaf); } },
     { num: "WB2", tag: "comments", title: "Where crossing feels hardest",
       body: "Residents named specific danger spots repeatedly: Atlantic Avenue at Whitaker Mill (Ironworks), Glenwood Avenue outside downtown, and New Bern Avenue.",
-      take: "This is concrete, <strong>location-specific</strong> intelligence that can be routed straight to traffic engineering." },
+      take: "This is concrete, <strong>location-specific</strong> intelligence that can be routed straight to traffic engineering.",
+      viz: function (cv) { quoteBars(cv, "396293", C.leaf); } },
     { num: "WB11", tag: "comments", title: "Improving the walk or bike to transit stops",
       body: "The single top answer is simply &ldquo;Sidewalks&rdquo; (48 upvotes), followed by greenway connections, lighting, and mid-block crossings.",
-      take: "The question most directly tied to TT1's charter <strong>validates the sidewalk-and-lighting focus</strong> unprompted." },
+      take: "The question most directly tied to TT1's charter <strong>validates the sidewalk-and-lighting focus</strong> unprompted.",
+      viz: function (cv) { quoteBars(cv, "396511", C.green); } },
     { num: "Demo", tag: "survey", title: "Who answered the demographic questions?",
       body: "Only about a quarter to a third of respondents answered the optional demographic items, and those who did skew white, higher-income, and highly educated.",
-      take: "Read demographic breakdowns as <strong>directional</strong>. Gender has the largest usable samples and is explored on its own tab." }
+      take: "Read demographic breakdowns as <strong>directional</strong>. Gender has the largest usable samples and is explored on its own tab.",
+      viz: function (cv) {
+        smallHBar(cv, S.demoCoverage.map(function (d) { return d.field; }), S.demoCoverage.map(function (d) { return d.pct; }), C.navy,
+          { xfmt: function (v) { return v + "%"; }, tipLabel: function (c) { return c.parsed.x + "% answered (n=" + fmt(S.demoCoverage[c.dataIndex].n) + ")"; } });
+      } }
   ];
 
   function renderQuestions() {
@@ -163,8 +243,21 @@
         '<span class="q-tag ' + q.tag + '">' + (q.tag === "survey" ? "Responses" : "Comments") + '</span>' +
         '<span class="q-chevron">&#9656;</span>' +
         '</summary><div class="q-body"><p>' + q.body + '</p>' +
+        '<div class="q-chart"><canvas></canvas></div>' +
         '<div class="takeaway">' + q.take + '</div></div></details>';
     }).join("");
+    // Lazy-render each question's chart the first time its section is opened
+    // (a canvas has no size while the <details> is collapsed).
+    var items = host.querySelectorAll(".q-item");
+    items.forEach(function (el, i) {
+      el.addEventListener("toggle", function () {
+        var q = QUESTIONS[i];
+        if (el.open && !q._rendered && q.viz) {
+          q._rendered = true;
+          q.viz(el.querySelector("canvas"));
+        }
+      });
+    });
   }
 
   // =========================================================================
@@ -207,12 +300,6 @@
           plugins: { legend: { position: "right", labels: { boxWidth: 12, padding: 8 } },
             tooltip: { callbacks: { label: function (c) { return c.label + ": " + fmt(c.parsed) + " (" + pct(c.parsed, m.q1Answered) + "%)"; } } } } }
       });
-      // Engagement by question (top 10 by pctUpvoted)
-      var eng = S.comments.summary.filter(function (r) { return r.pctUpvoted != null; })
-        .sort(function (a, b) { return b.pctUpvoted - a.pctUpvoted; }).slice(0, 10);
-      hBar("chart-engagement", eng.map(function (r) { return r.label.replace(/^\w+\s\d+\.?\s?/, "").slice(0, 30); }),
-        eng.map(function (r) { return r.pctUpvoted; }), C.teal,
-        { xfmt: function (v) { return v + "%"; }, tip: { label: function (c) { return c.parsed.x + "% of comments upvoted"; } } });
     }
 
     if (v === "whynot") {
@@ -313,6 +400,6 @@
 
   // ---- Initial render -----------------------------------------------------
   renderQuestions();
-  renderView("overview");
-  rendered.overview = true;
+  renderView("whynot");
+  rendered.whynot = true;
 })();

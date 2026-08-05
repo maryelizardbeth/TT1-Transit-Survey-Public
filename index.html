@@ -20,16 +20,16 @@
 
   <!-- ===================== Tab nav ===================== -->
   <nav class="tab-nav" role="tablist" aria-label="Dashboard sections">
-    <button class="tab-btn active" data-view="overview" role="tab" aria-selected="true">Overview &amp; Questions</button>
-    <button class="tab-btn" data-view="whynot" role="tab" aria-selected="false">Why People Don't Ride</button>
+    <button class="tab-btn active" data-view="whynot" role="tab" aria-selected="true">Why People Don't Ride</button>
     <button class="tab-btn" data-view="women" role="tab" aria-selected="false">Women &amp; Ridership</button>
     <button class="tab-btn" data-view="evidence" role="tab" aria-selected="false">Key Evidence</button>
+    <button class="tab-btn" data-view="overview" role="tab" aria-selected="false">Overview &amp; Questions</button>
   </nav>
 
   <!-- ============================================================= -->
   <!-- VIEW 1: OVERVIEW & PER-QUESTION TAKEAWAYS                      -->
   <!-- ============================================================= -->
-  <section class="view active" id="view-overview" role="tabpanel">
+  <section class="view" id="view-overview" role="tabpanel">
     <div class="section-band">
       <h1>Survey overview &amp; question-by-question takeaways</h1>
       <p class="lede">The How Raleigh Moves survey gathered <strong id="kf-total">—</strong> individual responses plus a
@@ -46,15 +46,10 @@
       </div>
 
       <div class="card-grid" style="margin-bottom:18px;">
-        <div class="card">
+        <div class="card" style="max-width:640px;">
           <h2>How often residents ride the bus</h2>
           <p class="card-sub">Question 1 &middot; all individual responses</p>
           <div class="chart-box"><canvas id="chart-q1"></canvas></div>
-        </div>
-        <div class="card">
-          <h2>Most-endorsed comments, by question</h2>
-          <p class="card-sub">Share of public comments that earned at least one upvote</p>
-          <div class="chart-box"><canvas id="chart-engagement"></canvas></div>
         </div>
       </div>
 
@@ -82,7 +77,7 @@
   <!-- ============================================================= -->
   <!-- VIEW 2: WHY PEOPLE DON'T RIDE                                  -->
   <!-- ============================================================= -->
-  <section class="view" id="view-whynot" role="tabpanel">
+  <section class="view active" id="view-whynot" role="tabpanel">
     <div class="section-band">
       <h1>Why non-riding residents prefer not to ride</h1>
       <p class="lede">Focused on the <strong id="wn-nonrider">—</strong> respondents who do not currently ride GoRaleigh
