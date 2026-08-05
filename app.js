@@ -92,15 +92,6 @@
   setText("ev-sidewalk", (sidewalkRow ? sidewalkRow.pctImportant : "—") + "%");
   setText("ev-nostop", pctNoStop + "%");
 
-  // Income evidence grid
-  var incomeGrid = document.getElementById("ev-income-grid");
-  if (incomeGrid) {
-    incomeGrid.innerHTML = S.income.fareSwitch.map(function (b) {
-      return '<div class="evidence-stat"><div class="big">' + b.pct + '%</div>' +
-        '<div class="cap">of ' + b.bucket + ' non-riders cite the return of fares (n=' + b.n + ')</div></div>';
-    }).join("");
-  }
-
   // =========================================================================
   // Chart helpers
   // =========================================================================
