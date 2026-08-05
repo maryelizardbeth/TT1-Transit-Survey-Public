@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GoRaleigh Transit Survey Insights — TT1 Better Connections to Transit</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- ===================== Header ===================== -->
+  <header class="app-header">
+    <span class="logo">RALEIGH</span>
+    <div class="title-wrap">
+      <span class="title">Transit Survey Insights</span>
+      <span class="subtitle">TT1 &middot; Better Connections to Transit &middot; How Raleigh Moves Survey</span>
+    </div>
+    <span class="spacer"></span>
+    <span class="version-badge">Public Prototype</span>
+  </header>
+
+  <!-- ===================== Tab nav ===================== -->
+  <nav class="tab-nav" role="tablist" aria-label="Dashboard sections">
+    <button class="tab-btn active" data-view="overview" role="tab" aria-selected="true">Overview &amp; Questions</button>
+    <button class="tab-btn" data-view="whynot" role="tab" aria-selected="false">Why People Don't Ride</button>
+    <button class="tab-btn" data-view="women" role="tab" aria-selected="false">Women &amp; Ridership</button>
+    <button class="tab-btn" data-view="evidence" role="tab" aria-selected="false">Key Evidence</button>
+  </nav>
+
+  <!-- ============================================================= -->
+  <!-- VIEW 1: OVERVIEW & PER-QUESTION TAKEAWAYS                      -->
+  <!-- ============================================================= -->
+  <section class="view active" id="view-overview" role="tabpanel">
+    <div class="section-band">
+      <h1>Survey overview &amp; question-by-question takeaways</h1>
+      <p class="lede">The How Raleigh Moves survey gathered <strong id="kf-total">—</strong> individual responses plus a
+        separate collaborative layer of <strong id="kf-comments">—</strong> comments that participants could upvote. This
+        section summarizes who responded and the single most important takeaway from each question.</p>
+    </div>
+    <div class="wrap">
+      <div class="kpi-row">
+        <div class="kpi"><span class="num" id="kpi-total">—</span><span class="label">Individual responses</span></div>
+        <div class="kpi amber"><span class="num" id="kpi-nonrider">—</span><span class="label">Are non-riders</span><span class="sub" id="kpi-nonrider-sub">never + lapsed</span></div>
+        <div class="kpi teal"><span class="num" id="kpi-rider">—</span><span class="label">Current riders</span><span class="sub">daily / weekly / occasional</span></div>
+        <div class="kpi navy"><span class="num" id="kpi-comments">—</span><span class="label">Collaborative comments</span></div>
+        <div class="kpi"><span class="num" id="kpi-upvotes">—</span><span class="label">Total upvotes cast</span></div>
+      </div>
+
+      <div class="card-grid" style="margin-bottom:18px;">
+        <div class="card">
+          <h2>How often residents ride the bus</h2>
+          <p class="card-sub">Question 1 &middot; all individual responses</p>
+          <div class="chart-box"><canvas id="chart-q1"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Most-endorsed comments, by question</h2>
+          <p class="card-sub">Share of public comments that earned at least one upvote</p>
+          <div class="chart-box"><canvas id="chart-engagement"></canvas></div>
+        </div>
+      </div>
+
+      <details class="info-box" open>
+        <summary>The short version</summary>
+        <div class="info-body">
+          <ul>
+            <li><strong>Roughly 3 in 4 respondents are non-riders.</strong> The dominant, well-supported barriers are car
+              dependence, service frequency and reliability, safety, and getting to the stop on foot.</li>
+            <li><strong>Travel time is the loudest single complaint.</strong> The most-upvoted comment in the entire dataset
+              (99 upvotes) is that the bus takes four times longer than driving.</li>
+            <li><strong>Getting to the stop matters as much as the ride.</strong> Sidewalks and safe crossings to reach a stop
+              are the number-one rated improvement and the most repeated top-upvoted theme.</li>
+            <li><strong>Payment is a real but secondary friction.</strong> It ranks near the bottom of rated priorities, yet
+              "tap-to-pay instead of the Umo app" is the single most-upvoted concrete ask on the fare question.</li>
+          </ul>
+        </div>
+      </details>
+
+      <h2 style="color:var(--raleigh-green);font-size:1.05rem;margin:4px 0 12px;">Takeaway for each question</h2>
+      <div class="q-list" id="question-list"><!-- injected by app.js --></div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- VIEW 2: WHY PEOPLE DON'T RIDE                                  -->
+  <!-- ============================================================= -->
+  <section class="view" id="view-whynot" role="tabpanel">
+    <div class="section-band">
+      <h1>Why non-riding residents prefer not to ride</h1>
+      <p class="lede">Focused on the <strong id="wn-nonrider">—</strong> respondents who do not currently ride GoRaleigh
+        (never-riders plus those who stopped in the past six months). Ratings, structured reasons, and residents' own words
+        all point the same direction.</p>
+    </div>
+    <div class="wrap">
+      <div class="kpi-row">
+        <div class="kpi amber"><span class="num" id="wn-kpi-pct">—</span><span class="label">Of respondents are non-riders</span></div>
+        <div class="kpi"><span class="num" id="wn-kpi-stop">—</span><span class="label">Of non-riders lack a stop within a 10-min walk</span></div>
+        <div class="kpi teal"><span class="num" id="wn-kpi-know">—</span><span class="label">Of non-riders know how to pay the fare</span></div>
+        <div class="kpi navy"><span class="num">99</span><span class="label">Upvotes on "4x longer than a car"</span></div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card">
+          <h2>Reasons residents stopped or never started</h2>
+          <p class="card-sub">Question 1a &middot; non-riders &middot; select all that apply</p>
+          <div class="chart-box"><canvas id="chart-reasons"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Which improvements would matter most</h2>
+          <p class="card-sub">Question 2 &middot; non-riders &middot; % rating "important" or "very important"</p>
+          <div class="chart-box tall"><canvas id="chart-importance"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>What non-riders raise in their own words</h2>
+          <p class="card-sub">Open-text questions 6–9 &middot; % of comments mentioning each theme</p>
+          <div class="chart-box"><canvas id="chart-themes"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Do non-riders know how to pay?</h2>
+          <p class="card-sub">Question 3 &middot; non-riders vs. current riders</p>
+          <div class="chart-box"><canvas id="chart-fareknow"></canvas></div>
+        </div>
+      </div>
+
+      <details class="info-box" open style="margin-top:18px;">
+        <summary>What this tells us</summary>
+        <div class="info-body">
+          <ul>
+            <li><strong>No single cause dominates the structured reasons.</strong> Schedule/frequency and safety lead, closely
+              followed by changed travel needs, gaining a car, and the return of fares.</li>
+            <li><strong>People rate access-to-stop and reliability above everything.</strong> Sidewalks and safe crossings to
+              reach a stop top the list; fare payment sits near the bottom.</li>
+            <li><strong>Fare knowledge is genuinely thin.</strong> Only about a fifth of non-riders know how to pay, versus the
+              large majority of current riders — an outreach gap more than a technology gap.</li>
+            <li><strong>The fare reintroduction lands hardest on lower-income residents</strong> (see the income breakdown on the
+              Key Evidence tab).</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="card wide" style="margin-top:16px;">
+        <h2>What residents said would get them to ride</h2>
+        <p class="card-sub">Top-upvoted public comments from the "circumstances to ride" and "one more day per week" questions</p>
+        <div class="quote-list" id="quotes-whynot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- VIEW 3: WOMEN & RIDERSHIP                                      -->
+  <!-- ============================================================= -->
+  <section class="view" id="view-women" role="tabpanel">
+    <div class="section-band">
+      <h1>Ridership &amp; responses among women</h1>
+      <p class="lede">Gender is the best-powered demographic comparison in this survey
+        (<strong id="wm-female">—</strong> women, <strong id="wm-male">—</strong> men). The clearest difference: women place
+        markedly higher priority on personal-safety infrastructure at and around stops.</p>
+    </div>
+    <div class="wrap">
+      <div class="caveat">
+        Demographic questions were optional and answered by only about a quarter to a third of respondents, who skewed
+        white, higher-income, and highly educated. Gender has the largest usable samples, so it is reported here; treat exact
+        percentages as directional, not a precise readout of Raleigh as a whole.
+      </div>
+
+      <div class="kpi-row">
+        <div class="kpi"><span class="num" id="wm-kpi-female">—</span><span class="label">Women responding</span></div>
+        <div class="kpi teal"><span class="num" id="wm-kpi-male">—</span><span class="label">Men responding</span></div>
+        <div class="kpi amber"><span class="num" id="wm-kpi-light">—</span><span class="label">Women's lighting priority vs. men (1–5 scale)</span></div>
+        <div class="kpi navy"><span class="num" id="wm-kpi-learn">—</span><span class="label">Women wanting to learn how to pay vs. men</span></div>
+      </div>
+
+      <div class="card-grid">
+        <div class="card wide">
+          <h2>Where women and men differ on priorities</h2>
+          <p class="card-sub">Question 2 &middot; mean importance (1–5), women vs. men, ranked by the size of the gap</p>
+          <div class="chart-box tall"><canvas id="chart-gender-importance"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Current ridership rate</h2>
+          <p class="card-sub">Share who currently ride, by gender</p>
+          <div class="chart-box"><canvas id="chart-gender-rider"></canvas></div>
+        </div>
+        <div class="card">
+          <h2>Fare knowledge, by gender</h2>
+          <p class="card-sub">Question 3 &middot; how residents answer "do you know how to pay?"</p>
+          <div class="chart-box"><canvas id="chart-gender-fare"></canvas></div>
+        </div>
+      </div>
+
+      <details class="info-box" open style="margin-top:18px;">
+        <summary>What stands out for women</summary>
+        <div class="info-body">
+          <ul>
+            <li><strong>Lighting at stops is the standout gap.</strong> Women rate it about half a point higher than men on a
+              five-point scale — a large difference — alongside benches, sidewalks/crossings, and park-and-ride.</li>
+            <li><strong>A fare-knowledge gap, not a fare-preference gap.</strong> Women are roughly twice as likely as men to say
+              they would like to learn how to pay, even though both genders rate the payment system's importance almost identically.</li>
+            <li><strong>Safety is more present in women's open-text answers</strong> (about 32% vs. 23% of men), though the
+              structured "why I stopped" reason is noisier and doesn't show the same clean gap.</li>
+            <li><strong>Overall ridership rates are similar</strong> between women and men; the difference is in what would make
+              the experience feel safe and usable.</li>
+          </ul>
+        </div>
+      </details>
+
+      <div class="card wide" style="margin-top:16px;">
+        <h2>In women's own words</h2>
+        <p class="card-sub">Representative comments on safety and the experience of riding</p>
+        <div class="quote-list" id="quotes-women"></div>
+        <p class="note">Comments shown are drawn verbatim from open-text responses and the collaborative comment layer. Any
+          personally identifying details have been left out.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================= -->
+  <!-- VIEW 4: KEY EVIDENCE                                           -->
+  <!-- ============================================================= -->
+  <section class="view" id="view-evidence" role="tabpanel">
+    <div class="section-band">
+      <h1>Key evidence &amp; insights</h1>
+      <p class="lede">The strongest evidence from both datasets, mapped directly against the team's draft problem statement.
+        Each claim is marked by how well the survey supports it.</p>
+    </div>
+    <div class="wrap">
+      <div class="problem-statement">
+        <h3>Draft problem statement</h3>
+        <p>Despite encouraging signs of mode shift, transit ridership remains low. Over 70% of respondents indicated they had
+          not used GoRaleigh services in the past 12 months. Residents frequently cite two key barriers: the additional time
+          required to complete trips via transit, and the lack of convenient access to bus stops. Addressing these barriers is
+          essential to expanding equitable access to transit, reducing car dependency, and achieving broader transportation and
+          climate goals.</p>
+        <p class="short">Transit ridership remains low despite mode-shift gains.</p>
+      </div>
+
+      <!-- Claim 1 -->
+      <div class="claim-card">
+        <p class="claim"><span class="verdict supported">Supported</span> Over 70% are non-riders</p>
+        <p class="basis">Combining residents who never ride with those who stopped in the past six months,
+          <strong id="ev-nonrider-pct">—</strong> of respondents who answered the ridership question are non-riders. The claim
+          holds as stated.</p>
+        <div class="evidence-grid">
+          <div class="evidence-stat"><div class="big" id="ev-nonrider">—</div><div class="cap">non-riders (never + lapsed)</div></div>
+          <div class="evidence-stat"><div class="big" id="ev-never">—</div><div class="cap">never use the bus</div></div>
+          <div class="evidence-stat"><div class="big" id="ev-lapsed">—</div><div class="cap">stopped in past 6 months</div></div>
+        </div>
+      </div>
+
+      <!-- Claim 2 -->
+      <div class="claim-card">
+        <p class="claim"><span class="verdict supported">Supported</span> Barrier 1 — transit takes too much time</p>
+        <p class="basis">Travel time is the most emotionally charged issue in the entire dataset. The single most-upvoted comment
+          (99 upvotes) is that the bus takes four times longer than a car, and "time-consuming" is the top-upvoted answer to the
+          word-association question. Frequency and reliability also lead the structured priorities.</p>
+        <div class="evidence-grid">
+          <div class="evidence-stat"><div class="big">99</div><div class="cap">upvotes: "4x longer than a car" — the top comment overall</div></div>
+          <div class="evidence-stat"><div class="big" id="ev-reliable">—</div><div class="cap">of non-riders rate more reliable service important</div></div>
+          <div class="evidence-stat"><div class="big" id="ev-freq-theme">—</div><div class="cap">of non-riders rate more frequent service important</div></div>
+        </div>
+      </div>
+
+      <!-- Claim 3 -->
+      <div class="claim-card">
+        <p class="claim"><span class="verdict supported">Supported</span> Barrier 2 — inconvenient access to stops</p>
+        <p class="basis">"Better sidewalks, crosswalks, or other infrastructure to safely reach the bus stop" is the
+          <strong>number-one rated improvement</strong> among non-riders, and sidewalks are the most repeated top-upvoted theme
+          across the walking and biking questions. Roughly three in ten non-riders don't have a stop within a ten-minute walk.</p>
+        <div class="evidence-grid">
+          <div class="evidence-stat"><div class="big" id="ev-sidewalk">—</div><div class="cap">of non-riders rate sidewalks/crossings to the stop important — the #1 improvement</div></div>
+          <div class="evidence-stat"><div class="big" id="ev-nostop">—</div><div class="cap">of non-riders lack a stop within a 10-min walk</div></div>
+          <div class="evidence-stat"><div class="big">#1</div><div class="cap">"Sidewalks" is the top-upvoted answer on improving the walk to transit</div></div>
+        </div>
+      </div>
+
+      <!-- Claim 4 -->
+      <div class="claim-card">
+        <p class="claim"><span class="verdict partial">Context</span> An equity dimension the statement should keep</p>
+        <p class="basis">The return of fares is cited as a reason for stopping at roughly four times the rate among lower-income
+          non-riders compared with the highest-income group. Reducing car dependency and expanding equitable access are directly
+          in tension with barriers that fall hardest on residents with the fewest alternatives.</p>
+        <div class="evidence-grid" id="ev-income-grid"><!-- injected by app.js --></div>
+        <p class="note">Small samples in the lower-income brackets; directional evidence that fits the equity framing of the
+          problem statement.</p>
+      </div>
+
+      <div class="card wide">
+        <h2>The evidence residents upvoted most</h2>
+        <p class="card-sub">Highest-upvoted public comments tied to the two named barriers</p>
+        <div class="quote-list" id="quotes-evidence"></div>
+      </div>
+
+      <p class="src-badge">Sources: How Raleigh Moves survey — individual responses &amp; collaborative comments exports</p>
+    </div>
+  </section>
+
+  <!-- ===================== Footer ===================== -->
+  <footer class="app-footer">
+    <strong>How Raleigh Moves: Walking, Biking &amp; Transit Survey.</strong> Prepared for the TT1 Better Connections to Transit
+    team. Percentages are calculated among respondents who answered each question. Demographic breakdowns come from an optional,
+    self-selected subset and are directional. Verbatim comments are shown as submitted, with personally identifying details
+    omitted. This dashboard is a working prototype, not an official public record.
+  </footer>
+
+  <script src="./data.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
