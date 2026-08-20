@@ -72,12 +72,21 @@
   var lightRow = g.importance.find(function (r) { return /lighting/i.test(r.improvement); });
   var learnF = g.fareKnowledge.female["No, would like to learn"];
   var learnM = g.fareKnowledge.male["No, would like to learn"];
+  var assumeF = g.fareKnowledge.female["No, but assume it is similar"];
+  var assumeM = g.fareKnowledge.male["No, but assume it is similar"];
+  var knowF = g.fareKnowledge.female["Yes, I know how"];
+  var knowM = g.fareKnowledge.male["Yes, I know how"];
   setText("wm-female", fmt(g.nFemale));
   setText("wm-male", fmt(g.nMale));
   setText("wm-kpi-female", fmt(g.nFemale));
   setText("wm-kpi-male", fmt(g.nMale));
   setText("wm-kpi-light", "+" + (lightRow ? lightRow.gap.toFixed(1) : "—"));
   setText("wm-kpi-learn", "≈" + (learnM ? (learnF / learnM).toFixed(1) : "—") + "×");
+  setText("wm-fare-assume-tie", assumeF === assumeM ? assumeF + "%" : assumeF + "% / " + assumeM + "%");
+  setText("wm-fare-know-m", knowM + "%");
+  setText("wm-fare-know-f", knowF + "%");
+  setText("wm-fare-learn-f", learnF + "%");
+  setText("wm-fare-learn-m", learnM + "%");
 
   // Evidence
   var reliableRow = S.importance.nonriders.find(function (r) { return /reliable/i.test(r.name); });
