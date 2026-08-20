@@ -95,17 +95,33 @@
   // =========================================================================
   // Chart helpers
   // =========================================================================
+  // Break a long category label into an array of lines so Chart.js wraps it
+  // on the axis instead of truncating or overflowing.
+  function wrapLabel(str, maxLen) {
+    maxLen = maxLen || 26;
+    var words = String(str).split(" ");
+    var lines = [], cur = "";
+    words.forEach(function (w) {
+      var test = cur ? cur + " " + w : w;
+      if (test.length > maxLen && cur) { lines.push(cur); cur = w; }
+      else { cur = test; }
+    });
+    if (cur) lines.push(cur);
+    return lines;
+  }
+
   function hBar(id, labels, data, color, opts) {
     opts = opts || {};
     return new Chart(document.getElementById(id), {
       type: "bar",
-      data: { labels: labels, datasets: [{ data: data, backgroundColor: color, borderRadius: 3, maxBarThickness: 34 }] },
+      data: { labels: labels.map(function (l) { return wrapLabel(l); }),
+        datasets: [{ data: data, backgroundColor: color, borderRadius: 3, maxBarThickness: 34 }] },
       options: Object.assign({
         indexAxis: "y", responsive: true, maintainAspectRatio: false,
         plugins: { legend: { display: false }, tooltip: { callbacks: opts.tip } },
         scales: {
           x: { beginAtZero: true, grid: { color: "#eee" }, ticks: { callback: opts.xfmt } },
-          y: { grid: { display: false } }
+          y: { grid: { display: false }, ticks: { autoSkip: false } }
         }
       }, opts.extra || {})
     });
