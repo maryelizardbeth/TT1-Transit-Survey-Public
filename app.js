@@ -103,7 +103,6 @@
   setText("ev-sidewalk", (sidewalkRow ? sidewalkRow.pctImportant : "—") + "%");
   setText("ev-reliable-riders", reliableRowRiders ? reliableRowRiders.pctImportant : "—");
   setText("ev-freq-theme-riders", freqRowRiders ? freqRowRiders.pctImportant : "—");
-  setText("ev-nostop", pctNoStop + "%");
 
   // =========================================================================
   // Chart helpers
