@@ -92,6 +92,7 @@
   var reliableRow = S.importance.nonriders.find(function (r) { return /reliable/i.test(r.name); });
   var freqRow = S.importance.nonriders.find(function (r) { return /frequent/i.test(r.name); });
   var sidewalkRow = S.importance.nonriders.find(function (r) { return /sidewalk/i.test(r.name); });
+  var lightingRow = S.importance.nonriders.find(function (r) { return /lighting/i.test(r.name); });
   var reliableRowRiders = S.importance.riders.find(function (r) { return /reliable/i.test(r.name); });
   var freqRowRiders = S.importance.riders.find(function (r) { return /frequent/i.test(r.name); });
   setText("ev-nonrider-pct", m.pctNonrider + "%");
@@ -101,6 +102,7 @@
   setText("ev-freq-theme", (freqRow ? freqRow.pctImportant : "—") + "%");
   setText("ev-reliable", (reliableRow ? reliableRow.pctImportant : "—") + "%");
   setText("ev-sidewalk", (sidewalkRow ? sidewalkRow.pctImportant : "—") + "%");
+  setText("ev-lighting", (lightingRow ? lightingRow.pctImportant : "—") + "%");
   setText("ev-reliable-riders", reliableRowRiders ? reliableRowRiders.pctImportant : "—");
   setText("ev-freq-theme-riders", freqRowRiders ? freqRowRiders.pctImportant : "—");
 
