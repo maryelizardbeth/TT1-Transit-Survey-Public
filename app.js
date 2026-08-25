@@ -258,7 +258,7 @@
 
   // Short, hand-written conclusions layered on top of the auto theme summary.
   var COMMENT_TAKEAWAYS = {
-    "396284": "Fare and payment dominate, with <strong>tap-to-pay instead of the Umo app</strong> the recurring ask; routes and reliability also surface.",
+    "396284": "Fare and payment dominate, with <strong>tap-to-pay instead of the Umo app</strong> the recurring ask.",
     "396287": "Routes/coverage and frequency lead, and travel-time competitiveness with driving is the emotional peak — the most-endorsed comment says the bus takes <strong>four times longer than a car</strong>.",
     "396289": "Frequency and route directness (avoiding the downtown transfer) are what would add a trip.",
     "396290": "First impressions skew negative — safety, cars, and time — with <strong>&ldquo;time-consuming&rdquo;</strong> the most-endorsed.",
