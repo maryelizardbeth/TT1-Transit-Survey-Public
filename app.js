@@ -283,9 +283,10 @@
       return "This question captured <strong>" + fmt(a.nPublic + a.nPrivate) + " map pins</strong> marking weekly origins and " +
         "destinations; about " + fmt(a.nAll) + " carried a text label. It is best read as a spatial layer rather than discussion.";
     }
-    var top = a.themes[0];
-    var topStr = top ? top.name + " (" + top.pct + "%)" : "";
-    return "Across <strong>" + fmt(a.nAll) + " comments</strong> (" + fmt(a.nPublic) + " public), the leading themes are " + topStr;
+    var t = a.themes.slice(0, 3).map(function (x) { return x.name + " (" + x.pct + "%)"; });
+    var joined = t.length >= 3 ? t[0] + ", " + t[1] + ", and " + t[2] : t.join(" and ");
+    return "Across <strong>" + fmt(a.nAll) + " comments</strong> (" + fmt(a.nPublic) + " public, " +
+      fmt(a.nPrivate) + " private), the leading themes are " + joined + ".";
   }
   function upvoteLine(a) {
     if (a.spatial) return "";
