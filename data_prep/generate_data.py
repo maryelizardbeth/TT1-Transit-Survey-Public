@@ -307,6 +307,19 @@ comment_order = [str(qid) for qid in comment_themes.ORDER]
 # Convenience map still used by the focused quote blocks (why-not / evidence).
 top_quotes = {str(qid): per_question_raw[qid]["topQuotes"] for qid in comment_themes.ORDER}
 
+# Tap-to-pay related comments, combined across the fare-improvements question (3b,
+# QuestionId 396284) and the versus-other-systems comparison question (9, 396291).
+tap_to_pay_pat = r'tap.?to.?pay|tap.?to.?ride|contactless|\bumo\b|apple ?pay|google ?pay|tap (?:my |your |a )?(?:phone|card)'
+tap_to_pay_qids = [396284, 396291]
+tap_sub = cdf[cdf['QuestionId'].isin(tap_to_pay_qids)].copy()
+tap_comments = tap_sub['Comment'].dropna().astype(str)
+tap_mask = tap_comments.str.contains(tap_to_pay_pat, case=False, regex=True)
+tap_hit_rows = tap_sub.loc[tap_comments[tap_mask].index]
+tap_to_pay = {
+    "comments": int(tap_mask.sum()),
+    "upvotes": int(tap_hit_rows['Upvotes'].sum()),
+}
+
 comments_agg = {
     "totalComments": int(len(cdf)),
     "publicComments": int((cdf['Private'] == False).sum()),
@@ -351,7 +364,7 @@ SURVEY = {
     "income": {"fareSwitch": fare_switch_income},
     "tenure": {"ownPct": own_pct, "ownN": own_n, "rentPct": rent_pct, "rentN": rent_n},
     "comments": {"perQuestion": comment_perq, "order": comment_order,
-                 "topQuotes": top_quotes, "aggregate": comments_agg},
+                 "topQuotes": top_quotes, "aggregate": comments_agg, "tapToPay": tap_to_pay},
 }
 
 with open(OUT_PATH, "w", encoding="utf-8") as f:

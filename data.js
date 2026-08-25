@@ -1885,6 +1885,10 @@ window.SURVEY = {
         "Lack of Bike Lanes": 8
       },
       "maxUpvote": 99
+    },
+    "tapToPay": {
+      "comments": 176,
+      "upvotes": 377
     }
   }
 };

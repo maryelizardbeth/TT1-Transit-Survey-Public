@@ -107,6 +107,8 @@
   setText("ev-lighting", (lightingRow ? lightingRow.pctImportant : "—") + "%");
   setText("ev-sidewalk-riders", sidewalkRowRiders ? sidewalkRowRiders.pctImportant : "—");
   setText("ev-lighting-riders", lightingRowRiders ? lightingRowRiders.pctImportant : "—");
+  setText("ev-taptopay-comments", fmt(S.comments.tapToPay.comments));
+  setText("ev-taptopay-upvotes", fmt(S.comments.tapToPay.upvotes));
   setText("ev-reliable-riders", reliableRowRiders ? reliableRowRiders.pctImportant : "—");
   setText("ev-freq-theme-riders", freqRowRiders ? freqRowRiders.pctImportant : "—");
 
