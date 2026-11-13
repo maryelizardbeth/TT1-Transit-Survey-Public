@@ -395,7 +395,7 @@
       r = th(seg, "security");
       if (r) out.push(tile(pctPair(r.pctF, r.pctM), "of women : men commenters raise personal security or harassment", r.flag));
       q = qrow(seg, "safety", 396284);
-      if (q) out.push(tile(pctPair(q.pctF, q.pctM), "use safety wording when asked how to improve the fare system (Q3b)", q.flag));
+      if (q) out.push(tile(pctPair(q.pctF, q.pctM), "mention safety in the fare-improvements comment box (Q3b), which many people used for general improvements", q.flag));
     } else if (t.id === "shade") {
       r = th(seg, "heat");
       if (r) out.push(tile(pctPair(r.pctF, r.pctM), "of women : men commenters mention heat or shade", r.flag));
