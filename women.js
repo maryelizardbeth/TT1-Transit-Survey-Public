@@ -220,7 +220,7 @@
     var raw = (W.structured[seg] || []).filter(function (r) { return r.block === "q2"; });
     var rel = (W.ratingStyle[seg] || { centered: [] }).centered;
     function dataFor(mode) {
-      var rows = (mode === "raw" ? raw : rel).slice().sort(function (a, b) { return b.diff - a.diff; });
+      var rows = (mode === "raw" ? raw : rel).slice().sort(function (a, b) { return b.meanF - a.meanF; });
       return {
         rows: rows,
         labels: rows.map(function (r) { return wrap((r.flag === "clear" ? "★ " : r.flag === "suggestive" ? "☆ " : "") + r.name, 30); }),
@@ -245,8 +245,8 @@
     var note = document.getElementById(p + "q2note");
     function setNote(mode) {
       note.innerHTML = mode === "raw"
-        ? "★ clear difference, ☆ suggestive. Hover a bar for details. Women rate most improvements slightly higher, so the next view removes each person's own average."
-        : "Each person's rating minus their own average across all 11 improvements, so bars show what a group prioritises <em>relative to its other answers</em>. Zero = an average priority for that person. ★ clear, ☆ suggestive.";
+        ? "Sorted by women's score, highest first. ★ clear difference, ☆ suggestive. Hover a bar for details. Women rate most improvements slightly higher, so the next view removes each person's own average."
+        : "Each person's rating minus their own average across all 11 improvements, so bars show what a group prioritises <em>relative to its other answers</em>. Zero = an average priority for that person. Sorted by women's score, highest first. ★ clear, ☆ suggestive.";
     }
     setNote("raw");
     document.getElementById(p + "q2toggle").addEventListener("click", function (e) {
