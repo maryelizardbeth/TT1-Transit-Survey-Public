@@ -144,7 +144,7 @@
       L.push("<strong>Park-and-ride is worth watching.</strong> Women riders rate it " + pairMean("riders", "q2_park_and_ride_facilities") + ", a possible difference that is not significant.");
       L.push("<strong>Fare knowledge and payment look alike.</strong> Nearly all riders know how to pay (" + pairPct("riders", "q3_knows_how_to_pay") + "), and " +
         pairPct("riders", "q3a_pays_with_the_umo_app") + " of those who pay use the Umo app. The fare-knowledge gap seen overall is a non-rider issue.");
-      L.push("<strong>In their comments,</strong> women riders write less about bike lanes than men riders do (suggestive). Other gaps are not significant. See the Comments &amp; themes section below.");
+      L.push("<strong>In their comments,</strong> women riders write less about bike lanes and more about heat and shade than men riders do (both suggestive). Other gaps are not significant. See the Comments &amp; themes section below.");
     } else {
       L.push("<strong>Three pedestrian-environment items lean higher among women non-riders:</strong> lighting at stops (" + pairMean("nonriders", "q2_lighting_at_stops") +
         "), benches (" + pairMean("nonriders", "q2_benches_at_stops") + ") and safe sidewalks &amp; crossings (" + pairMean("nonriders", "q2_safe_sidewalks_crossings") +
@@ -204,6 +204,7 @@
 
     html += '<details class="info-box" open style="margin-top:16px;"><summary>What stands out</summary><div class="info-body">' + narrative(seg) + "</div></details>";
 
+    html += focusHTML(seg);
     html += commentsHTML(seg);
 
     html += '<details class="info-box" style="margin-top:16px;"><summary>Every question, women vs. men</summary><div class="info-body" id="' + p + 'tables"></div></details>';
@@ -323,7 +324,179 @@
     host.querySelectorAll("canvas").forEach(function (cv) { var c = Chart.getChart(cv); if (c) c.destroy(); });
     voiceState.chart = null; voiceState.seg = seg;
     host.innerHTML = segmentHTML(seg);
-    q2Chart(seg); forestChart(seg); allTables(seg); compositionTable(seg); bindComments();
+    q2Chart(seg); forestChart(seg); focusCharts(seg); allTables(seg); compositionTable(seg); bindComments();
+  }
+
+
+  // =========================================================================
+  // Focus areas: traveling with children / light & security / shade & the walk
+  // =========================================================================
+  function TP(seg) { return W.topics && W.topics[seg]; }
+  function th(seg, key) {
+    var t = TP(seg); if (!t) return null;
+    for (var i = 0; i < t.themes.length; i++) if (t.themes[i].key === key) return t.themes[i];
+    return null;
+  }
+  function qrow(seg, key, qid) {
+    var t = TP(seg); if (!t) return null;
+    for (var i = 0; i < t.byQuestion.length; i++) if (t.byQuestion[i].key === key && t.byQuestion[i].qid === qid) return t.byQuestion[i];
+    return null;
+  }
+  // A measure resolves to { label, f, m, flag } (percent for women / men) or null when unavailable.
+  function measure(seg, spec) {
+    var r;
+    if (spec.item) {
+      r = it(seg, spec.item); if (!r) return null;
+      return { label: spec.label, f: spec.mode === "top2" ? r.top2F : r.pctF, m: spec.mode === "top2" ? r.top2M : r.pctM, flag: r.flag, p: r.p, nF: r.nF, nM: r.nM };
+    }
+    r = th(seg, spec.theme); if (!r) return null;
+    return { label: spec.label, f: r.pctF, m: r.pctM, flag: r.flag, p: r.p, nF: r.nF, nM: r.nM };
+  }
+  function tile(big, cap, flag) {
+    return '<div class="evidence-stat"><div class="big">' + big + '</div><div class="cap">' + cap + "</div>" +
+      (flag ? '<div style="margin-top:5px;">' + badge(flag) + "</div>" : "") + "</div>";
+  }
+  function pctPair(f, m) { return f0(f) + "% : " + f0(m) + "%"; }
+
+  var TOPICS = [
+    { id: "kids", title: "Traveling with children",
+      frame: "The survey did not ask about children, so this topic comes from comments only: how many people raise it, who they are, and where it comes up.",
+      rowKeys: ["kids"] },
+    { id: "light", title: "Light, safety & security",
+      frame: "Lighting is the one significant survey difference. Here is how it lines up with what women and men say about safety and security.",
+      measures: [
+        { item: "q2_lighting_at_stops", mode: "top2", label: "Rate lighting at stops important" },
+        { item: "q2_safe_sidewalks_crossings", mode: "top2", label: "Rate safe sidewalks & crossings important" },
+        { item: "q1a_safety_concerns", mode: "pct", label: "Cite safety as a reason for not riding" },
+        { theme: "lighting", label: "Mention lighting or the dark (comments)" },
+        { theme: "security", label: "Raise personal security or harassment (comments)" },
+        { theme: "safety", label: "Use safety wording of any kind (comments)" }],
+      rowKeys: ["lighting", "security", "safety"], validate: "lighting" },
+    { id: "shade", title: "Shade, heat & the walk",
+      frame: "How women and men rate and write about stop comfort, shade and the walk to the stop.",
+      measures: [
+        { theme: "heat", label: "Mention heat or shade (comments)" },
+        { item: "wb13_a_more_pleasant_enviro", mode: "pct", label: "Say a more pleasant environment (shade, trees) would help" },
+        { item: "q2_shelters_at_stops", mode: "top2", label: "Rate shelters at stops important" },
+        { item: "q2_benches_at_stops", mode: "top2", label: "Rate benches at stops important" },
+        { theme: "walk", label: "Mention distance or the walk to the stop (comments)" },
+        { item: "wb10_hard", mode: "pct", label: "Find the walk or bike to the stop difficult" },
+        { theme: "sidewalks", label: "Mention sidewalks or pedestrian access (comments)" }],
+      rowKeys: ["heat", "walk"], validate: "heat" }
+  ];
+  var KEY_NAME = { kids: "Children", lighting: "Lighting", security: "Personal security", safety: "Safety wording", heat: "Heat & shade", walk: "Walk to stop" };
+
+  function topicTiles(seg, t) {
+    var out = [], r, q, k = TP(seg) && TP(seg).kids;
+    if (t.id === "light") {
+      r = it(seg, "q2_lighting_at_stops");
+      if (r) out.push(tile(f2(r.meanF) + " : " + f2(r.meanM), "lighting at stops, importance on the 1–5 scale, women : men", r.flag));
+      if (r) out.push(tile(pctPair(r.top2F, r.top2M), "rate lighting at stops important or very important"));
+      r = th(seg, "security");
+      if (r) out.push(tile(pctPair(r.pctF, r.pctM), "of women : men commenters raise personal security or harassment", r.flag));
+      q = qrow(seg, "safety", 396284);
+      if (q) out.push(tile(pctPair(q.pctF, q.pctM), "use safety wording when asked how to improve the fare system (Q3b)", q.flag));
+    } else if (t.id === "shade") {
+      r = th(seg, "heat");
+      if (r) out.push(tile(pctPair(r.pctF, r.pctM), "of women : men commenters mention heat or shade", r.flag));
+      q = qrow(seg, "heat", 396306);
+      if (q) out.push(tile(pctPair(q.pctF, q.pctM), "mention heat or shade when asked what makes walking or biking comfortable", q.flag));
+      r = it(seg, "wb13_a_more_pleasant_enviro");
+      if (r) out.push(tile(pctPair(r.pctF, r.pctM), "say a more pleasant environment (shade, trees, art) would make walking or biking more appealing", r.flag));
+      r = it(seg, "q2_shelters_at_stops");
+      if (r) out.push(tile(pctPair(r.top2F, r.top2M), "rate shelters at stops important", r.flag));
+    } else if (k) {
+      r = th(seg, "kids");
+      out.push(tile(k.nWomen + " : " + k.nMen, "women : men whose comments mention children, strollers or school trips"));
+      if (r) out.push(tile(pctPair(r.pctF, r.pctM), "of women : men commenters", r.flag));
+      if (k.age3544 != null) out.push(tile(k.age3544 + " of " + k.ageKnown, "of these women are aged 35–44, vs " + f0(k.womenAge3544Pct) + "% of women respondents in this group"));
+      out.push(tile(k.womenRiders + " : " + k.womenNonriders, "of these women are current riders : non-riders"));
+    }
+    return out.join("");
+  }
+
+  function topicRows(seg, t) {
+    var tp = TP(seg); if (!tp) return [];
+    var rows = tp.byQuestion.filter(function (r) { return t.rowKeys.indexOf(r.key) >= 0; });
+    rows.sort(function (a, b) {
+      var fa = a.flag === "none" ? 1 : 0, fb = b.flag === "none" ? 1 : 0;
+      return fa - fb || Math.abs(b.diff) - Math.abs(a.diff);
+    });
+    return rows.slice(0, 8);
+  }
+
+  function validationLine(seg, t) {
+    var tp = TP(seg); if (!t.validate || !tp) return "";
+    var v = tp.validation.filter(function (x) { return x.key === t.validate; });
+    if (!v.length) return "";
+    return '<p class="note">Comments and ratings line up: ' + v.map(function (x) {
+      return x.group.toLowerCase() + " who raise it in comments rate " + x.rating.toLowerCase() + " " + f2(x.meanYes) + " vs. " + f2(x.meanNo) +
+        " for those who don't (" + (x.p < 0.05 ? "significant" : "not significant") + ")";
+    }).join("; ") + ".</p>";
+  }
+
+  function topicCard(seg, t) {
+    var tiles = topicTiles(seg, t), rows = topicRows(seg, t);
+    var html = '<div class="card wide topic-card" style="margin-top:16px;"><h2>' + esc(t.title) + '</h2><p class="card-sub">' + esc(t.frame) + "</p>";
+    if (tiles) html += '<div class="evidence-grid">' + tiles + "</div>";
+    html += '<div class="topic-grid"><div><h3 class="tbl-h">' + (t.id === "kids" ? "Share of commenters raising children" : "Women vs. men on each measure") +
+      '</h3><div class="chart-box" id="w-focus-' + t.id + '-box"><canvas id="w-focus-' + t.id + '"></canvas></div></div>';
+    html += '<div><h3 class="tbl-h">Where it comes up in the comments</h3>';
+    if (rows.length) {
+      html += '<div class="tbl-scroll"><table class="wtable"><thead><tr><th>Question</th><th>Topic</th><th class="num">Women</th><th class="num">Men</th><th>Evidence</th></tr></thead><tbody>' +
+        rows.map(function (r) {
+          return "<tr><th scope=\"row\">" + esc(r.question) + "</th><td>" + esc(KEY_NAME[r.key]) + '</td><td class="num">' + f0(r.pctF) + '%</td><td class="num">' + f0(r.pctM) + "%</td><td>" + badge(r.flag, r) + "</td></tr>";
+        }).join("") + "</tbody></table></div>" +
+        '<p class="note">Share of each group\'s comments on that question. Only questions with at least ' + 30 + " comments per group and a handful of mentions are listed.</p>";
+    } else {
+      html += '<p class="note">Too few comments in this group to break the topic down by question.</p>';
+    }
+    html += "</div></div>" + validationLine(seg, t) + "</div>";
+    return html;
+  }
+
+  function focusHTML(seg) {
+    if (!TP(seg)) return "";
+    var html = '<h2 class="sub-band">Focus areas</h2><p class="seg-lede">Three topics worth a closer, quantitative look: traveling with children, light and security, and shade and the walk. ' +
+      "Commenter percentages count each person once. Heat &amp; shade was separated from general weather after a first look at the comments, so treat it as exploratory.</p>";
+    TOPICS.forEach(function (t) { html += topicCard(seg, t); });
+    return html;
+  }
+
+  function focusCharts(seg) {
+    if (!TP(seg)) return;
+    TOPICS.forEach(function (t) {
+      var cv = document.getElementById("w-focus-" + t.id); if (!cv) return;
+      var ms;
+      if (t.id === "kids") {
+        var sc = [["All comments", "any"], ["Transit questions", "transit"], ["Walking & biking questions", "walkbike"]];
+        ms = sc.map(function (x) {
+          var tt = W.text.themes[seg] && W.text.themes[seg][x[1]], r = null;
+          if (tt) tt.items.forEach(function (i) { if (i.name === "Traveling with children") r = i; });
+          return r ? { label: x[0], f: r.pctF, m: r.pctM, flag: r.flag, p: r.p, nF: tt.nF, nM: tt.nM } : null;
+        });
+      } else {
+        ms = t.measures.map(function (sp) { return measure(seg, sp); });
+      }
+      ms = ms.filter(Boolean);
+      if (!ms.length) { cv.parentNode.innerHTML = '<p class="note">No data for this group.</p>'; return; }
+      document.getElementById("w-focus-" + t.id + "-box").style.height = Math.max(200, ms.length * 46 + 70) + "px";
+      new Chart(cv, {
+        type: "bar",
+        data: { labels: ms.map(function (x) { return wrap((x.flag === "clear" ? "★ " : x.flag === "suggestive" ? "☆ " : "") + x.label, 36); }),
+          datasets: [
+            { label: "Women", data: ms.map(function (x) { return x.f; }), backgroundColor: C.green, borderRadius: 3, maxBarThickness: 13 },
+            { label: "Men", data: ms.map(function (x) { return x.m; }), backgroundColor: C.chartreuse, borderRadius: 3, maxBarThickness: 13 }] },
+        options: { indexAxis: "y", responsive: true, maintainAspectRatio: false, animation: false,
+          plugins: { legend: { position: "top", labels: { boxWidth: 12, padding: 8 } },
+            tooltip: { callbacks: {
+              title: function (items) { return ms[items[0].dataIndex].label; },
+              label: function (c) { return c.dataset.label + ": " + f1(c.parsed.x) + "%"; },
+              afterBody: function (items) { var x = ms[items[0].dataIndex]; return FLAG_LABEL[x.flag] + " (p = " + pTxt(x.p) + ", n = " + x.nF + " women, " + x.nM + " men)"; } } } },
+          scales: { x: { beginAtZero: true, max: t.id === "kids" ? undefined : 100, grid: { color: "#eee" }, ticks: { callback: function (v) { return v + "%"; } } },
+            y: { grid: { display: false }, ticks: { autoSkip: false, font: { size: 11 } } } } }
+      });
+    });
   }
 
   // =========================================================================
@@ -363,7 +536,7 @@
     var q = W.text.quotes, out = "";
     var capt = { "Traveling with children": "Caregiving", "Light, safety & feeling secure": "Personal security & lighting", "Shade, heat & the walk to the stop": "Heat & shade", "Not knowing how it works": "Information gap" };
     var TH = themeFor("all", "any"), find = function (n) { var r = null; TH && TH.items.forEach(function (x) { if (x.name.indexOf(n) === 0) r = x; }); return r; };
-    var stat = { "Traveling with children": find("Caregiving"), "Light, safety & feeling secure": find("Personal security"), "Shade, heat & the walk to the stop": find("Heat") };
+    var stat = { "Traveling with children": find("Traveling with children"), "Light, safety & feeling secure": find("Personal security"), "Shade, heat & the walk to the stop": find("Heat") };
     Object.keys(q).forEach(function (title) {
       var s = stat[title];
       out += '<div class="voice-card"><h3>' + esc(title) + "</h3>" +
@@ -380,7 +553,8 @@
     var th = themeFor("all", "any");
     function g(n) { var r = null; th.items.forEach(function (x) { if (x.name.indexOf(n) === 0) r = x; }); return r; }
     var bike = themeFor("all", "walkbike").items.filter(function (x) { return /Biking/.test(x.name); })[0];
-    var care = g("Caregiving"), sec = g("Personal security"), amen = g("Bus stop"), heat = g("Heat"), info = g("Apps"), fare = g("Fare");
+    var careWB = themeFor("all", "walkbike").items.filter(function (x) { return x.name === "Traveling with children"; })[0];
+    var care = g("Traveling with children"), sec = g("Personal security"), amen = g("Bus stop"), heat = g("Heat"), info = g("Apps"), fare = g("Fare");
     var html = '<h2 class="sub-band">Comments &amp; themes</h2><p class="seg-lede">Linking each comment to its author\'s answers gives ' + W.text.engagement[seg].female.commenters + " women and " +
       W.text.engagement[seg].male.commenters + " men in this group who wrote about transit, walking and biking.</p>";
     html += '<div class="caveat"><strong>Exploratory.</strong> Theme counts come from keyword rules applied to each person\'s comments, and the groups are small, so most gaps are <em>suggestive</em> rather than significant. ' +
@@ -394,10 +568,12 @@
 
     html += seg !== "all" ? '<p class="note" style="margin-top:12px;">The written summary of what the comments add and the quotes below cover all respondents. Choose &ldquo;All respondents&rdquo; at the top to read the written summary.</p>' :
       '<details class="info-box" open style="margin-top:16px;"><summary>What the comments add</summary><div class="info-body"><ul>' +
-      "<li><strong>Women's attention leans toward the walk and the wait.</strong> Bus stop amenities (" + f0(amen.pctF) + "% of women vs. " + f0(amen.pctM) + "% of men) is suggestive; heat and shade (" + f0(heat.pctF) + "% vs. " + f0(heat.pctM) +
-      "%) and crossings and sidewalks lean the same way but are not significant. It echoes the survey result that lighting, benches and sidewalks matter more to women.</li>" +
+      "<li><strong>Women's attention leans toward the walk and the wait.</strong> Heat and shade is the clearest: " + f0(heat.pctF) + "% of women commenters vs. " + f0(heat.pctM) +
+      "% of men (" + FLAG_LABEL[heat.flag].toLowerCase() + "). Bus stop amenities (" + f0(amen.pctF) + "% vs. " + f0(amen.pctM) + "%) is " + FLAG_LABEL[amen.flag].toLowerCase() +
+      "; crossings and sidewalks lean the same way but are not significant. It echoes the survey result that lighting, benches and sidewalks matter more to women.</li>" +
       "<li><strong>Men's comments are more about cycling.</strong> In the walking and biking questions, " + f0(bike.pctM) + "% of men mention bike lanes or biking vs. " + f0(bike.pctF) + "% of women, the one significant text difference. For women, walking-first improvements may land better than bike-lane framing.</li>" +
-      "<li><strong>Travelling with children appears mainly in women's comments</strong> (" + f0(care.pctF) + "% vs. " + f0(care.pctM) + "%, suggestive): strollers and curb ramps, school trips, child-friendly stops, and not feeling able to bring kids onto unprotected streets. The numbers are small, but it points to trip-chaining and care trips as a distinct need worth testing.</li>" +
+      "<li><strong>Traveling with children appears mainly in women's comments</strong> (" + f0(care.pctF) + "% vs. " + f0(care.pctM) + "%, " + FLAG_LABEL[care.flag].toLowerCase() + " overall; " +
+      FLAG_LABEL[careWB.flag].toLowerCase() + " in the walking and biking questions): strollers and curb ramps, school trips, child-friendly stops, and not feeling able to bring kids onto unprotected streets. The numbers are small, but it points to trip-chaining and care trips as a distinct need worth testing.</li>" +
       "<li><strong>Personal security is a real but minority theme.</strong> " + f0(sec.pctF) + "% of women commenters vs. " + f0(sec.pctM) + "% of men raise crime, harassment or feeling unsafe around other people (not significant). When women raise it, it tends to be specific: being alone, the dark, loitering near stations.</li>" +
       "<li><strong>The information signal is in the survey answers, not the comments.</strong> Comments about apps, information and signage appear at the same rate for women and men (" + f0(info.pctF) + "% vs. " + f0(info.pctM) + "%). The women-specific signal comes from the structured questions: not knowing how to pay and not being sure a stop is nearby.</li>" +
       "<li><strong>Tone and topics.</strong> Women's comments read a little more negative on the platform's automated sentiment score (small difference). Men write somewhat more about fare technology such as tap-to-pay (" + f0(fare.pctM) + "% vs. " + f0(fare.pctF) + "%, not significant).</li></ul></div></details>";

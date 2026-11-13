@@ -3682,6 +3682,19 @@ window.SURVEY = {
             "nM": 120,
             "items": [
               {
+                "name": "Heat & shade",
+                "pctF": 29.7,
+                "pctM": 14.2,
+                "kF": 41,
+                "kM": 17,
+                "diff": 15.5,
+                "ciLo": 5.4,
+                "ciHi": 25.1,
+                "p": 0.0029,
+                "q": 0.0576,
+                "flag": "clear"
+              },
+              {
                 "name": "Bus stop amenities",
                 "pctF": 29.0,
                 "pctM": 17.5,
@@ -3691,21 +3704,8 @@ window.SURVEY = {
                 "ciLo": 1.1,
                 "ciHi": 21.4,
                 "p": 0.0393,
-                "q": 0.3021,
+                "q": 0.2611,
                 "flag": "suggestive"
-              },
-              {
-                "name": "Heat, shade & weather",
-                "pctF": 37.7,
-                "pctM": 27.5,
-                "kF": 52,
-                "kM": 33,
-                "diff": 10.2,
-                "ciLo": -1.3,
-                "ciHi": 21.2,
-                "p": 0.0864,
-                "q": 0.3159,
-                "flag": "none"
               },
               {
                 "name": "Crosswalks & intersections",
@@ -3717,7 +3717,7 @@ window.SURVEY = {
                 "ciLo": -2.3,
                 "ciHi": 21.7,
                 "p": 0.1341,
-                "q": 0.3159,
+                "q": 0.3325,
                 "flag": "none"
               },
               {
@@ -3730,7 +3730,7 @@ window.SURVEY = {
                 "ciLo": -0.5,
                 "ciHi": 17.4,
                 "p": 0.0653,
-                "q": 0.31,
+                "q": 0.2611,
                 "flag": "none"
               },
               {
@@ -3743,21 +3743,8 @@ window.SURVEY = {
                 "ciLo": -2.4,
                 "ciHi": 18.9,
                 "p": 0.1529,
-                "q": 0.3159,
+                "q": 0.3325,
                 "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
-                "pctF": 10.1,
-                "pctM": 3.3,
-                "kF": 14,
-                "kM": 4,
-                "diff": 6.8,
-                "ciLo": 0.5,
-                "ciHi": 13.3,
-                "p": 0.0477,
-                "q": 0.3021,
-                "flag": "suggestive"
               },
               {
                 "name": "Cost & affordability",
@@ -3769,7 +3756,20 @@ window.SURVEY = {
                 "ciLo": -2.4,
                 "ciHi": 15.0,
                 "p": 0.1663,
-                "q": 0.3159,
+                "q": 0.3325,
+                "flag": "none"
+              },
+              {
+                "name": "Traveling with children",
+                "pctF": 8.7,
+                "pctM": 2.5,
+                "kF": 12,
+                "kM": 3,
+                "diff": 6.2,
+                "ciLo": 0.3,
+                "ciHi": 12.3,
+                "p": 0.0586,
+                "q": 0.2611,
                 "flag": "none"
               },
               {
@@ -3782,7 +3782,7 @@ window.SURVEY = {
                 "ciLo": -2.8,
                 "ciHi": 14.2,
                 "p": 0.2091,
-                "q": 0.3611,
+                "q": 0.3801,
                 "flag": "none"
               },
               {
@@ -3795,7 +3795,7 @@ window.SURVEY = {
                 "ciLo": -6.4,
                 "ciHi": 17.6,
                 "p": 0.3835,
-                "q": 0.5605,
+                "q": 0.59,
                 "flag": "none"
               },
               {
@@ -3808,7 +3808,7 @@ window.SURVEY = {
                 "ciLo": -5.9,
                 "ciHi": 17.2,
                 "p": 0.3623,
-                "q": 0.5605,
+                "q": 0.59,
                 "flag": "none"
               },
               {
@@ -3821,7 +3821,7 @@ window.SURVEY = {
                 "ciLo": -6.0,
                 "ciHi": 13.0,
                 "p": 0.5223,
-                "q": 0.7088,
+                "q": 0.7461,
                 "flag": "none"
               },
               {
@@ -3834,7 +3834,7 @@ window.SURVEY = {
                 "ciLo": -8.6,
                 "ciHi": 14.3,
                 "p": 0.6931,
-                "q": 0.823,
+                "q": 0.8596,
                 "flag": "none"
               },
               {
@@ -3873,7 +3873,20 @@ window.SURVEY = {
                 "ciLo": -9.5,
                 "ciHi": 7.2,
                 "p": 0.8531,
-                "q": 0.9535,
+                "q": 0.9479,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 14.5,
+                "pctM": 16.7,
+                "kF": 20,
+                "kM": 20,
+                "diff": -2.2,
+                "ciLo": -11.3,
+                "ciHi": 6.7,
+                "p": 0.7307,
+                "q": 0.8596,
                 "flag": "none"
               },
               {
@@ -3886,7 +3899,7 @@ window.SURVEY = {
                 "ciLo": -15.7,
                 "ciHi": 8.2,
                 "p": 0.6156,
-                "q": 0.7798,
+                "q": 0.8208,
                 "flag": "none"
               },
               {
@@ -3899,7 +3912,7 @@ window.SURVEY = {
                 "ciLo": -20.2,
                 "ciHi": 2.3,
                 "p": 0.1381,
-                "q": 0.3159,
+                "q": 0.3325,
                 "flag": "none"
               },
               {
@@ -3912,7 +3925,7 @@ window.SURVEY = {
                 "ciLo": -21.0,
                 "ciHi": 2.9,
                 "p": 0.166,
-                "q": 0.3159,
+                "q": 0.3325,
                 "flag": "none"
               },
               {
@@ -3925,7 +3938,7 @@ window.SURVEY = {
                 "ciLo": -26.8,
                 "ciHi": -3.6,
                 "p": 0.0149,
-                "q": 0.2836,
+                "q": 0.1493,
                 "flag": "suggestive"
               }
             ]
@@ -3944,7 +3957,7 @@ window.SURVEY = {
                 "ciLo": -0.2,
                 "ciHi": 17.4,
                 "p": 0.0758,
-                "q": 0.6294,
+                "q": 0.6102,
                 "flag": "none"
               },
               {
@@ -3957,7 +3970,20 @@ window.SURVEY = {
                 "ciLo": 0.4,
                 "ciHi": 13.8,
                 "p": 0.0576,
-                "q": 0.6294,
+                "q": 0.6102,
+                "flag": "none"
+              },
+              {
+                "name": "Heat & shade",
+                "pctF": 11.5,
+                "pctM": 4.7,
+                "kF": 14,
+                "kM": 5,
+                "diff": 6.8,
+                "ciLo": -0.6,
+                "ciHi": 14.1,
+                "p": 0.0915,
+                "q": 0.6102,
                 "flag": "none"
               },
               {
@@ -3970,20 +3996,7 @@ window.SURVEY = {
                 "ciLo": -2.4,
                 "ciHi": 15.7,
                 "p": 0.1808,
-                "q": 0.6294,
-                "flag": "none"
-              },
-              {
-                "name": "Heat, shade & weather",
-                "pctF": 12.3,
-                "pctM": 6.6,
-                "kF": 15,
-                "kM": 7,
-                "diff": 5.7,
-                "ciLo": -2.3,
-                "ciHi": 13.5,
-                "p": 0.1798,
-                "q": 0.6294,
+                "q": 0.6625,
                 "flag": "none"
               },
               {
@@ -3996,7 +4009,7 @@ window.SURVEY = {
                 "ciLo": -2.7,
                 "ciHi": 13.6,
                 "p": 0.1987,
-                "q": 0.6294,
+                "q": 0.6625,
                 "flag": "none"
               },
               {
@@ -4009,7 +4022,7 @@ window.SURVEY = {
                 "ciLo": -8.1,
                 "ciHi": 17.5,
                 "p": 0.507,
-                "q": 0.9838,
+                "q": 0.9414,
                 "flag": "none"
               },
               {
@@ -4022,7 +4035,7 @@ window.SURVEY = {
                 "ciLo": -5.9,
                 "ciHi": 13.3,
                 "p": 0.4746,
-                "q": 0.9838,
+                "q": 0.9414,
                 "flag": "none"
               },
               {
@@ -4035,20 +4048,7 @@ window.SURVEY = {
                 "ciLo": -7.0,
                 "ciHi": 12.5,
                 "p": 0.5964,
-                "q": 1.0,
-                "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
-                "pctF": 5.7,
-                "pctM": 2.8,
-                "kF": 7,
-                "kM": 3,
-                "diff": 2.9,
-                "ciLo": -3.0,
-                "ciHi": 8.8,
-                "p": 0.3452,
-                "q": 0.9371,
+                "q": 0.9872,
                 "flag": "none"
               },
               {
@@ -4074,7 +4074,20 @@ window.SURVEY = {
                 "ciLo": -5.5,
                 "ciHi": 9.8,
                 "p": 0.6417,
-                "q": 1.0,
+                "q": 0.9872,
+                "flag": "none"
+              },
+              {
+                "name": "Traveling with children",
+                "pctF": 4.1,
+                "pctM": 1.9,
+                "kF": 5,
+                "kM": 2,
+                "diff": 2.2,
+                "ciLo": -3.1,
+                "ciHi": 7.5,
+                "p": 0.4541,
+                "q": 0.9414,
                 "flag": "none"
               },
               {
@@ -4156,6 +4169,19 @@ window.SURVEY = {
                 "flag": "none"
               },
               {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 0.8,
+                "pctM": 2.8,
+                "kF": 1,
+                "kM": 3,
+                "diff": -2.0,
+                "ciLo": -7.2,
+                "ciHi": 2.1,
+                "p": 0.34,
+                "q": 0.9414,
+                "flag": "none"
+              },
+              {
                 "name": "Traffic danger & driver behavior",
                 "pctF": 9.0,
                 "pctM": 12.3,
@@ -4165,7 +4191,7 @@ window.SURVEY = {
                 "ciLo": -11.8,
                 "ciHi": 4.9,
                 "p": 0.5178,
-                "q": 0.9838,
+                "q": 0.9414,
                 "flag": "none"
               },
               {
@@ -4178,7 +4204,7 @@ window.SURVEY = {
                 "ciLo": -22.3,
                 "ciHi": 2.1,
                 "p": 0.1262,
-                "q": 0.6294,
+                "q": 0.6312,
                 "flag": "none"
               }
             ]
@@ -4197,8 +4223,21 @@ window.SURVEY = {
                 "ciLo": 0.1,
                 "ciHi": 24.9,
                 "p": 0.0514,
-                "q": 0.2439,
+                "q": 0.2054,
                 "flag": "none"
+              },
+              {
+                "name": "Heat & shade",
+                "pctF": 25.0,
+                "pctM": 12.7,
+                "kF": 32,
+                "kM": 14,
+                "diff": 12.3,
+                "ciLo": 2.2,
+                "ciHi": 21.8,
+                "p": 0.0208,
+                "q": 0.149,
+                "flag": "suggestive"
               },
               {
                 "name": "Sidewalks & pedestrian access",
@@ -4210,7 +4249,7 @@ window.SURVEY = {
                 "ciLo": 0.4,
                 "ciHi": 22.1,
                 "p": 0.0484,
-                "q": 0.2439,
+                "q": 0.2054,
                 "flag": "suggestive"
               },
               {
@@ -4223,24 +4262,11 @@ window.SURVEY = {
                 "ciLo": -1.0,
                 "ciHi": 17.6,
                 "p": 0.0823,
-                "q": 0.3127,
+                "q": 0.2743,
                 "flag": "none"
               },
               {
-                "name": "Heat, shade & weather",
-                "pctF": 35.2,
-                "pctM": 27.3,
-                "kF": 45,
-                "kM": 30,
-                "diff": 7.9,
-                "ciLo": -4.0,
-                "ciHi": 19.3,
-                "p": 0.2098,
-                "q": 0.5696,
-                "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
+                "name": "Traveling with children",
                 "pctF": 7.0,
                 "pctM": 0.9,
                 "kF": 9,
@@ -4249,7 +4275,7 @@ window.SURVEY = {
                 "ciLo": 0.9,
                 "ciHi": 12.0,
                 "p": 0.0223,
-                "q": 0.2123,
+                "q": 0.149,
                 "flag": "suggestive"
               },
               {
@@ -4262,7 +4288,7 @@ window.SURVEY = {
                 "ciLo": -7.5,
                 "ciHi": 15.9,
                 "p": 0.4903,
-                "q": 1.0,
+                "q": 0.9954,
                 "flag": "none"
               },
               {
@@ -4275,7 +4301,7 @@ window.SURVEY = {
                 "ciLo": -2.7,
                 "ciHi": 10.7,
                 "p": 0.3001,
-                "q": 0.7128,
+                "q": 0.7503,
                 "flag": "none"
               },
               {
@@ -4288,7 +4314,7 @@ window.SURVEY = {
                 "ciLo": -6.3,
                 "ciHi": 10.7,
                 "p": 0.692,
-                "q": 1.0,
+                "q": 0.9954,
                 "flag": "none"
               },
               {
@@ -4314,7 +4340,7 @@ window.SURVEY = {
                 "ciLo": -5.4,
                 "ciHi": 9.3,
                 "p": 0.6433,
-                "q": 1.0,
+                "q": 0.9954,
                 "flag": "none"
               },
               {
@@ -4392,7 +4418,7 @@ window.SURVEY = {
                 "ciLo": -8.4,
                 "ciHi": 4.4,
                 "p": 0.5826,
-                "q": 1.0,
+                "q": 0.9954,
                 "flag": "none"
               },
               {
@@ -4405,7 +4431,20 @@ window.SURVEY = {
                 "ciLo": -14.9,
                 "ciHi": 9.9,
                 "p": 0.6968,
-                "q": 1.0,
+                "q": 0.9954,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 14.8,
+                "pctM": 18.2,
+                "kF": 19,
+                "kM": 20,
+                "diff": -3.3,
+                "ciLo": -13.0,
+                "ciHi": 6.1,
+                "p": 0.5987,
+                "q": 0.9954,
                 "flag": "none"
               },
               {
@@ -4418,7 +4457,7 @@ window.SURVEY = {
                 "ciLo": -23.1,
                 "ciHi": 1.7,
                 "p": 0.116,
-                "q": 0.3673,
+                "q": 0.3314,
                 "flag": "none"
               },
               {
@@ -4431,7 +4470,7 @@ window.SURVEY = {
                 "ciLo": -31.2,
                 "ciHi": -7.9,
                 "p": 0.0017,
-                "q": 0.0321,
+                "q": 0.0338,
                 "flag": "clear"
               }
             ]
@@ -4443,17 +4482,17 @@ window.SURVEY = {
             "nM": 36,
             "items": [
               {
-                "name": "Heat, shade & weather",
-                "pctF": 46.3,
-                "pctM": 25.0,
-                "kF": 19,
-                "kM": 9,
-                "diff": 21.3,
-                "ciLo": -0.2,
-                "ciHi": 40.0,
-                "p": 0.0613,
-                "q": 0.3885,
-                "flag": "none"
+                "name": "Heat & shade",
+                "pctF": 39.0,
+                "pctM": 13.9,
+                "kF": 16,
+                "kM": 5,
+                "diff": 25.1,
+                "ciLo": 5.2,
+                "ciHi": 42.3,
+                "p": 0.0202,
+                "q": 0.3517,
+                "flag": "suggestive"
               },
               {
                 "name": "Sidewalks & pedestrian access",
@@ -4465,7 +4504,7 @@ window.SURVEY = {
                 "ciLo": -3.3,
                 "ciHi": 35.4,
                 "p": 0.1277,
-                "q": 0.4854,
+                "q": 0.511,
                 "flag": "none"
               },
               {
@@ -4478,7 +4517,7 @@ window.SURVEY = {
                 "ciLo": 0.4,
                 "ciHi": 31.7,
                 "p": 0.0527,
-                "q": 0.3885,
+                "q": 0.3517,
                 "flag": "none"
               },
               {
@@ -4491,7 +4530,7 @@ window.SURVEY = {
                 "ciLo": -7.5,
                 "ciHi": 30.4,
                 "p": 0.2992,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4504,7 +4543,7 @@ window.SURVEY = {
                 "ciLo": -8.4,
                 "ciHi": 30.5,
                 "p": 0.3111,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4517,20 +4556,7 @@ window.SURVEY = {
                 "ciLo": -9.6,
                 "ciHi": 27.9,
                 "p": 0.4285,
-                "q": 0.6784,
-                "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
-                "pctF": 17.1,
-                "pctM": 8.3,
-                "kF": 7,
-                "kM": 3,
-                "diff": 8.7,
-                "ciLo": -7.2,
-                "ciHi": 23.9,
-                "p": 0.3212,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4543,7 +4569,7 @@ window.SURVEY = {
                 "ciLo": -8.6,
                 "ciHi": 24.4,
                 "p": 0.3608,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4556,7 +4582,7 @@ window.SURVEY = {
                 "ciLo": -8.6,
                 "ciHi": 24.4,
                 "p": 0.3608,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4569,7 +4595,7 @@ window.SURVEY = {
                 "ciLo": -13.4,
                 "ciHi": 28.9,
                 "p": 0.4973,
-                "q": 0.7245,
+                "q": 0.7626,
                 "flag": "none"
               },
               {
@@ -4582,7 +4608,33 @@ window.SURVEY = {
                 "ciLo": -11.8,
                 "ciHi": 25.3,
                 "p": 0.5908,
-                "q": 0.7245,
+                "q": 0.7626,
+                "flag": "none"
+              },
+              {
+                "name": "Traveling with children",
+                "pctF": 12.2,
+                "pctM": 5.6,
+                "kF": 5,
+                "kM": 2,
+                "diff": 6.6,
+                "ciLo": -7.7,
+                "ciHi": 20.6,
+                "p": 0.4382,
+                "q": 0.7304,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 24.4,
+                "pctM": 19.4,
+                "kF": 10,
+                "kM": 7,
+                "diff": 4.9,
+                "ciLo": -13.9,
+                "ciHi": 22.8,
+                "p": 0.7839,
+                "q": 0.871,
                 "flag": "none"
               },
               {
@@ -4621,7 +4673,7 @@ window.SURVEY = {
                 "ciLo": -25.7,
                 "ciHi": 16.0,
                 "p": 0.6482,
-                "q": 0.7245,
+                "q": 0.7626,
                 "flag": "none"
               },
               {
@@ -4634,7 +4686,7 @@ window.SURVEY = {
                 "ciLo": -25.8,
                 "ciHi": 14.8,
                 "p": 0.6345,
-                "q": 0.7245,
+                "q": 0.7626,
                 "flag": "none"
               },
               {
@@ -4647,7 +4699,7 @@ window.SURVEY = {
                 "ciLo": -25.2,
                 "ciHi": 9.8,
                 "p": 0.555,
-                "q": 0.7245,
+                "q": 0.7626,
                 "flag": "none"
               },
               {
@@ -4660,7 +4712,7 @@ window.SURVEY = {
                 "ciLo": -31.8,
                 "ciHi": 10.6,
                 "p": 0.3655,
-                "q": 0.6313,
+                "q": 0.7304,
                 "flag": "none"
               },
               {
@@ -4673,7 +4725,7 @@ window.SURVEY = {
                 "ciLo": -39.7,
                 "ciHi": 1.1,
                 "p": 0.096,
-                "q": 0.4562,
+                "q": 0.4802,
                 "flag": "none"
               },
               {
@@ -4686,7 +4738,7 @@ window.SURVEY = {
                 "ciLo": -44.5,
                 "ciHi": -3.9,
                 "p": 0.0363,
-                "q": 0.3885,
+                "q": 0.3517,
                 "flag": "suggestive"
               }
             ]
@@ -4695,6 +4747,19 @@ window.SURVEY = {
             "nF": 38,
             "nM": 35,
             "items": [
+              {
+                "name": "Heat & shade",
+                "pctF": 21.1,
+                "pctM": 5.7,
+                "kF": 8,
+                "kM": 2,
+                "diff": 15.3,
+                "ciLo": -1.0,
+                "ciHi": 31.2,
+                "p": 0.088,
+                "q": 0.6997,
+                "flag": "none"
+              },
               {
                 "name": "Cleanliness & conditions",
                 "pctF": 31.6,
@@ -4705,7 +4770,7 @@ window.SURVEY = {
                 "ciLo": -5.5,
                 "ciHi": 32.7,
                 "p": 0.1822,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4718,20 +4783,7 @@ window.SURVEY = {
                 "ciLo": -7.7,
                 "ciHi": 33.3,
                 "p": 0.226,
-                "q": 0.7386,
-                "flag": "none"
-              },
-              {
-                "name": "Heat, shade & weather",
-                "pctF": 23.7,
-                "pctM": 11.4,
-                "kF": 9,
-                "kM": 4,
-                "diff": 12.3,
-                "ciLo": -5.8,
-                "ciHi": 29.2,
-                "p": 0.2264,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4744,7 +4796,7 @@ window.SURVEY = {
                 "ciLo": -6.7,
                 "ciHi": 25.9,
                 "p": 0.3123,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4757,7 +4809,7 @@ window.SURVEY = {
                 "ciLo": -6.7,
                 "ciHi": 25.9,
                 "p": 0.3123,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4770,7 +4822,7 @@ window.SURVEY = {
                 "ciLo": -6.7,
                 "ciHi": 25.9,
                 "p": 0.3123,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4783,7 +4835,7 @@ window.SURVEY = {
                 "ciLo": -8.0,
                 "ciHi": 26.4,
                 "p": 0.3499,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4796,7 +4848,7 @@ window.SURVEY = {
                 "ciLo": -3.3,
                 "ciHi": 20.8,
                 "p": 0.2409,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4809,7 +4861,7 @@ window.SURVEY = {
                 "ciLo": -11.1,
                 "ciHi": 19.8,
                 "p": 0.7125,
-                "q": 0.9149,
+                "q": 0.9064,
                 "flag": "none"
               },
               {
@@ -4822,20 +4874,7 @@ window.SURVEY = {
                 "ciLo": -14.6,
                 "ciHi": 21.7,
                 "p": 0.7705,
-                "q": 0.9149,
-                "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
-                "pctF": 10.5,
-                "pctM": 8.6,
-                "kF": 4,
-                "kM": 3,
-                "diff": 2.0,
-                "ciLo": -13.2,
-                "ciHi": 16.7,
-                "p": 1.0,
-                "q": 1.0,
+                "q": 0.9064,
                 "flag": "none"
               },
               {
@@ -4847,6 +4886,19 @@ window.SURVEY = {
                 "diff": 0.1,
                 "ciLo": -20.8,
                 "ciHi": 21.1,
+                "p": 1.0,
+                "q": 1.0,
+                "flag": "none"
+              },
+              {
+                "name": "Traveling with children",
+                "pctF": 5.3,
+                "pctM": 5.7,
+                "kF": 2,
+                "kM": 2,
+                "diff": -0.5,
+                "ciLo": -13.9,
+                "ciHi": 12.3,
                 "p": 1.0,
                 "q": 1.0,
                 "flag": "none"
@@ -4874,7 +4926,7 @@ window.SURVEY = {
                 "ciLo": -17.6,
                 "ciHi": 10.0,
                 "p": 0.6658,
-                "q": 0.9149,
+                "q": 0.9064,
                 "flag": "none"
               },
               {
@@ -4887,7 +4939,7 @@ window.SURVEY = {
                 "ciLo": -19.0,
                 "ciHi": 11.1,
                 "p": 0.7035,
-                "q": 0.9149,
+                "q": 0.9064,
                 "flag": "none"
               },
               {
@@ -4900,7 +4952,7 @@ window.SURVEY = {
                 "ciLo": -20.1,
                 "ciHi": 12.0,
                 "p": 0.7293,
-                "q": 0.9149,
+                "q": 0.9064,
                 "flag": "none"
               },
               {
@@ -4913,7 +4965,20 @@ window.SURVEY = {
                 "ciLo": -25.7,
                 "ciHi": 15.4,
                 "p": 0.6247,
-                "q": 0.9149,
+                "q": 0.9064,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 2.6,
+                "pctM": 8.6,
+                "kF": 1,
+                "kM": 3,
+                "diff": -5.9,
+                "ciLo": -19.9,
+                "ciHi": 6.3,
+                "p": 0.3444,
+                "q": 0.6997,
                 "flag": "none"
               },
               {
@@ -4926,7 +4991,7 @@ window.SURVEY = {
                 "ciLo": -22.3,
                 "ciHi": 8.8,
                 "p": 0.4681,
-                "q": 0.8893,
+                "q": 0.8511,
                 "flag": "none"
               },
               {
@@ -4939,7 +5004,7 @@ window.SURVEY = {
                 "ciLo": -39.5,
                 "ciHi": 2.6,
                 "p": 0.0978,
-                "q": 0.7386,
+                "q": 0.6997,
                 "flag": "none"
               }
             ]
@@ -4958,24 +5023,24 @@ window.SURVEY = {
                 "ciLo": -5.5,
                 "ciHi": 38.2,
                 "p": 0.1514,
-                "q": 0.9592,
+                "q": 0.9297,
                 "flag": "none"
               },
               {
-                "name": "Heat, shade & weather",
-                "pctF": 39.5,
-                "pctM": 25.8,
-                "kF": 15,
-                "kM": 8,
-                "diff": 13.7,
-                "ciLo": -8.6,
-                "ciHi": 33.6,
-                "p": 0.3066,
-                "q": 0.9708,
+                "name": "Heat & shade",
+                "pctF": 26.3,
+                "pctM": 12.9,
+                "kF": 10,
+                "kM": 4,
+                "diff": 13.4,
+                "ciLo": -6.2,
+                "ciHi": 30.9,
+                "p": 0.2324,
+                "q": 0.9297,
                 "flag": "none"
               },
               {
-                "name": "Caregiving: kids, strollers, carrying",
+                "name": "Traveling with children",
                 "pctF": 10.5,
                 "pctM": 0.0,
                 "kF": 4,
@@ -4984,7 +5049,7 @@ window.SURVEY = {
                 "ciLo": -2.2,
                 "ciHi": 24.1,
                 "p": 0.1218,
-                "q": 0.9592,
+                "q": 0.9297,
                 "flag": "none"
               },
               {
@@ -4997,7 +5062,7 @@ window.SURVEY = {
                 "ciLo": -7.2,
                 "ciHi": 24.7,
                 "p": 0.281,
-                "q": 0.9708,
+                "q": 0.9365,
                 "flag": "none"
               },
               {
@@ -5010,7 +5075,7 @@ window.SURVEY = {
                 "ciLo": -9.0,
                 "ciHi": 25.0,
                 "p": 0.4937,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5023,7 +5088,7 @@ window.SURVEY = {
                 "ciLo": -12.1,
                 "ciHi": 25.5,
                 "p": 0.5524,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5036,7 +5101,7 @@ window.SURVEY = {
                 "ciLo": -11.9,
                 "ciHi": 27.1,
                 "p": 0.5614,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5049,7 +5114,7 @@ window.SURVEY = {
                 "ciLo": -11.2,
                 "ciHi": 22.1,
                 "p": 0.5,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5062,7 +5127,7 @@ window.SURVEY = {
                 "ciLo": -9.3,
                 "ciHi": 17.8,
                 "p": 0.6219,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5087,6 +5152,19 @@ window.SURVEY = {
                 "diff": 2.0,
                 "ciLo": -19.9,
                 "ciHi": 22.9,
+                "p": 1.0,
+                "q": 1.0,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 23.7,
+                "pctM": 22.6,
+                "kF": 9,
+                "kM": 7,
+                "diff": 1.1,
+                "ciLo": -19.2,
+                "ciHi": 20.2,
                 "p": 1.0,
                 "q": 1.0,
                 "flag": "none"
@@ -5166,7 +5244,7 @@ window.SURVEY = {
                 "ciLo": -28.1,
                 "ciHi": 15.2,
                 "p": 0.6186,
-                "q": 0.9846,
+                "q": 1.0,
                 "flag": "none"
               },
               {
@@ -5179,7 +5257,7 @@ window.SURVEY = {
                 "ciLo": -37.5,
                 "ciHi": 6.8,
                 "p": 0.2273,
-                "q": 0.9708,
+                "q": 0.9297,
                 "flag": "none"
               },
               {
@@ -5192,7 +5270,7 @@ window.SURVEY = {
                 "ciLo": -51.5,
                 "ciHi": -11.5,
                 "p": 0.0049,
-                "q": 0.0923,
+                "q": 0.0971,
                 "flag": "clear"
               }
             ]
@@ -5213,7 +5291,20 @@ window.SURVEY = {
                 "ciLo": -3.3,
                 "ciHi": 25.2,
                 "p": 0.1383,
-                "q": 0.6562,
+                "q": 0.5756,
+                "flag": "none"
+              },
+              {
+                "name": "Heat & shade",
+                "pctF": 25.8,
+                "pctM": 14.5,
+                "kF": 25,
+                "kM": 12,
+                "diff": 11.3,
+                "ciLo": -0.6,
+                "ciHi": 22.6,
+                "p": 0.0669,
+                "q": 0.5756,
                 "flag": "none"
               },
               {
@@ -5226,7 +5317,7 @@ window.SURVEY = {
                 "ciLo": -1.4,
                 "ciHi": 22.6,
                 "p": 0.1082,
-                "q": 0.6562,
+                "q": 0.5756,
                 "flag": "none"
               },
               {
@@ -5239,24 +5330,11 @@ window.SURVEY = {
                 "ciLo": -3.9,
                 "ciHi": 24.1,
                 "p": 0.1727,
-                "q": 0.6562,
+                "q": 0.5756,
                 "flag": "none"
               },
               {
-                "name": "Heat, shade & weather",
-                "pctF": 34.0,
-                "pctM": 27.7,
-                "kF": 33,
-                "kM": 23,
-                "diff": 6.3,
-                "ciLo": -7.3,
-                "ciHi": 19.3,
-                "p": 0.4204,
-                "q": 0.7769,
-                "flag": "none"
-              },
-              {
-                "name": "Caregiving: kids, strollers, carrying",
+                "name": "Traveling with children",
                 "pctF": 7.2,
                 "pctM": 1.2,
                 "kF": 7,
@@ -5265,7 +5343,7 @@ window.SURVEY = {
                 "ciLo": -0.4,
                 "ciHi": 13.0,
                 "p": 0.0708,
-                "q": 0.6562,
+                "q": 0.5756,
                 "flag": "none"
               },
               {
@@ -5278,7 +5356,7 @@ window.SURVEY = {
                 "ciLo": -5.3,
                 "ciHi": 15.8,
                 "p": 0.4029,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5291,7 +5369,7 @@ window.SURVEY = {
                 "ciLo": -6.2,
                 "ciHi": 15.9,
                 "p": 0.4305,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5304,7 +5382,7 @@ window.SURVEY = {
                 "ciLo": -7.5,
                 "ciHi": 17.7,
                 "p": 0.4915,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5317,7 +5395,7 @@ window.SURVEY = {
                 "ciLo": -5.7,
                 "ciHi": 14.5,
                 "p": 0.3887,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5330,7 +5408,7 @@ window.SURVEY = {
                 "ciLo": -10.0,
                 "ciHi": 17.1,
                 "p": 0.6364,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5343,7 +5421,7 @@ window.SURVEY = {
                 "ciLo": -6.4,
                 "ciHi": 11.8,
                 "p": 0.6215,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5356,7 +5434,7 @@ window.SURVEY = {
                 "ciLo": -11.3,
                 "ciHi": 16.6,
                 "p": 0.7596,
-                "q": 0.8018,
+                "q": 0.7996,
                 "flag": "none"
               },
               {
@@ -5382,7 +5460,7 @@ window.SURVEY = {
                 "ciLo": -14.5,
                 "ciHi": 9.7,
                 "p": 0.7207,
-                "q": 0.8018,
+                "q": 0.7996,
                 "flag": "none"
               },
               {
@@ -5395,7 +5473,7 @@ window.SURVEY = {
                 "ciLo": -16.7,
                 "ciHi": 9.7,
                 "p": 0.6262,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5408,7 +5486,20 @@ window.SURVEY = {
                 "ciLo": -18.0,
                 "ciHi": 10.6,
                 "p": 0.6542,
-                "q": 0.7769,
+                "q": 0.7696,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 10.3,
+                "pctM": 14.5,
+                "kF": 10,
+                "kM": 12,
+                "diff": -4.1,
+                "ciLo": -14.4,
+                "ciHi": 5.6,
+                "p": 0.4949,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5421,7 +5512,7 @@ window.SURVEY = {
                 "ciLo": -17.7,
                 "ciHi": 8.6,
                 "p": 0.5145,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5434,7 +5525,7 @@ window.SURVEY = {
                 "ciLo": -22.8,
                 "ciHi": 5.5,
                 "p": 0.2894,
-                "q": 0.7769,
+                "q": 0.7696,
                 "flag": "none"
               },
               {
@@ -5447,7 +5538,7 @@ window.SURVEY = {
                 "ciLo": -24.2,
                 "ciHi": 3.5,
                 "p": 0.1669,
-                "q": 0.6562,
+                "q": 0.5756,
                 "flag": "none"
               }
             ]
@@ -5466,7 +5557,7 @@ window.SURVEY = {
                 "ciLo": -6.0,
                 "ciHi": 24.8,
                 "p": 0.2581,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5479,7 +5570,7 @@ window.SURVEY = {
                 "ciLo": -2.2,
                 "ciHi": 18.4,
                 "p": 0.1343,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5492,7 +5583,7 @@ window.SURVEY = {
                 "ciLo": -2.6,
                 "ciHi": 15.3,
                 "p": 0.2266,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5505,7 +5596,7 @@ window.SURVEY = {
                 "ciLo": -6.3,
                 "ciHi": 16.1,
                 "p": 0.4886,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5518,7 +5609,7 @@ window.SURVEY = {
                 "ciLo": -4.5,
                 "ciHi": 14.1,
                 "p": 0.3846,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5531,11 +5622,11 @@ window.SURVEY = {
                 "ciLo": -6.3,
                 "ciHi": 12.9,
                 "p": 0.5766,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
-                "name": "Caregiving: kids, strollers, carrying",
+                "name": "Traveling with children",
                 "pctF": 3.6,
                 "pctM": 0.0,
                 "kF": 3,
@@ -5544,7 +5635,7 @@ window.SURVEY = {
                 "ciLo": -2.1,
                 "ciHi": 10.0,
                 "p": 0.2513,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5557,11 +5648,11 @@ window.SURVEY = {
                 "ciLo": -6.3,
                 "ciHi": 12.9,
                 "p": 0.5766,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
-                "name": "Heat, shade & weather",
+                "name": "Heat & shade",
                 "pctF": 7.1,
                 "pctM": 4.3,
                 "kF": 6,
@@ -5570,7 +5661,7 @@ window.SURVEY = {
                 "ciLo": -5.6,
                 "ciHi": 10.9,
                 "p": 0.5117,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5583,7 +5674,7 @@ window.SURVEY = {
                 "ciLo": -3.1,
                 "ciHi": 8.3,
                 "p": 0.5009,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5608,6 +5699,19 @@ window.SURVEY = {
                 "diff": 0.2,
                 "ciLo": -15.1,
                 "ciHi": 15.7,
+                "p": 1.0,
+                "q": 1.0,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 0.0,
+                "pctM": 0.0,
+                "kF": 0,
+                "kM": 0,
+                "diff": 0.0,
+                "ciLo": -5.2,
+                "ciHi": 4.4,
                 "p": 1.0,
                 "q": 1.0,
                 "flag": "none"
@@ -5687,7 +5791,7 @@ window.SURVEY = {
                 "ciLo": -13.5,
                 "ciHi": 6.5,
                 "p": 0.5909,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               },
               {
@@ -5700,7 +5804,7 @@ window.SURVEY = {
                 "ciLo": -20.9,
                 "ciHi": 8.6,
                 "p": 0.4943,
-                "q": 0.9356,
+                "q": 0.9848,
                 "flag": "none"
               }
             ]
@@ -5719,7 +5823,7 @@ window.SURVEY = {
                 "ciLo": 1.4,
                 "ciHi": 30.7,
                 "p": 0.044,
-                "q": 0.4792,
+                "q": 0.3783,
                 "flag": "suggestive"
               },
               {
@@ -5732,7 +5836,20 @@ window.SURVEY = {
                 "ciLo": 0.0,
                 "ciHi": 26.1,
                 "p": 0.0733,
-                "q": 0.4792,
+                "q": 0.3783,
+                "flag": "none"
+              },
+              {
+                "name": "Heat & shade",
+                "pctF": 24.4,
+                "pctM": 12.8,
+                "kF": 22,
+                "kM": 10,
+                "diff": 11.6,
+                "ciLo": -0.4,
+                "ciHi": 23.0,
+                "p": 0.0756,
+                "q": 0.3783,
                 "flag": "none"
               },
               {
@@ -5745,20 +5862,7 @@ window.SURVEY = {
                 "ciLo": -3.4,
                 "ciHi": 19.4,
                 "p": 0.2191,
-                "q": 0.8325,
-                "flag": "none"
-              },
-              {
-                "name": "Heat, shade & weather",
-                "pctF": 33.3,
-                "pctM": 26.9,
-                "kF": 30,
-                "kM": 21,
-                "diff": 6.4,
-                "ciLo": -7.5,
-                "ciHi": 19.8,
-                "p": 0.4033,
-                "q": 0.882,
+                "q": 0.7303,
                 "flag": "none"
               },
               {
@@ -5771,11 +5875,11 @@ window.SURVEY = {
                 "ciLo": -9.2,
                 "ciHi": 18.6,
                 "p": 0.5123,
-                "q": 0.9014,
+                "q": 0.8698,
                 "flag": "none"
               },
               {
-                "name": "Caregiving: kids, strollers, carrying",
+                "name": "Traveling with children",
                 "pctF": 5.6,
                 "pctM": 1.3,
                 "kF": 5,
@@ -5784,7 +5888,7 @@ window.SURVEY = {
                 "ciLo": -2.2,
                 "ciHi": 11.2,
                 "p": 0.2176,
-                "q": 0.8325,
+                "q": 0.7303,
                 "flag": "none"
               },
               {
@@ -5797,7 +5901,7 @@ window.SURVEY = {
                 "ciLo": -4.7,
                 "ciHi": 12.1,
                 "p": 0.3855,
-                "q": 0.882,
+                "q": 0.8698,
                 "flag": "none"
               },
               {
@@ -5901,7 +6005,20 @@ window.SURVEY = {
                 "ciLo": -10.4,
                 "ciHi": 3.4,
                 "p": 0.4178,
-                "q": 0.882,
+                "q": 0.8698,
+                "flag": "none"
+              },
+              {
+                "name": "Weather (rain, cold, flooding)",
+                "pctF": 11.1,
+                "pctM": 15.4,
+                "kF": 10,
+                "kM": 12,
+                "diff": -4.3,
+                "ciLo": -15.1,
+                "ciHi": 6.1,
+                "p": 0.4939,
+                "q": 0.8698,
                 "flag": "none"
               },
               {
@@ -5914,7 +6031,7 @@ window.SURVEY = {
                 "ciLo": -19.0,
                 "ciHi": 10.1,
                 "p": 0.6359,
-                "q": 1.0,
+                "q": 0.9783,
                 "flag": "none"
               },
               {
@@ -5927,7 +6044,7 @@ window.SURVEY = {
                 "ciLo": -16.0,
                 "ciHi": 6.4,
                 "p": 0.5219,
-                "q": 0.9014,
+                "q": 0.8698,
                 "flag": "none"
               },
               {
@@ -5940,7 +6057,7 @@ window.SURVEY = {
                 "ciLo": -23.8,
                 "ciHi": 5.3,
                 "p": 0.2711,
-                "q": 0.8583,
+                "q": 0.7744,
                 "flag": "none"
               },
               {
@@ -5953,7 +6070,7 @@ window.SURVEY = {
                 "ciLo": -27.6,
                 "ciHi": 0.5,
                 "p": 0.0757,
-                "q": 0.4792,
+                "q": 0.3783,
                 "flag": "none"
               }
             ]
@@ -6119,6 +6236,1760 @@ window.SURVEY = {
             "who": "Woman, non-rider"
           }
         ]
+      }
+    },
+    "topics": {
+      "all": {
+        "themes": [
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 12,
+            "kM": 3,
+            "pctF": 8.7,
+            "pctM": 2.5,
+            "diff": 6.2,
+            "ciLo": 0.3,
+            "ciHi": 12.3,
+            "p": 0.0586,
+            "q": 0.1704,
+            "flag": "none",
+            "key": "kids",
+            "name": "Traveling with children"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 49,
+            "kM": 39,
+            "pctF": 35.5,
+            "pctM": 32.5,
+            "diff": 3.0,
+            "ciLo": -8.6,
+            "ciHi": 14.3,
+            "p": 0.6931,
+            "q": 0.7307,
+            "flag": "none",
+            "key": "lighting",
+            "name": "Lighting & the dark"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 23,
+            "kM": 13,
+            "pctF": 16.7,
+            "pctM": 10.8,
+            "diff": 5.8,
+            "ciLo": -2.8,
+            "ciHi": 14.2,
+            "p": 0.2091,
+            "q": 0.278,
+            "flag": "none",
+            "key": "security",
+            "name": "Personal security & harassment"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 90,
+            "kM": 65,
+            "pctF": 65.2,
+            "pctM": 54.2,
+            "diff": 11.1,
+            "ciLo": -0.9,
+            "ciHi": 22.7,
+            "p": 0.0757,
+            "q": 0.1704,
+            "flag": "none",
+            "key": "safety",
+            "name": "Safety wording (any kind)"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 41,
+            "kM": 17,
+            "pctF": 29.7,
+            "pctM": 14.2,
+            "diff": 15.5,
+            "ciLo": 5.4,
+            "ciHi": 25.1,
+            "p": 0.0029,
+            "q": 0.0259,
+            "flag": "clear",
+            "key": "heat",
+            "name": "Heat & shade"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 20,
+            "kM": 20,
+            "pctF": 14.5,
+            "pctM": 16.7,
+            "diff": -2.2,
+            "ciLo": -11.3,
+            "ciHi": 6.7,
+            "p": 0.7307,
+            "q": 0.7307,
+            "flag": "none",
+            "key": "weather",
+            "name": "Weather (rain, cold, flooding)"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 45,
+            "kM": 30,
+            "pctF": 32.6,
+            "pctM": 25.0,
+            "diff": 7.6,
+            "ciLo": -3.5,
+            "ciHi": 18.3,
+            "p": 0.2162,
+            "q": 0.278,
+            "flag": "none",
+            "key": "walk",
+            "name": "Distance & the walk to the stop"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 108,
+            "kM": 84,
+            "pctF": 78.3,
+            "pctM": 70.0,
+            "diff": 8.3,
+            "ciLo": -2.4,
+            "ciHi": 18.9,
+            "p": 0.1529,
+            "q": 0.2753,
+            "flag": "none",
+            "key": "sidewalks",
+            "name": "Sidewalks & pedestrian access"
+          },
+          {
+            "nF": 138,
+            "nM": 120,
+            "kF": 40,
+            "kM": 21,
+            "pctF": 29.0,
+            "pctM": 17.5,
+            "diff": 11.5,
+            "ciLo": 1.1,
+            "ciHi": 21.4,
+            "p": 0.0393,
+            "q": 0.1704,
+            "flag": "suggestive",
+            "key": "amenities",
+            "name": "Bus stop amenities"
+          }
+        ],
+        "byQuestion": [
+          {
+            "nF": 65,
+            "nM": 64,
+            "kF": 14,
+            "kM": 2,
+            "pctF": 21.5,
+            "pctM": 3.1,
+            "diff": 18.4,
+            "ciLo": 7.2,
+            "ciHi": 30.1,
+            "p": 0.0023,
+            "q": 0.0951,
+            "flag": "clear",
+            "key": "safety",
+            "qid": 396284,
+            "question": "3b. Improvements to the fare system"
+          },
+          {
+            "nF": 108,
+            "nM": 89,
+            "kF": 2,
+            "kM": 2,
+            "pctF": 1.9,
+            "pctM": 2.2,
+            "diff": -0.4,
+            "ciLo": -6.1,
+            "ciHi": 4.5,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 108,
+            "nM": 89,
+            "kF": 6,
+            "kM": 3,
+            "pctF": 5.6,
+            "pctM": 3.4,
+            "diff": 2.2,
+            "ciLo": -4.6,
+            "ciHi": 8.6,
+            "p": 0.5165,
+            "q": 1.0,
+            "flag": "none",
+            "key": "security",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 108,
+            "nM": 89,
+            "kF": 15,
+            "kM": 13,
+            "pctF": 13.9,
+            "pctM": 14.6,
+            "diff": -0.7,
+            "ciLo": -11.0,
+            "ciHi": 9.0,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 108,
+            "nM": 89,
+            "kF": 4,
+            "kM": 0,
+            "pctF": 3.7,
+            "pctM": 0.0,
+            "diff": 3.7,
+            "ciLo": -1.0,
+            "ciHi": 9.1,
+            "p": 0.1282,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 108,
+            "nM": 89,
+            "kF": 7,
+            "kM": 2,
+            "pctF": 6.5,
+            "pctM": 2.2,
+            "diff": 4.2,
+            "ciLo": -2.3,
+            "ciHi": 10.7,
+            "p": 0.1882,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 74,
+            "nM": 68,
+            "kF": 2,
+            "kM": 2,
+            "pctF": 2.7,
+            "pctM": 2.9,
+            "diff": -0.2,
+            "ciLo": -7.7,
+            "ciHi": 6.7,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "security",
+            "qid": 396289,
+            "question": "7. Change to ride one more day/week"
+          },
+          {
+            "nF": 74,
+            "nM": 68,
+            "kF": 16,
+            "kM": 5,
+            "pctF": 21.6,
+            "pctM": 7.4,
+            "diff": 14.3,
+            "ciLo": 2.5,
+            "ciHi": 25.7,
+            "p": 0.0188,
+            "q": 0.2574,
+            "flag": "suggestive",
+            "key": "safety",
+            "qid": 396289,
+            "question": "7. Change to ride one more day/week"
+          },
+          {
+            "nF": 74,
+            "nM": 68,
+            "kF": 7,
+            "kM": 3,
+            "pctF": 9.5,
+            "pctM": 4.4,
+            "diff": 5.0,
+            "ciLo": -4.1,
+            "ciHi": 14.3,
+            "p": 0.3305,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396289,
+            "question": "7. Change to ride one more day/week"
+          },
+          {
+            "nF": 89,
+            "nM": 69,
+            "kF": 5,
+            "kM": 3,
+            "pctF": 5.6,
+            "pctM": 4.3,
+            "diff": 1.3,
+            "ciLo": -7.0,
+            "ciHi": 8.7,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "security",
+            "qid": 396290,
+            "question": "8. First word or phrase about the bus"
+          },
+          {
+            "nF": 89,
+            "nM": 69,
+            "kF": 12,
+            "kM": 6,
+            "pctF": 13.5,
+            "pctM": 8.7,
+            "diff": 4.8,
+            "ciLo": -5.8,
+            "ciHi": 14.6,
+            "p": 0.4515,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396290,
+            "question": "8. First word or phrase about the bus"
+          },
+          {
+            "nF": 84,
+            "nM": 69,
+            "kF": 4,
+            "kM": 2,
+            "pctF": 4.8,
+            "pctM": 2.9,
+            "diff": 1.9,
+            "ciLo": -5.8,
+            "ciHi": 9.0,
+            "p": 0.6906,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396291,
+            "question": "9. Versus bus systems elsewhere"
+          },
+          {
+            "nF": 84,
+            "nM": 69,
+            "kF": 11,
+            "kM": 8,
+            "pctF": 13.1,
+            "pctM": 11.6,
+            "diff": 1.5,
+            "ciLo": -9.7,
+            "ciHi": 12.0,
+            "p": 0.8109,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396291,
+            "question": "9. Versus bus systems elsewhere"
+          },
+          {
+            "nF": 124,
+            "nM": 97,
+            "kF": 4,
+            "kM": 1,
+            "pctF": 3.2,
+            "pctM": 1.0,
+            "diff": 2.2,
+            "ciLo": -2.8,
+            "ciHi": 7.0,
+            "p": 0.3881,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "kids",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 124,
+            "nM": 97,
+            "kF": 21,
+            "kM": 14,
+            "pctF": 16.9,
+            "pctM": 14.4,
+            "diff": 2.5,
+            "ciLo": -7.5,
+            "ciHi": 11.9,
+            "p": 0.7114,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 124,
+            "nM": 97,
+            "kF": 26,
+            "kM": 23,
+            "pctF": 21.0,
+            "pctM": 23.7,
+            "diff": -2.7,
+            "ciLo": -14.0,
+            "ciHi": 8.1,
+            "p": 0.6289,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 124,
+            "nM": 97,
+            "kF": 4,
+            "kM": 1,
+            "pctF": 3.2,
+            "pctM": 1.0,
+            "diff": 2.2,
+            "ciLo": -2.8,
+            "ciHi": 7.0,
+            "p": 0.3881,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 124,
+            "nM": 97,
+            "kF": 3,
+            "kM": 1,
+            "pctF": 2.4,
+            "pctM": 1.0,
+            "diff": 1.4,
+            "ciLo": -3.5,
+            "ciHi": 5.9,
+            "p": 0.6329,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 95,
+            "nM": 84,
+            "kF": 12,
+            "kM": 7,
+            "pctF": 12.6,
+            "pctM": 8.3,
+            "diff": 4.3,
+            "ciLo": -5.2,
+            "ciHi": 13.5,
+            "p": 0.4672,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396293,
+            "question": "Walk/bike 2. Easier/harder crossing spots"
+          },
+          {
+            "nF": 95,
+            "nM": 84,
+            "kF": 17,
+            "kM": 15,
+            "pctF": 17.9,
+            "pctM": 17.9,
+            "diff": 0.0,
+            "ciLo": -11.5,
+            "ciHi": 11.2,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396293,
+            "question": "Walk/bike 2. Easier/harder crossing spots"
+          },
+          {
+            "nF": 46,
+            "nM": 54,
+            "kF": 5,
+            "kM": 1,
+            "pctF": 10.9,
+            "pctM": 1.9,
+            "diff": 9.0,
+            "ciLo": -1.0,
+            "ciHi": 21.3,
+            "p": 0.0916,
+            "q": 0.9391,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396294,
+            "question": "Walk/bike 3. Confusing intersections"
+          },
+          {
+            "nF": 46,
+            "nM": 54,
+            "kF": 3,
+            "kM": 3,
+            "pctF": 6.5,
+            "pctM": 5.6,
+            "diff": 1.0,
+            "ciLo": -9.5,
+            "ciHi": 12.5,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396294,
+            "question": "Walk/bike 3. Confusing intersections"
+          },
+          {
+            "nF": 103,
+            "nM": 93,
+            "kF": 4,
+            "kM": 3,
+            "pctF": 3.9,
+            "pctM": 3.2,
+            "diff": 0.7,
+            "ciLo": -5.6,
+            "ciHi": 6.7,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 103,
+            "nM": 93,
+            "kF": 20,
+            "kM": 17,
+            "pctF": 19.4,
+            "pctM": 18.3,
+            "diff": 1.1,
+            "ciLo": -10.0,
+            "ciHi": 12.0,
+            "p": 0.8572,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 103,
+            "nM": 93,
+            "kF": 21,
+            "kM": 7,
+            "pctF": 20.4,
+            "pctM": 7.5,
+            "diff": 12.9,
+            "ciLo": 3.1,
+            "ciHi": 22.4,
+            "p": 0.0134,
+            "q": 0.2574,
+            "flag": "suggestive",
+            "key": "heat",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 103,
+            "nM": 93,
+            "kF": 3,
+            "kM": 1,
+            "pctF": 2.9,
+            "pctM": 1.1,
+            "diff": 1.8,
+            "ciLo": -3.3,
+            "ciHi": 7.2,
+            "p": 0.6231,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 92,
+            "nM": 84,
+            "kF": 8,
+            "kM": 8,
+            "pctF": 8.7,
+            "pctM": 9.5,
+            "diff": -0.8,
+            "ciLo": -10.0,
+            "ciHi": 8.0,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 92,
+            "nM": 84,
+            "kF": 13,
+            "kM": 9,
+            "pctF": 14.1,
+            "pctM": 10.7,
+            "diff": 3.4,
+            "ciLo": -6.7,
+            "ciHi": 13.3,
+            "p": 0.649,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 92,
+            "nM": 84,
+            "kF": 8,
+            "kM": 4,
+            "pctF": 8.7,
+            "pctM": 4.8,
+            "diff": 3.9,
+            "ciLo": -4.1,
+            "ciHi": 12.0,
+            "p": 0.377,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 77,
+            "nM": 70,
+            "kF": 6,
+            "kM": 6,
+            "pctF": 7.8,
+            "pctM": 8.6,
+            "diff": -0.8,
+            "ciLo": -10.6,
+            "ciHi": 8.6,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 77,
+            "nM": 70,
+            "kF": 6,
+            "kM": 2,
+            "pctF": 7.8,
+            "pctM": 2.9,
+            "diff": 4.9,
+            "ciLo": -3.2,
+            "ciHi": 13.4,
+            "p": 0.28,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "security",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 77,
+            "nM": 70,
+            "kF": 15,
+            "kM": 15,
+            "pctF": 19.5,
+            "pctM": 21.4,
+            "diff": -1.9,
+            "ciLo": -15.1,
+            "ciHi": 11.0,
+            "p": 0.8389,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 77,
+            "nM": 70,
+            "kF": 5,
+            "kM": 1,
+            "pctF": 6.5,
+            "pctM": 1.4,
+            "diff": 5.1,
+            "ciLo": -2.2,
+            "ciHi": 13.0,
+            "p": 0.2123,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 93,
+            "nM": 82,
+            "kF": 6,
+            "kM": 3,
+            "pctF": 6.5,
+            "pctM": 3.7,
+            "diff": 2.8,
+            "ciLo": -4.6,
+            "ciHi": 10.1,
+            "p": 0.5044,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 93,
+            "nM": 82,
+            "kF": 27,
+            "kM": 18,
+            "pctF": 29.0,
+            "pctM": 22.0,
+            "diff": 7.1,
+            "ciLo": -6.0,
+            "ciHi": 19.6,
+            "p": 0.3036,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 93,
+            "nM": 82,
+            "kF": 13,
+            "kM": 6,
+            "pctF": 14.0,
+            "pctM": 7.3,
+            "diff": 6.7,
+            "ciLo": -2.9,
+            "ciHi": 16.0,
+            "p": 0.2235,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 93,
+            "nM": 82,
+            "kF": 23,
+            "kM": 22,
+            "pctF": 24.7,
+            "pctM": 26.8,
+            "diff": -2.1,
+            "ciLo": -15.1,
+            "ciHi": 10.7,
+            "p": 0.8626,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 49,
+            "nM": 48,
+            "kF": 4,
+            "kM": 3,
+            "pctF": 8.2,
+            "pctM": 6.2,
+            "diff": 1.9,
+            "ciLo": -9.8,
+            "ciHi": 13.7,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396511,
+            "question": "11. Improve walk/bike to transit stops"
+          },
+          {
+            "nF": 49,
+            "nM": 48,
+            "kF": 2,
+            "kM": 5,
+            "pctF": 4.1,
+            "pctM": 10.4,
+            "diff": -6.3,
+            "ciLo": -18.5,
+            "ciHi": 5.0,
+            "p": 0.2682,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396511,
+            "question": "11. Improve walk/bike to transit stops"
+          },
+          {
+            "nF": 49,
+            "nM": 48,
+            "kF": 10,
+            "kM": 5,
+            "pctF": 20.4,
+            "pctM": 10.4,
+            "diff": 10.0,
+            "ciLo": -4.8,
+            "ciHi": 24.5,
+            "p": 0.2615,
+            "q": 0.9946,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396511,
+            "question": "11. Improve walk/bike to transit stops"
+          },
+          {
+            "nF": 49,
+            "nM": 48,
+            "kF": 4,
+            "kM": 2,
+            "pctF": 8.2,
+            "pctM": 4.2,
+            "diff": 4.0,
+            "ciLo": -7.0,
+            "ciHi": 15.4,
+            "p": 0.6775,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396511,
+            "question": "11. Improve walk/bike to transit stops"
+          }
+        ],
+        "validation": [
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Women",
+            "nYes": 47,
+            "nNo": 84,
+            "meanYes": 4.28,
+            "meanNo": 3.92,
+            "p": 0.0894
+          },
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Men",
+            "nYes": 38,
+            "nNo": 79,
+            "meanYes": 3.87,
+            "meanNo": 3.33,
+            "p": 0.0687
+          },
+          {
+            "key": "heat",
+            "rating": "Shelters at stops",
+            "group": "Women",
+            "nYes": 41,
+            "nNo": 91,
+            "meanYes": 4.02,
+            "meanNo": 3.68,
+            "p": 0.294
+          },
+          {
+            "key": "heat",
+            "rating": "Shelters at stops",
+            "group": "Men",
+            "nYes": 17,
+            "nNo": 102,
+            "meanYes": 4.0,
+            "meanNo": 3.5,
+            "p": 0.2835
+          }
+        ],
+        "kids": {
+          "nWomen": 12,
+          "nMen": 3,
+          "womenRiders": 5,
+          "womenNonriders": 7,
+          "ageKnown": 12,
+          "age3544": 8,
+          "womenAge3544Pct": 19.2,
+          "pAge": 0.0002
+        }
+      },
+      "riders": {
+        "themes": [
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 5,
+            "kM": 2,
+            "pctF": 12.2,
+            "pctM": 5.6,
+            "diff": 6.6,
+            "ciLo": -7.7,
+            "ciHi": 20.6,
+            "p": 0.4382,
+            "q": 0.6573,
+            "flag": "none",
+            "key": "kids",
+            "name": "Traveling with children"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 15,
+            "kM": 13,
+            "pctF": 36.6,
+            "pctM": 36.1,
+            "diff": 0.5,
+            "ciLo": -20.4,
+            "ciHi": 21.0,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "name": "Lighting & the dark"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 8,
+            "kM": 4,
+            "pctF": 19.5,
+            "pctM": 11.1,
+            "diff": 8.4,
+            "ciLo": -8.6,
+            "ciHi": 24.4,
+            "p": 0.3608,
+            "q": 0.6495,
+            "flag": "none",
+            "key": "security",
+            "name": "Personal security & harassment"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 28,
+            "kM": 20,
+            "pctF": 68.3,
+            "pctM": 55.6,
+            "diff": 12.7,
+            "ciLo": -8.6,
+            "ciHi": 32.8,
+            "p": 0.3461,
+            "q": 0.6495,
+            "flag": "none",
+            "key": "safety",
+            "name": "Safety wording (any kind)"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 16,
+            "kM": 5,
+            "pctF": 39.0,
+            "pctM": 13.9,
+            "diff": 25.1,
+            "ciLo": 5.2,
+            "ciHi": 42.3,
+            "p": 0.0202,
+            "q": 0.1821,
+            "flag": "suggestive",
+            "key": "heat",
+            "name": "Heat & shade"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 10,
+            "kM": 7,
+            "pctF": 24.4,
+            "pctM": 19.4,
+            "diff": 4.9,
+            "ciLo": -13.9,
+            "ciHi": 22.8,
+            "p": 0.7839,
+            "q": 1.0,
+            "flag": "none",
+            "key": "weather",
+            "name": "Weather (rain, cold, flooding)"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 12,
+            "kM": 11,
+            "pctF": 29.3,
+            "pctM": 30.6,
+            "diff": -1.3,
+            "ciLo": -21.3,
+            "ciHi": 18.4,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "name": "Distance & the walk to the stop"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 33,
+            "kM": 23,
+            "pctF": 80.5,
+            "pctM": 63.9,
+            "diff": 16.6,
+            "ciLo": -3.3,
+            "ciHi": 35.4,
+            "p": 0.1277,
+            "q": 0.5749,
+            "flag": "none",
+            "key": "sidewalks",
+            "name": "Sidewalks & pedestrian access"
+          },
+          {
+            "nF": 41,
+            "nM": 36,
+            "kF": 13,
+            "kM": 7,
+            "pctF": 31.7,
+            "pctM": 19.4,
+            "diff": 12.3,
+            "ciLo": -7.5,
+            "ciHi": 30.4,
+            "p": 0.2992,
+            "q": 0.6495,
+            "flag": "none",
+            "key": "amenities",
+            "name": "Bus stop amenities"
+          }
+        ],
+        "byQuestion": [
+          {
+            "nF": 35,
+            "nM": 30,
+            "kF": 4,
+            "kM": 2,
+            "pctF": 11.4,
+            "pctM": 6.7,
+            "diff": 4.8,
+            "ciLo": -11.4,
+            "ciHi": 20.1,
+            "p": 0.6783,
+            "q": 0.6783,
+            "flag": "none",
+            "key": "security",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 35,
+            "nM": 30,
+            "kF": 4,
+            "kM": 2,
+            "pctF": 11.4,
+            "pctM": 6.7,
+            "diff": 4.8,
+            "ciLo": -11.4,
+            "ciHi": 20.1,
+            "p": 0.6783,
+            "q": 0.6783,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          }
+        ],
+        "validation": [
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Women",
+            "nYes": 15,
+            "nNo": 25,
+            "meanYes": 3.93,
+            "meanNo": 3.96,
+            "p": 0.8232
+          },
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Men",
+            "nYes": 13,
+            "nNo": 23,
+            "meanYes": 4.15,
+            "meanNo": 3.17,
+            "p": 0.0172
+          },
+          {
+            "key": "heat",
+            "rating": "Shelters at stops",
+            "group": "Women",
+            "nYes": 16,
+            "nNo": 24,
+            "meanYes": 3.94,
+            "meanNo": 3.62,
+            "p": 0.5725
+          }
+        ],
+        "kids": {
+          "nWomen": 5,
+          "nMen": 2,
+          "womenRiders": 5,
+          "womenNonriders": 0,
+          "ageKnown": 5,
+          "age3544": 3,
+          "womenAge3544Pct": 22.9,
+          "pAge": 0.0716
+        }
+      },
+      "nonriders": {
+        "themes": [
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 7,
+            "kM": 1,
+            "pctF": 7.2,
+            "pctM": 1.2,
+            "diff": 6.0,
+            "ciLo": -0.4,
+            "ciHi": 13.0,
+            "p": 0.0708,
+            "q": 0.3088,
+            "flag": "none",
+            "key": "kids",
+            "name": "Traveling with children"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 34,
+            "kM": 26,
+            "pctF": 35.1,
+            "pctM": 31.3,
+            "diff": 3.7,
+            "ciLo": -10.0,
+            "ciHi": 17.1,
+            "p": 0.6364,
+            "q": 0.6364,
+            "flag": "none",
+            "key": "lighting",
+            "name": "Lighting & the dark"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 15,
+            "kM": 9,
+            "pctF": 15.5,
+            "pctM": 10.8,
+            "diff": 4.6,
+            "ciLo": -5.7,
+            "ciHi": 14.5,
+            "p": 0.3887,
+            "q": 0.5567,
+            "flag": "none",
+            "key": "security",
+            "name": "Personal security & harassment"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 62,
+            "kM": 44,
+            "pctF": 63.9,
+            "pctM": 53.0,
+            "diff": 10.9,
+            "ciLo": -3.4,
+            "ciHi": 24.7,
+            "p": 0.1716,
+            "q": 0.3088,
+            "flag": "none",
+            "key": "safety",
+            "name": "Safety wording (any kind)"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 25,
+            "kM": 12,
+            "pctF": 25.8,
+            "pctM": 14.5,
+            "diff": 11.3,
+            "ciLo": -0.6,
+            "ciHi": 22.6,
+            "p": 0.0669,
+            "q": 0.3088,
+            "flag": "none",
+            "key": "heat",
+            "name": "Heat & shade"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 10,
+            "kM": 12,
+            "pctF": 10.3,
+            "pctM": 14.5,
+            "diff": -4.1,
+            "ciLo": -14.4,
+            "ciHi": 5.6,
+            "p": 0.4949,
+            "q": 0.5567,
+            "flag": "none",
+            "key": "weather",
+            "name": "Weather (rain, cold, flooding)"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 33,
+            "kM": 19,
+            "pctF": 34.0,
+            "pctM": 22.9,
+            "diff": 11.1,
+            "ciLo": -2.2,
+            "ciHi": 23.7,
+            "p": 0.1373,
+            "q": 0.3088,
+            "flag": "none",
+            "key": "walk",
+            "name": "Distance & the walk to the stop"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 75,
+            "kM": 60,
+            "pctF": 77.3,
+            "pctM": 72.3,
+            "diff": 5.0,
+            "ciLo": -7.5,
+            "ciHi": 17.7,
+            "p": 0.4915,
+            "q": 0.5567,
+            "flag": "none",
+            "key": "sidewalks",
+            "name": "Sidewalks & pedestrian access"
+          },
+          {
+            "nF": 97,
+            "nM": 83,
+            "kF": 27,
+            "kM": 14,
+            "pctF": 27.8,
+            "pctM": 16.9,
+            "diff": 11.0,
+            "ciLo": -1.4,
+            "ciHi": 22.6,
+            "p": 0.1082,
+            "q": 0.3088,
+            "flag": "none",
+            "key": "amenities",
+            "name": "Bus stop amenities"
+          }
+        ],
+        "byQuestion": [
+          {
+            "nF": 40,
+            "nM": 41,
+            "kF": 14,
+            "kM": 2,
+            "pctF": 35.0,
+            "pctM": 4.9,
+            "diff": 30.1,
+            "ciLo": 13.0,
+            "ciHi": 46.0,
+            "p": 0.0007,
+            "q": 0.0174,
+            "flag": "clear",
+            "key": "safety",
+            "qid": 396284,
+            "question": "3b. Improvements to the fare system"
+          },
+          {
+            "nF": 73,
+            "nM": 59,
+            "kF": 11,
+            "kM": 11,
+            "pctF": 15.1,
+            "pctM": 18.6,
+            "diff": -3.6,
+            "ciLo": -17.0,
+            "ciHi": 9.1,
+            "p": 0.6425,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 73,
+            "nM": 59,
+            "kF": 6,
+            "kM": 2,
+            "pctF": 8.2,
+            "pctM": 3.4,
+            "diff": 4.8,
+            "ciLo": -4.4,
+            "ciHi": 13.7,
+            "p": 0.2967,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396287,
+            "question": "6. Circumstances more likely to ride"
+          },
+          {
+            "nF": 45,
+            "nM": 45,
+            "kF": 11,
+            "kM": 5,
+            "pctF": 24.4,
+            "pctM": 11.1,
+            "diff": 13.3,
+            "ciLo": -2.7,
+            "ciHi": 28.9,
+            "p": 0.1668,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396289,
+            "question": "7. Change to ride one more day/week"
+          },
+          {
+            "nF": 45,
+            "nM": 45,
+            "kF": 4,
+            "kM": 2,
+            "pctF": 8.9,
+            "pctM": 4.4,
+            "diff": 4.4,
+            "ciLo": -7.2,
+            "ciHi": 16.7,
+            "p": 0.6766,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396289,
+            "question": "7. Change to ride one more day/week"
+          },
+          {
+            "nF": 60,
+            "nM": 48,
+            "kF": 4,
+            "kM": 3,
+            "pctF": 6.7,
+            "pctM": 6.2,
+            "diff": 0.4,
+            "ciLo": -10.9,
+            "ciHi": 10.5,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "security",
+            "qid": 396290,
+            "question": "8. First word or phrase about the bus"
+          },
+          {
+            "nF": 60,
+            "nM": 48,
+            "kF": 7,
+            "kM": 4,
+            "pctF": 11.7,
+            "pctM": 8.3,
+            "diff": 3.3,
+            "ciLo": -9.3,
+            "ciHi": 15.0,
+            "p": 0.7515,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396290,
+            "question": "8. First word or phrase about the bus"
+          },
+          {
+            "nF": 56,
+            "nM": 47,
+            "kF": 8,
+            "kM": 4,
+            "pctF": 14.3,
+            "pctM": 8.5,
+            "diff": 5.8,
+            "ciLo": -7.6,
+            "ciHi": 18.3,
+            "p": 0.5394,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396291,
+            "question": "9. Versus bus systems elsewhere"
+          },
+          {
+            "nF": 82,
+            "nM": 68,
+            "kF": 15,
+            "kM": 12,
+            "pctF": 18.3,
+            "pctM": 17.6,
+            "diff": 0.6,
+            "ciLo": -12.1,
+            "ciHi": 12.8,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 82,
+            "nM": 68,
+            "kF": 17,
+            "kM": 14,
+            "pctF": 20.7,
+            "pctM": 20.6,
+            "diff": 0.1,
+            "ciLo": -13.1,
+            "ciHi": 12.9,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 82,
+            "nM": 68,
+            "kF": 3,
+            "kM": 1,
+            "pctF": 3.7,
+            "pctM": 1.5,
+            "diff": 2.2,
+            "ciLo": -4.7,
+            "ciHi": 8.9,
+            "p": 0.6266,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396292,
+            "question": "Walk/bike 1. Crossing-street experience"
+          },
+          {
+            "nF": 68,
+            "nM": 58,
+            "kF": 7,
+            "kM": 3,
+            "pctF": 10.3,
+            "pctM": 5.2,
+            "diff": 5.1,
+            "ciLo": -5.3,
+            "ciHi": 15.2,
+            "p": 0.3399,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396293,
+            "question": "Walk/bike 2. Easier/harder crossing spots"
+          },
+          {
+            "nF": 68,
+            "nM": 58,
+            "kF": 10,
+            "kM": 12,
+            "pctF": 14.7,
+            "pctM": 20.7,
+            "diff": -6.0,
+            "ciLo": -19.7,
+            "ciHi": 7.3,
+            "p": 0.4812,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396293,
+            "question": "Walk/bike 2. Easier/harder crossing spots"
+          },
+          {
+            "nF": 75,
+            "nM": 67,
+            "kF": 12,
+            "kM": 13,
+            "pctF": 16.0,
+            "pctM": 19.4,
+            "diff": -3.4,
+            "ciLo": -16.2,
+            "ciHi": 9.2,
+            "p": 0.6619,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 75,
+            "nM": 67,
+            "kF": 14,
+            "kM": 4,
+            "pctF": 18.7,
+            "pctM": 6.0,
+            "diff": 12.7,
+            "ciLo": 1.6,
+            "ciHi": 23.6,
+            "p": 0.0252,
+            "q": 0.3156,
+            "flag": "suggestive",
+            "key": "heat",
+            "qid": 396306,
+            "question": "Walk/bike 5. What feels comfortable"
+          },
+          {
+            "nF": 67,
+            "nM": 58,
+            "kF": 8,
+            "kM": 7,
+            "pctF": 11.9,
+            "pctM": 12.1,
+            "diff": -0.1,
+            "ciLo": -12.4,
+            "ciHi": 11.5,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 67,
+            "nM": 58,
+            "kF": 9,
+            "kM": 8,
+            "pctF": 13.4,
+            "pctM": 13.8,
+            "diff": -0.4,
+            "ciLo": -13.1,
+            "ciHi": 11.8,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 67,
+            "nM": 58,
+            "kF": 5,
+            "kM": 3,
+            "pctF": 7.5,
+            "pctM": 5.2,
+            "diff": 2.3,
+            "ciLo": -7.6,
+            "ciHi": 11.8,
+            "p": 0.7235,
+            "q": 1.0,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396506,
+            "question": "Walk/bike 6. What feels stressful"
+          },
+          {
+            "nF": 51,
+            "nM": 48,
+            "kF": 4,
+            "kM": 3,
+            "pctF": 7.8,
+            "pctM": 6.2,
+            "diff": 1.6,
+            "ciLo": -10.0,
+            "ciHi": 13.0,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 51,
+            "nM": 48,
+            "kF": 3,
+            "kM": 2,
+            "pctF": 5.9,
+            "pctM": 4.2,
+            "diff": 1.7,
+            "ciLo": -8.8,
+            "ciHi": 12.2,
+            "p": 1.0,
+            "q": 1.0,
+            "flag": "none",
+            "key": "security",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 51,
+            "nM": 48,
+            "kF": 8,
+            "kM": 10,
+            "pctF": 15.7,
+            "pctM": 20.8,
+            "diff": -5.1,
+            "ciLo": -20.5,
+            "ciHi": 10.2,
+            "p": 0.6053,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396307,
+            "question": "Walk/bike 7. Safety concerns changing routes"
+          },
+          {
+            "nF": 66,
+            "nM": 56,
+            "kF": 5,
+            "kM": 3,
+            "pctF": 7.6,
+            "pctM": 5.4,
+            "diff": 2.2,
+            "ciLo": -8.0,
+            "ciHi": 11.8,
+            "p": 0.7251,
+            "q": 1.0,
+            "flag": "none",
+            "key": "lighting",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 66,
+            "nM": 56,
+            "kF": 19,
+            "kM": 13,
+            "pctF": 28.8,
+            "pctM": 23.2,
+            "diff": 5.6,
+            "ciLo": -10.2,
+            "ciHi": 20.5,
+            "p": 0.5397,
+            "q": 1.0,
+            "flag": "none",
+            "key": "safety",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 66,
+            "nM": 56,
+            "kF": 10,
+            "kM": 5,
+            "pctF": 15.2,
+            "pctM": 8.9,
+            "diff": 6.2,
+            "ciLo": -6.1,
+            "ciHi": 17.9,
+            "p": 0.4088,
+            "q": 1.0,
+            "flag": "none",
+            "key": "heat",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          },
+          {
+            "nF": 66,
+            "nM": 56,
+            "kF": 17,
+            "kM": 13,
+            "pctF": 25.8,
+            "pctM": 23.2,
+            "diff": 2.5,
+            "ciLo": -12.9,
+            "ciHi": 17.4,
+            "p": 0.8341,
+            "q": 1.0,
+            "flag": "none",
+            "key": "walk",
+            "qid": 396507,
+            "question": "Walk/bike 9. Why not walk or bike"
+          }
+        ],
+        "validation": [
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Women",
+            "nYes": 32,
+            "nNo": 59,
+            "meanYes": 4.44,
+            "meanNo": 3.9,
+            "p": 0.0289
+          },
+          {
+            "key": "lighting",
+            "rating": "Lighting at stops",
+            "group": "Men",
+            "nYes": 25,
+            "nNo": 55,
+            "meanYes": 3.72,
+            "meanNo": 3.44,
+            "p": 0.554
+          },
+          {
+            "key": "heat",
+            "rating": "Shelters at stops",
+            "group": "Women",
+            "nYes": 25,
+            "nNo": 67,
+            "meanYes": 4.08,
+            "meanNo": 3.7,
+            "p": 0.3587
+          },
+          {
+            "key": "heat",
+            "rating": "Shelters at stops",
+            "group": "Men",
+            "nYes": 12,
+            "nNo": 70,
+            "meanYes": 4.08,
+            "meanNo": 3.5,
+            "p": 0.2205
+          }
+        ],
+        "kids": {
+          "nWomen": 7,
+          "nMen": 1,
+          "womenRiders": 0,
+          "womenNonriders": 7,
+          "ageKnown": 7,
+          "age3544": 5,
+          "womenAge3544Pct": 17.9,
+          "pAge": 0.002
+        }
       }
     }
   },

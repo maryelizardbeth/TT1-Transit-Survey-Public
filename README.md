@@ -14,8 +14,9 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 3. **Women &amp; Ridership** — the survey's best-powered demographic comparison; where women and men differ.
 4. **Women Deep Dive** — one tab with a filter at the top (all respondents / current riders / non-riders). It compares
    women with men on every closed-ended question with effect sizes, 95% confidence intervals and false-discovery-
-   corrected evidence labels (*significant* / *suggestive* / *not significant*), and adds a comments & themes section
-   (theme prevalence, hand-reviewed quotes). Comments are linked to each
+   corrected evidence labels (*significant* / *suggestive* / *not significant*), a Focus areas section (traveling with children; light, safety & security;
+   shade, heat & the walk) that quantifies each topic from the survey ratings and the comments, and a comments & themes
+   section (theme prevalence, hand-reviewed quotes). Comments are linked to each
    author's gender and rider status.
 5. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
 
@@ -32,6 +33,7 @@ data_prep/
   women_stats.py      Tests used for women-vs-men comparisons (Fisher, Mann-Whitney, bootstrap, BH-FDR)
   women_analysis.py   Structured-answer comparisons by segment, rating-style check, sample composition
   women_text.py       Comment themes, commenter counts, hand-reviewed quotes
+  women_topics.py     Focus-area measures: topic themes, question-by-question rows, ratings cross-check
 ```
 
 ## Regenerating the data
@@ -93,6 +95,10 @@ To add live layers later:
   tendency to rate everything higher is not mistaken for a priority.
 - Comment themes are keyword-based and counted once per person. Verbatim quotes come from the hand-reviewed
   allowlist `CURATED_QUOTES` in `women_text.py`, screened for identifying details. The survey's "Private" flag only meant a comment was hidden from other participants while the survey was open, so all comments are treated as public now that it is closed.
+
+- Focus areas use two separate correction families per group: the topic themes (compared across people) and the
+  question-by-question rows (exploratory). "Heat & shade" was split from general weather after a first look at the
+  comments, so it is exploratory. The survey asked nothing about children, so that topic comes from comments only.
 
 ## Notes on the data
 

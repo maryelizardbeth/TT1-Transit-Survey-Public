@@ -336,6 +336,7 @@ comments_agg = {
 # ---------------------------------------------------------------------------
 import women_analysis
 import women_text
+import women_topics
 
 KEEP = ("block", "id", "name", "kind", "nF", "nM", "pctF", "pctM", "meanF", "meanM", "top2F", "top2M",
         "diff", "ciLo", "ciHi", "delta", "p", "q", "flag", "adjP", "adjSign")
@@ -371,6 +372,7 @@ WOMEN = {
         "engagement": women_text.engagement(w_frame, df, gender_col),
         "quotes": women_text.quotes(cdf),
     },
+    "topics": women_topics.topics(df, cols, gender_col, cdf),
 }
 
 # ---------------------------------------------------------------------------
