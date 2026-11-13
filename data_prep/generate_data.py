@@ -332,6 +332,49 @@ comments_agg = {
 }
 
 # ---------------------------------------------------------------------------
+# WOMEN deep dive (structured answers + open text, riders / non-riders / all)
+# ---------------------------------------------------------------------------
+import women_analysis
+import women_text
+
+KEEP = ("block", "id", "name", "kind", "nF", "nM", "pctF", "pctM", "meanF", "meanM", "top2F", "top2M",
+        "diff", "ciLo", "ciHi", "delta", "p", "q", "flag", "adjP", "adjSign")
+
+
+def _slim(items):
+    return [{k: r[k] for k in KEEP if k in r} for r in items]
+
+
+w_struct = women_analysis.structured(df, cols, gender_col)
+w_comp = women_analysis.composition(df, cols, gender_col)
+w_style = women_analysis.rating_style(df, cols, gender_col)
+w_frame = women_text.frame(df, cols, gender_col, cdf)
+w_themes = women_text.themes_by_scope(w_frame)
+w_theme_slim = {s: {g: ({"nF": t["nF"], "nM": t["nM"],
+                         "items": [{k: r[k] for k in ("name", "kFpct", "pctF", "pctM", "kF", "kM", "diff", "ciLo", "ciHi", "p", "q", "flag") if k in r}
+                                   for r in t["items"]]} if t else None)
+                 for g, t in grp.items()} for s, grp in w_themes.items()}
+n_nonbinary = int((df[gender_col] == "Non-binary").sum())
+
+WOMEN = {
+    "sample": {
+        "nFemale": n_female, "nMale": n_male, "nNonbinary": n_nonbinary,
+        "genderAnswered": int(df[gender_col].notna().sum()),
+        "seg": {s: {"nF": v["nF"], "nM": v["nM"]} for s, v in w_struct.items()},
+    },
+    "blocks": [{"id": b, "title": t, "ref": r} for b, t, r in women_analysis.BLOCKS],
+    "structured": {s: _slim(v["items"]) for s, v in w_struct.items()},
+    "ratingStyle": w_style,
+    "composition": {s: [{k: r[k] for k in ("name", "pctF", "pctM", "diff", "p", "flag")} for r in v] for s, v in w_comp.items()},
+    "text": {
+        "themes": w_theme_slim,
+        "engagement": women_text.engagement(w_frame, df, gender_col),
+        "words": women_text.distinctive_words(w_frame),
+        "quotes": women_text.quotes(cdf),
+    },
+}
+
+# ---------------------------------------------------------------------------
 # Assemble
 # ---------------------------------------------------------------------------
 SURVEY = {
@@ -361,6 +404,7 @@ SURVEY = {
         "safety": gender_safety,
         "reasons": gender_reasons,
     },
+    "women": WOMEN,
     "income": {"fareSwitch": fare_switch_income},
     "tenure": {"ownPct": own_pct, "ownN": own_n, "rentPct": rent_pct, "rentN": rent_n},
     "comments": {"perQuestion": comment_perq, "order": comment_order,

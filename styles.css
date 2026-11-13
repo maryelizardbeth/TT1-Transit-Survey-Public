@@ -387,3 +387,65 @@ a { color: var(--raleigh-green); }
   .wrap { padding: 14px 14px 32px; }
   .section-band { padding: 14px 14px 12px; }
 }
+
+/* ==========================================================================
+   Women deep-dive tabs (women.js)
+   ========================================================================== */
+.tab-btn.tab-women { box-shadow: inset 0 -2px 0 var(--chartreuse); }
+
+/* Evidence labels and dots */
+.ev { display: inline-block; font-size: 0.68rem; font-weight: 700; border-radius: 10px; padding: 2px 9px; white-space: nowrap; cursor: help; }
+.ev-clear { background: var(--green-tint); color: var(--raleigh-green); border: 1px solid var(--leaf-green); }
+.ev-suggestive { background: #FFF7E6; color: #8a5a00; border: 1px solid #F3D08A; }
+.ev-none { background: #F2F2F2; color: #666; border: 1px solid #DDD; }
+.dot { display: inline-block; width: 10px; height: 10px; border-radius: 50%; vertical-align: -1px; }
+.dot-clear { background: var(--raleigh-green); }
+.dot-suggestive { background: var(--amber); }
+.dot-none { background: #C9CCCF; }
+
+/* Tables */
+.tbl-scroll { overflow-x: auto; }
+.wtable { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin: 6px 0 4px; }
+.wtable th, .wtable td { padding: 7px 10px; border-bottom: 1px solid #E6E6E6; text-align: left; vertical-align: top; }
+.wtable thead th { background: var(--green-tint-alt); color: var(--raleigh-green); font-size: 0.74rem; text-transform: uppercase; letter-spacing: 0.3px; border-bottom: 2px solid var(--green-tint); }
+.wtable tbody th { font-weight: 600; }
+.wtable .num { text-align: right; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.wtable .na { color: #aaa; }
+.wtable small { color: #777; font-weight: 400; text-transform: none; letter-spacing: 0; }
+.tbl-h { font-size: 0.92rem; color: var(--raleigh-green); margin: 16px 0 4px; display: flex; align-items: center; gap: 8px; }
+.tbl-h .q-num { display: inline-block; background: var(--green-tint); color: var(--raleigh-green); border-radius: 4px; font-size: 0.7rem; font-weight: 800; padding: 2px 7px; }
+
+/* Toggle buttons */
+.toggle-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 10px; }
+.seg-toggle { display: inline-flex; border: 1px solid var(--border); border-radius: 6px; overflow: hidden; margin: 0 0 10px; }
+.toggle-row .seg-toggle { margin: 0; }
+.seg-toggle button { font-family: inherit; font-size: 0.8rem; font-weight: 600; color: var(--body-text); background: var(--white); border: none; border-right: 1px solid var(--border); padding: 6px 13px; cursor: pointer; }
+.seg-toggle button:last-child { border-right: none; }
+.seg-toggle button:hover { background: var(--green-tint-alt); }
+.seg-toggle button.on { background: var(--raleigh-green); color: var(--white); }
+.seg-toggle button:focus-visible { outline: 2px solid var(--teal); outline-offset: -2px; }
+
+/* Word chips */
+.chip-cols { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 18px; }
+.chip { display: inline-block; font-size: 0.8rem; border-radius: 14px; padding: 4px 11px; margin: 0 6px 7px 0; }
+.chip.w { background: var(--green-tint); color: var(--raleigh-green); }
+.chip.m { background: #EAF2F6; color: var(--navy); }
+
+/* Quotes by theme */
+.voice-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 16px; }
+.voice-card h3 { margin: 0 0 2px; font-size: 0.95rem; color: var(--raleigh-green); }
+.voice-card .voice-stat { margin: 0 0 8px; font-size: 0.76rem; color: #6b6b6b; }
+.quote .who { display: block; margin-top: 3px; font-size: 0.72rem; color: #777; font-style: normal; }
+.voice-card .quote { margin-bottom: 10px; }
+
+@media (max-width: 640px) {
+  .wtable { font-size: 0.78rem; }
+  .wtable th, .wtable td { padding: 6px 6px; }
+  .seg-toggle { flex-wrap: wrap; }
+}
+
+/* Keep the (now longer) tab bar to one scrollable row on phones */
+@media (max-width: 640px) {
+  .tab-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+  .tab-btn { white-space: nowrap; flex: 0 0 auto; }
+}

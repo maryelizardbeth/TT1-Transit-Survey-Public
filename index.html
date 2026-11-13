@@ -22,6 +22,10 @@
   <nav class="tab-nav" role="tablist" aria-label="Dashboard sections">
     <button class="tab-btn active" data-view="whynot" role="tab" aria-selected="true">Why People Don't Ride</button>
     <button class="tab-btn" data-view="women" role="tab" aria-selected="false">Women &amp; Ridership</button>
+    <button class="tab-btn tab-women" data-view="wall" role="tab" aria-selected="false">Women: Together</button>
+    <button class="tab-btn tab-women" data-view="wriders" role="tab" aria-selected="false">Women: Riders</button>
+    <button class="tab-btn tab-women" data-view="wnon" role="tab" aria-selected="false">Women: Non-riders</button>
+    <button class="tab-btn tab-women" data-view="wvoices" role="tab" aria-selected="false">Women: Comments &amp; Themes</button>
     <button class="tab-btn" data-view="evidence" role="tab" aria-selected="false">Key Evidence</button>
     <button class="tab-btn" data-view="overview" role="tab" aria-selected="false">Overview &amp; Questions</button>
   </nav>
@@ -243,6 +247,14 @@
   </section>
 
   <!-- ============================================================= -->
+  <!-- VIEWS 3a-3d: WOMEN DEEP DIVE (rendered by women.js)             -->
+  <!-- ============================================================= -->
+  <section class="view" id="view-wall" role="tabpanel"></section>
+  <section class="view" id="view-wriders" role="tabpanel"></section>
+  <section class="view" id="view-wnon" role="tabpanel"></section>
+  <section class="view" id="view-wvoices" role="tabpanel"></section>
+
+  <!-- ============================================================= -->
   <!-- VIEW 4: KEY EVIDENCE                                           -->
   <!-- ============================================================= -->
   <section class="view" id="view-evidence" role="tabpanel">
@@ -335,5 +347,6 @@
   <script src="./data.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
   <script src="./app.js"></script>
+  <script src="./women.js"></script>
 </body>
 </html>

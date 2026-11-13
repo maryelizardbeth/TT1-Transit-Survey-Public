@@ -12,7 +12,13 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 1. **Overview &amp; Questions** — who responded, plus the single most important takeaway from each question.
 2. **Why People Don't Ride** — the reasons, ratings, themes, and verbatim comments behind non-ridership.
 3. **Women &amp; Ridership** — the survey's best-powered demographic comparison; where women and men differ.
-4. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
+4. **Women: Together / Riders / Non-riders** — a women-vs-men deep dive on every closed-ended question,
+   run separately for current riders and non-riders and then combined, with effect sizes, 95% confidence
+   intervals and false-discovery-corrected evidence labels (*clear* / *suggestive* / *no reliable difference*).
+5. **Women: Comments & Themes** — theme prevalence in women's vs. men's comments (comments are linked to
+   each author's gender and rider status), participation and tone, distinctive words, and hand-reviewed
+   hand-reviewed quotes.
+6. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
 
 ## Project structure
 
@@ -20,9 +26,13 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 index.html            Markup: header, tab nav, four <section class="view"> panels
 styles.css            Design system (Raleigh green / leaf / amber / teal / navy; Calibri stack)
 app.js                Tab switching, KPI binding, Chart.js widgets, content injection
+women.js              Renders the four Women deep-dive tabs from SURVEY.women
 data.js               Auto-generated aggregate data (window.SURVEY). Do not edit by hand.
 data_prep/
   generate_data.py    Re-builds data.js from the two survey exports
+  women_stats.py      Tests used for women-vs-men comparisons (Fisher, Mann-Whitney, bootstrap, BH-FDR)
+  women_analysis.py   Structured-answer comparisons by segment, rating-style check, sample composition
+  women_text.py       Comment themes, engagement, distinctive words, hand-reviewed quotes
 ```
 
 ## Regenerating the data
@@ -71,6 +81,19 @@ To add live layers later:
   references survive a re-publish, consistent with the sibling app's convention.
 - The map-pin question (weekly origins/destinations) is a natural first layer; its coordinates were
   exported separately as CSV / GeoJSON during analysis.
+
+## Notes on the women deep dive
+
+- Compares **women (172) with men (153)**. Non-binary respondents (17) are too few to analyze separately
+  without risking identification, so they are counted but excluded from comparisons.
+- Evidence labels: **clear** = survives Benjamini-Hochberg correction across all comparisons in the group
+  (q < 0.10); **suggestive** = p < 0.05 before correction; otherwise **no reliable difference**. Riders (48/45)
+  are a small group, so only large gaps can be detected.
+- Combined-group results for the Q2 items and the main share-based items are re-tested adjusting for rider
+  status and age band; the "Relative priority" view removes each person's own average rating so a general
+  tendency to rate everything higher is not mistaken for a priority.
+- Comment themes are keyword-based and counted once per person. Verbatim quotes come from the hand-reviewed
+  allowlist `CURATED_QUOTES` in `women_text.py`, screened for identifying details. The survey's "Private" flag only meant a comment was hidden from other participants while the survey was open, so all comments are treated as public now that it is closed.
 
 ## Notes on the data
 
