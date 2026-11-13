@@ -369,7 +369,6 @@ WOMEN = {
     "text": {
         "themes": w_theme_slim,
         "engagement": women_text.engagement(w_frame, df, gender_col),
-        "words": women_text.distinctive_words(w_frame),
         "quotes": women_text.quotes(cdf),
     },
 }

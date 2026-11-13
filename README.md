@@ -14,8 +14,8 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 3. **Women &amp; Ridership** — the survey's best-powered demographic comparison; where women and men differ.
 4. **Women Deep Dive** — one tab with a filter at the top (all respondents / current riders / non-riders). It compares
    women with men on every closed-ended question with effect sizes, 95% confidence intervals and false-discovery-
-   corrected evidence labels (*clear* / *suggestive* / *no reliable difference*), and adds a comments & themes section
-   (theme prevalence, participation and tone, distinctive words, hand-reviewed quotes). Comments are linked to each
+   corrected evidence labels (*significant* / *suggestive* / *not significant*), and adds a comments & themes section
+   (theme prevalence, hand-reviewed quotes). Comments are linked to each
    author's gender and rider status.
 5. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
 
@@ -31,7 +31,7 @@ data_prep/
   generate_data.py    Re-builds data.js from the two survey exports
   women_stats.py      Tests used for women-vs-men comparisons (Fisher, Mann-Whitney, bootstrap, BH-FDR)
   women_analysis.py   Structured-answer comparisons by segment, rating-style check, sample composition
-  women_text.py       Comment themes, engagement, distinctive words, hand-reviewed quotes
+  women_text.py       Comment themes, commenter counts, hand-reviewed quotes
 ```
 
 ## Regenerating the data
@@ -85,8 +85,8 @@ To add live layers later:
 
 - Compares **women (172) with men (153)**. Non-binary respondents (17) are too few to analyze separately
   without risking identification, so they are counted but excluded from comparisons.
-- Evidence labels: **clear** = survives Benjamini-Hochberg correction across all comparisons in the group
-  (q < 0.10); **suggestive** = p < 0.05 before correction; otherwise **no reliable difference**. Riders (48/45)
+- Evidence labels: **significant** = survives Benjamini-Hochberg correction across all comparisons in the group
+  (q < 0.10); **suggestive** = p < 0.05 before correction; otherwise **not significant**. Riders (48/45)
   are a small group, so only large gaps can be detected.
 - Combined-group results for the Q2 items and the main share-based items are re-tested adjusting for rider
   status and age band; the "Relative priority" view removes each person's own average rating so a general

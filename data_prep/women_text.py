@@ -11,8 +11,6 @@ from other participants while the survey was open; the survey is closed, so all
 comments are treated as public. Quotes are still screened for identifying details.
 """
 import re
-import math
-from collections import Counter
 
 import numpy as np
 import pandas as pd
@@ -51,19 +49,6 @@ THEMES = {
     "Cleanliness & conditions": ct.THEMES["Cleanliness & conditions"],
     "Accessibility & mobility": ct.THEMES["Accessibility & mobility"],
 }
-
-STOP = set("a an the and or but if of to in on at for with from by is are was were be been it its this that these those i me "
-           "my we our you your he she they them their as so not no do does did have has had will would can could should just "
-           "very more most than then there here what when where which who how all any some too also about into over out up "
-           "down get got like really much many one dont cant doesn isn aren wasn don didn won wouldn couldn".split())
-
-
-def _tokens(text):
-    t = re.sub(r"[^a-z' ]", " ", text.lower())
-    w = [x.strip("'") for x in t.split()]
-    w = [x for x in w if x and x not in STOP and len(x) > 2]
-    return w + [a + " " + b for a, b in zip(w, w[1:])]
-
 
 def frame(df, cols, gcol, cdf):
     """Comments (excluding map-pin labels) joined to each author's gender and rider status."""
@@ -149,35 +134,6 @@ def engagement(c, df, gcol):
     for g in ["Female", "Male"]:
         out["all"][g.lower()]["respondents"] = int(g_all.get(g, 0))
     return out
-
-
-def distinctive_words(c, min_docs=10, prior=200.0, top=14):
-    """Informative-Dirichlet log-odds (Monroe et al. 2008) on person-level word presence.
-    Exploratory: with thousands of candidate words, treat as a lens, not a test."""
-    ppl = _person_level(c)
-    cnt = {"Female": Counter(), "Male": Counter()}
-    nd = Counter()
-    for _, r in ppl.iterrows():
-        cnt[r.gender].update(set(_tokens(r.txt)))
-        nd[r.gender] += 1
-    vocab = [w for w in set(cnt["Female"]) | set(cnt["Male"]) if cnt["Female"][w] + cnt["Male"][w] >= min_docs]
-    tot = {w: cnt["Female"][w] + cnt["Male"][w] for w in vocab}
-    N = sum(tot.values())
-    nF, nM = nd["Female"], nd["Male"]
-    res = []
-    for w in vocab:
-        a = max(0.5, prior * tot[w] / N)
-        yf, ym = cnt["Female"][w], cnt["Male"][w]
-        lf = math.log((yf + a) / (nF - yf + a))
-        lm = math.log((ym + a) / (nM - ym + a))
-        var = 1 / (yf + a) + 1 / (nF - yf + a) + 1 / (ym + a) + 1 / (nM - ym + a)
-        res.append(((lf - lm) / math.sqrt(var), w, yf, ym))
-    res.sort()
-
-    def pack(rows):
-        return [{"term": w, "pctF": round(yf / nF * 100, 1), "pctM": round(ym / nM * 100, 1), "z": round(z, 1)}
-                for z, w, yf, ym in rows]
-    return {"nF": nF, "nM": nM, "women": pack(res[::-1][:top]), "men": pack(res[:top])}
 
 
 # ---------------------------------------------------------------------------

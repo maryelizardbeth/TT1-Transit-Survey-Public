@@ -136,7 +136,7 @@ def build_items(df, cols):
 
     # ---- Q4 stop within a 10 minute walk ------------------------------------
     sv = df[cols[32]]
-    for raw, nice in [("Yes", "Has a stop within a 10-minute walk"), ("No", "No stop within a 10-minute walk"), ("Not sure", "Not sure")]:
+    for raw, nice in [("Yes", "Has a stop within a 10-minute walk"), ("No", "No stop within a 10-minute walk"), ("Not sure", "Not sure whether a stop is within a 10-minute walk")]:
         add("q4", "q4_" + raw.lower().replace(" ", ""), nice, "binary", (sv == raw).where(sv.notna()).astype(object).where(sv.notna()))
 
     # ---- Walking / biking ----------------------------------------------------

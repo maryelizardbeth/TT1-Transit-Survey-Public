@@ -1120,7 +1120,7 @@ window.SURVEY = {
         {
           "block": "q4",
           "id": "q4_notsure",
-          "name": "Not sure",
+          "name": "Not sure whether a stop is within a 10-minute walk",
           "kind": "binary",
           "nF": 168,
           "nM": 147,
@@ -1831,7 +1831,7 @@ window.SURVEY = {
         {
           "block": "q4",
           "id": "q4_notsure",
-          "name": "Not sure",
+          "name": "Not sure whether a stop is within a 10-minute walk",
           "kind": "binary",
           "nF": 47,
           "nM": 41,
@@ -2602,7 +2602,7 @@ window.SURVEY = {
         {
           "block": "q4",
           "id": "q4_notsure",
-          "name": "Not sure",
+          "name": "Not sure whether a stop is within a 10-minute walk",
           "kind": "binary",
           "nF": 121,
           "nM": 105,
@@ -6014,182 +6014,6 @@ window.SURVEY = {
           "pComments": 0.4286,
           "pWords": 0.1406
         }
-      },
-      "words": {
-        "nF": 138,
-        "nM": 120,
-        "women": [
-          {
-            "term": "raleigh",
-            "pctF": 32.6,
-            "pctM": 16.7,
-            "z": 2.8
-          },
-          {
-            "term": "crosswalk",
-            "pctF": 22.5,
-            "pctM": 10.0,
-            "z": 2.6
-          },
-          {
-            "term": "pedestrians",
-            "pctF": 34.1,
-            "pctM": 20.0,
-            "z": 2.4
-          },
-          {
-            "term": "going",
-            "pctF": 18.8,
-            "pctM": 8.3,
-            "z": 2.3
-          },
-          {
-            "term": "crosswalks",
-            "pctF": 26.8,
-            "pctM": 15.0,
-            "z": 2.2
-          },
-          {
-            "term": "because",
-            "pctF": 24.6,
-            "pctM": 13.3,
-            "z": 2.2
-          },
-          {
-            "term": "used",
-            "pctF": 15.9,
-            "pctM": 6.7,
-            "z": 2.2
-          },
-          {
-            "term": "bus stop",
-            "pctF": 15.9,
-            "pctM": 6.7,
-            "z": 2.2
-          },
-          {
-            "term": "sidewalks",
-            "pctF": 63.8,
-            "pctM": 50.0,
-            "z": 2.2
-          },
-          {
-            "term": "summer",
-            "pctF": 7.2,
-            "pctM": 0.8,
-            "z": 2.1
-          },
-          {
-            "term": "seems",
-            "pctF": 7.2,
-            "pctM": 0.0,
-            "z": 2.1
-          },
-          {
-            "term": "attention",
-            "pctF": 13.8,
-            "pctM": 5.8,
-            "z": 2.0
-          },
-          {
-            "term": "shade",
-            "pctF": 18.1,
-            "pctM": 9.2,
-            "z": 2.0
-          },
-          {
-            "term": "safety",
-            "pctF": 32.6,
-            "pctM": 21.7,
-            "z": 1.9
-          }
-        ],
-        "men": [
-          {
-            "term": "service",
-            "pctF": 12.3,
-            "pctM": 25.0,
-            "z": -2.6
-          },
-          {
-            "term": "lanes",
-            "pctF": 39.9,
-            "pctM": 54.2,
-            "z": -2.3
-          },
-          {
-            "term": "feels",
-            "pctF": 5.8,
-            "pctM": 14.2,
-            "z": -2.2
-          },
-          {
-            "term": "infrastructure",
-            "pctF": 9.4,
-            "pctM": 18.3,
-            "z": -2.0
-          },
-          {
-            "term": "signage",
-            "pctF": 2.9,
-            "pctM": 9.2,
-            "z": -2.0
-          },
-          {
-            "term": "faster",
-            "pctF": 4.3,
-            "pctM": 10.8,
-            "z": -1.9
-          },
-          {
-            "term": "hillsborough",
-            "pctF": 2.9,
-            "pctM": 8.3,
-            "z": -1.8
-          },
-          {
-            "term": "speed",
-            "pctF": 13.8,
-            "pctM": 22.5,
-            "z": -1.8
-          },
-          {
-            "term": "lane",
-            "pctF": 15.2,
-            "pctM": 24.2,
-            "z": -1.8
-          },
-          {
-            "term": "bike",
-            "pctF": 47.8,
-            "pctM": 59.2,
-            "z": -1.8
-          },
-          {
-            "term": "tap pay",
-            "pctF": 17.4,
-            "pctM": 26.7,
-            "z": -1.8
-          },
-          {
-            "term": "bike lanes",
-            "pctF": 34.1,
-            "pctM": 45.0,
-            "z": -1.8
-          },
-          {
-            "term": "take bus",
-            "pctF": 7.2,
-            "pctM": 14.2,
-            "z": -1.8
-          },
-          {
-            "term": "high speed",
-            "pctF": 4.3,
-            "pctM": 10.0,
-            "z": -1.7
-          }
-        ]
       },
       "quotes": {
         "Traveling with children": [
