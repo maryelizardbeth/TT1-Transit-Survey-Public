@@ -12,13 +12,12 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 1. **Overview &amp; Questions** — who responded, plus the single most important takeaway from each question.
 2. **Why People Don't Ride** — the reasons, ratings, themes, and verbatim comments behind non-ridership.
 3. **Women &amp; Ridership** — the survey's best-powered demographic comparison; where women and men differ.
-4. **Women: Together / Riders / Non-riders** — a women-vs-men deep dive on every closed-ended question,
-   run separately for current riders and non-riders and then combined, with effect sizes, 95% confidence
-   intervals and false-discovery-corrected evidence labels (*clear* / *suggestive* / *no reliable difference*).
-5. **Women: Comments & Themes** — theme prevalence in women's vs. men's comments (comments are linked to
-   each author's gender and rider status), participation and tone, distinctive words, and hand-reviewed
-   hand-reviewed quotes.
-6. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
+4. **Women Deep Dive** — one tab with a filter at the top (all respondents / current riders / non-riders). It compares
+   women with men on every closed-ended question with effect sizes, 95% confidence intervals and false-discovery-
+   corrected evidence labels (*clear* / *suggestive* / *no reliable difference*), and adds a comments & themes section
+   (theme prevalence, participation and tone, distinctive words, hand-reviewed quotes). Comments are linked to each
+   author's gender and rider status.
+5. **Key Evidence** — the strongest evidence mapped against the team's draft problem statement.
 
 ## Project structure
 
@@ -26,7 +25,7 @@ so the two read as siblings, and is structured to have ArcGIS Online layers adde
 index.html            Markup: header, tab nav, four <section class="view"> panels
 styles.css            Design system (Raleigh green / leaf / amber / teal / navy; Calibri stack)
 app.js                Tab switching, KPI binding, Chart.js widgets, content injection
-women.js              Renders the four Women deep-dive tabs from SURVEY.women
+women.js              Renders the Women Deep Dive tab (rider-status filter) from SURVEY.women
 data.js               Auto-generated aggregate data (window.SURVEY). Do not edit by hand.
 data_prep/
   generate_data.py    Re-builds data.js from the two survey exports

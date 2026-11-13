@@ -449,3 +449,11 @@ a { color: var(--raleigh-green); }
   .tab-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; }
   .tab-btn { white-space: nowrap; flex: 0 0 auto; }
 }
+
+/* Women deep-dive: single tab with a rider-status filter */
+.filter-bar { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 12px; }
+.filter-label { font-size: 0.8rem; font-weight: 700; color: var(--raleigh-green); text-transform: uppercase; letter-spacing: 0.3px; }
+.filter-bar .seg-toggle { margin: 0; }
+.filter-n { font-size: 0.8rem; color: #6b6b6b; }
+.seg-lede { margin: 0 0 4px; font-size: 0.95rem; max-width: 100ch; line-height: 1.5; }
+.sub-band { margin: 28px 0 6px; padding-top: 14px; border-top: 2px solid var(--green-tint); font-size: 1.2rem; color: var(--raleigh-green); }

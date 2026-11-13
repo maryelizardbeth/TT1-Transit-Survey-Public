@@ -22,10 +22,7 @@
   <nav class="tab-nav" role="tablist" aria-label="Dashboard sections">
     <button class="tab-btn active" data-view="whynot" role="tab" aria-selected="true">Why People Don't Ride</button>
     <button class="tab-btn" data-view="women" role="tab" aria-selected="false">Women &amp; Ridership</button>
-    <button class="tab-btn tab-women" data-view="wall" role="tab" aria-selected="false">Women: Together</button>
-    <button class="tab-btn tab-women" data-view="wriders" role="tab" aria-selected="false">Women: Riders</button>
-    <button class="tab-btn tab-women" data-view="wnon" role="tab" aria-selected="false">Women: Non-riders</button>
-    <button class="tab-btn tab-women" data-view="wvoices" role="tab" aria-selected="false">Women: Comments &amp; Themes</button>
+    <button class="tab-btn tab-women" data-view="wdive" role="tab" aria-selected="false">Women Deep Dive</button>
     <button class="tab-btn" data-view="evidence" role="tab" aria-selected="false">Key Evidence</button>
     <button class="tab-btn" data-view="overview" role="tab" aria-selected="false">Overview &amp; Questions</button>
   </nav>
@@ -247,12 +244,25 @@
   </section>
 
   <!-- ============================================================= -->
-  <!-- VIEWS 3a-3d: WOMEN DEEP DIVE (rendered by women.js)             -->
+  <!-- VIEW 3b: WOMEN DEEP DIVE (rendered by women.js)                 -->
   <!-- ============================================================= -->
-  <section class="view" id="view-wall" role="tabpanel"></section>
-  <section class="view" id="view-wriders" role="tabpanel"></section>
-  <section class="view" id="view-wnon" role="tabpanel"></section>
-  <section class="view" id="view-wvoices" role="tabpanel"></section>
+  <section class="view" id="view-wdive" role="tabpanel">
+    <div class="section-band">
+      <h1>Women deep dive: how women and men responded</h1>
+      <p class="lede">Women and men answer most questions the same way, with a few clear exceptions. Use the filter to look at
+        everyone, current riders only, or non-riders only; every chart, table and comment theme below follows it.</p>
+      <div class="filter-bar" role="group" aria-label="Filter by rider status">
+        <span class="filter-label">Show results for</span>
+        <div class="seg-toggle" id="wd-filter">
+          <button class="on" data-seg="all" aria-pressed="true">All respondents</button>
+          <button data-seg="riders" aria-pressed="false">Current riders</button>
+          <button data-seg="nonriders" aria-pressed="false">Non-riders</button>
+        </div>
+        <span class="filter-n" id="wd-filter-n">172 women, 153 men</span>
+      </div>
+    </div>
+    <div class="wrap" id="wd-body"></div>
+  </section>
 
   <!-- ============================================================= -->
   <!-- VIEW 4: KEY EVIDENCE                                           -->
